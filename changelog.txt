@@ -1,0 +1,95 @@
+Changelog:
+    
+    v0.3a (1.5.1)
+    + Dungeon/Pyramid/Mineshaft/Smithy/Stronghold loot!
+    
+    v0.3 (1.5.1)
+    + Omni-Scepter :D
+    + Configs :D
+    = Changed the Block IDs around a bit; if you don't want all
+      your existing GlowTools blocks to go missing, change them
+      to what they were before (BEFORE you open your world!)
+      Sorry for any inconveniences. :P
+      Here's a list:            (Before, After)
+            Block of Glowing Iron (244, 3000)
+            Block of Red Iron (245, 3001)
+            Glowing Sand (246, 3002)
+            Candentinium Ore (247, 3003)
+            Glowing Candentinium Ore (248, 3004)
+            Glowing Glass (249, 3005)
+            Glowing Sandstone (250, 3006)
+            Block of Candentinium (251, 3007)
+            Glowing Grass (252, 3008)
+            Glowing Dirt (253, 3009)
+            Glowing Cobblestone (254, 3010)
+            Glowing Stone (255, 3011)
+            Calcite (3000, 3012)
+    = Glowing Grass now only spawns if the block below it is grass
+      or dirt, and made rarer
+    + Dark Door :O
+    + Glowstone Infuser (Still a WIP)!
+    + New Creative Tab!
+    + Fancy Tooltip Stuff
+    = Made Calcite veins less gigantic to avoid angering customers
+    
+    v0.2a (1.5)
+    
+    = Updated to 1.5!
+    = Changed Cloak of Invisibility Texture
+    = Recipe Stuff
+    = Changed Cloning of Scepters of Light (now takes Candentinium
+      instead of Diamond)
+    + Smelting Candentinium Blocks gives 9 Candentinium Shards
+    
+    
+    v0.2 (1.4.7)
+    
+    + Glowing Glass!
+    + Glowing Sandstone!
+    + Glowing Grass (cannot be crafted, but is spawned randomly
+      on the surface [only spawns in 4% of chunks!])
+    + Glowing Dirt!
+    + Glowing Cobblestone!
+    + Glowing Stone!
+    + Glowing & Red Iron Nuggets! (try smelting your old glowing
+      iron armor/glowing & red iron tools)
+    + Calcite!
+    + Cloak of Invisibility! (and some other stuff to make it)
+    
+    
+    v0.1d (1.4.7)
+
+    + Cloning of Scepters of Light at the cost of Block of Diamond
+      (just place a Block of Diamond in the world and right-click
+       on it with Scepter of Light in hand)
+    + Scepter of Regeneration Mk. II (Regen 5...!)
+    + Fashionable Stripey Glowing Iron Armor
+    = Made Candentinium Ore Smeltable
+
+
+    v0.1c (1.4.7)
+
+    + Candentinium Ore & Shard
+    = Changed Recipe for Scepter of Regeneration
+    = Changed Recipe for Scepter Tip
+    + This time the gfx file is actually included!
+
+
+    v0.1b (1.4.7)
+
+    + Scepter of Light - releases light
+    + Scepter of Regeneration - heals you!
+    + Crafting Recipes for Glowing & Red Iron Tools
+    + Porkchops with Applesauce
+    + Glowing Sand!
+
+
+    v0.1a (1.4.7)
+
+    = First release
+    + Glowing Iron and Red Iron
+    + Glowing Iron Block
+    + Red Iron Block
+    + Glowing & Red Iron Tools
+    + Skidding Glow Arthropod
+    
