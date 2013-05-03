@@ -1,47 +1,23 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools;
 
-import glowTools.blocks.BlockBlueGlassOre;
-import glowTools.blocks.BlockCandentiniumOre;
-import glowTools.blocks.BlockDarkDoor;
-import glowTools.blocks.BlockFlowStoneBlock;
-import glowTools.blocks.BlockGlowCobbleBlock;
-import glowTools.blocks.BlockGlowDirtBlock;
-import glowTools.blocks.BlockGlowFarmland;
-import glowTools.blocks.BlockGlowGrassBlock;
-import glowTools.blocks.BlockGlowSandStoneBlock;
-import glowTools.blocks.BlockGlowglassBlock;
-import glowTools.blocks.BlockGlowingStoneBlock;
-import glowTools.blocks.BlockGlowironBlock;
-import glowTools.blocks.BlockGlowsandBlock;
-import glowTools.blocks.BlockGlowstoneInfuser;
-import glowTools.blocks.BlockRedironBlock;
-import glowTools.blocks.GTBlocks;
-import glowTools.config.ConfigLoader;
-import glowTools.config.ConfigSettings;
-import glowTools.items.CloakInvis;
-import glowTools.items.DarkDoorItem;
-import glowTools.items.GTItems;
-import glowTools.items.GlironArmor;
-import glowTools.items.GlowFood;
-import glowTools.items.GlowItem;
-import glowTools.items.GlowScepter;
-import glowTools.items.LightscepterItem;
-import glowTools.items.glironaxeItem;
-import glowTools.items.glironhoeItem;
-import glowTools.items.glironpickItem;
-import glowTools.items.glironshovelItem;
-import glowTools.items.glironswordItem;
-import glowTools.items.redironaxeItem;
-import glowTools.items.redironhoeItem;
-import glowTools.items.redironpickItem;
-import glowTools.items.redironshovelItem;
-import glowTools.items.redironswordItem;
-import glowTools.lib.Reference;
-import glowTools.recipe.GTRecipes;
-import glowTools.worldgen.GTChestLoot;
-import glowTools.worldgen.GTGen;
-import glowTools.worldgen.WorldGenGlowGrass;
-import glowTools.worldgen.WorldGenGlowOres;
+import glowTools.blocks.*;
+import glowTools.config.*;
+import glowTools.entity.*;
+import glowTools.items.*;
+import glowTools.lib.*;
+import glowTools.proxy.*;
+import glowTools.recipe.*;
+import glowTools.worldgen.*;
+import glowTools.worldgen.*;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -72,9 +48,11 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -88,11 +66,11 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class GlowTools
 {
 	/** Declaration */
-	@Instance("ZL123_GlowTools")
+	@Instance(Reference.MODID)
 	public static GlowTools instance;
 	
-	@SidedProxy(clientSide = "glowTools.ClientProxyGlowTools", serverSide = "glowTools.CommonProxyGlowTools")
-	public static CommonProxyGlowTools proxy;
+	@SidedProxy(clientSide = Reference.CLIENTPROXY, serverSide = Reference.SERVERPROXY)
+	public static CommonProxyGT proxy;
 	
 	static int startEntityId = 300;
     private static List<GlowFuelHandler> glowHandlers = Lists.newArrayList();
@@ -102,8 +80,7 @@ public class GlowTools
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Pre-initializing...", "");
-		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Loading Config...", "");
+		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "GlowTools v%s is running.", Reference.VERSION);
 		ConfigLoader.loadConfig(event);
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Omniscepter Hard Mode is set to %b.", ConfigSettings.OmniscepterHardMode);
 		instance = this;
@@ -118,23 +95,25 @@ public class GlowTools
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
-		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Initializing! :D", "");
 		proxy.registerRenderThings();
 		proxy.registerServerTickHandler();
 
 		
 		/** Random Necessities Section */
-		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Loading Random Necessities...", "");
 		
 		//Initialize World Generators
 		GTGen.gen();
 		//Loot
 		GTChestLoot.pop();
 		
+		//Register Entities
+		GTEntities.registerEntities();
+		
 		//GUIs
         NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		
         //Language Instances
+        LanguageRegistry.instance().addStringLocalization("entity." + Reference.MODID + ".Skidglow.name", "Skidding Glow");
         LanguageRegistry.instance().addStringLocalization("itemGroup.glowTools", "en_US", "GlowTools");
         LanguageRegistry.instance().addStringLocalization("item.glironshovelItem.name", "en_GB", "Glowing Iron Spade");
         LanguageRegistry.instance().addStringLocalization("item.redironshovelItem.name", "en_GB", "Red Iron Spade");
@@ -142,9 +121,21 @@ public class GlowTools
 		//Recipes
 		GTRecipes.recipes();
 		
+		//Eggs
+		registerEntityEgg(EntitySkidglow.class, 0x160E4A, 0x0B28E3);
+		
+	}
+	
+	@PostInit
+	public void postInit(FMLPostInitializationEvent event)
+	{
+		
+		
+		
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Finished Loading!", "");
 	}
-
+	
+	
 	public static boolean isOmniScepterHardMode(){
 		return ConfigSettings.OmniscepterHardMode;
 	}

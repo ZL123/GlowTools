@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools.items;
 
 import glowTools.GlowTools;
@@ -5,6 +14,10 @@ import glowTools.config.ConfigSettings;
 import glowTools.lib.Reference;
 
 import java.util.logging.Level;
+
+import api.EnumTag;
+import api.ObjectTags;
+import api.ThaumcraftApi;
 
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
@@ -160,8 +173,19 @@ public class GTItems {
 		CloakInvis = new CloakInvis(ConfigSettings.CloakInvisID, EnumArmorMaterialCloak, GlowTools.proxy.addArmor("Cloak"), 1).setUnlocalizedName("CloakInvis");
 		LanguageRegistry.addName(CloakInvis, "Cloak of Invisibility");
 		GameRegistry.addRecipe(new ItemStack(CloakInvis), new Object[]{"XXX", "XYX", "XXX", 'X', ReflectorItem, 'Y', cloakCore});
-				
+		
 	}
 	
+	public void postInit(){
+		
+		/**
+		 * Thaumcraft Aspects
+		 */
+		
+		
+		ThaumcraftApi.registerObjectTag(glowmoltItem.itemID, -1, (new ObjectTags()).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1).add(EnumTag.FIRE, 1));
+		ThaumcraftApi.registerObjectTag(redmoltItem.itemID, -1, (new ObjectTags()).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2).add(EnumTag.FIRE, 1));
+		
+	}
 	
 }

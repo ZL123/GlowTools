@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools.blocks;
 
 import glowTools.GlowTools;
@@ -18,7 +27,7 @@ public class BlockGlowsandBlock extends BlockSand
 		super(par1, Material.sand);
 		this.setCreativeTab(GlowTools.tabGlowTools);
 		this.setLightValue(1.0F);
-		this.setHardness(5F);
+		this.setHardness(0.5F);
 		this.setStepSound(soundSandFootstep);
 		this.setResistance(3F);
 	}

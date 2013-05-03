@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools;
 
 import glowTools.items.GTItems;
@@ -16,36 +25,36 @@ public class ServerTickHandler implements ITickHandler
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
 		if(hand.getItem() == GTItems.LightscepterItem)
-		{player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 300, 0));}
+		{player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 302, 0));}
 	}
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
 		if(hand.getItem() == GTItems.RegenscepterItem)
-		{player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 300, 2));}
+		{player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 302, 2));}
 	}
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
 		if(hand.getItem() == GTItems.Regenscepter2Item)
-		{player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 1200, 4));}
+		{player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 1202, 4));}
 	}
 		if(player.getCurrentItemOrArmor(3) != null)
 		{ItemStack chest = player.getCurrentItemOrArmor(3);
 		if(chest.getItem() == GTItems.CloakInvis)
-		{player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 30, 0));}
+		{player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 32, 0));}
 	}
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
 		if(hand.getItem() == GTItems.OmniscepterItem)
-		{player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 1200, 5));
-		player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.resistance.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.jump.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 1200, 1));
-		player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1200, 1));}
+		{player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 1202, 5));
+		player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.resistance.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.jump.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 1202, 1));
+		player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1202, 1));}
 	}
 }
 	

@@ -1,9 +1,22 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools.blocks;
 
 import glowTools.GlowTools;
 import glowTools.TileEntityGsInfuser;
 
 import java.util.Random;
+
+import api.EnumTag;
+import api.IAspectSource;
+import api.ObjectTags;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -240,8 +253,8 @@ public class BlockGlowstoneInfuser extends BlockContainer
         return true;
     }
 	
-    public int func_94328_b_(World par1World, int par2, int par3, int par4, int par5)
+    public int getComparatorInputOverride(World par1World, int par2, int par3, int par4, int par5)
     {
-        return Container.func_94526_b((IInventory)par1World.getBlockTileEntity(par2, par3, par4));
+        return Container.calcRedstoneFromInventory((IInventory)par1World.getBlockTileEntity(par2, par3, par4));
     }
 }

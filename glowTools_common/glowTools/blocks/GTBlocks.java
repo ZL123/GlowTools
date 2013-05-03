@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools.blocks;
 
 import glowTools.GlowTools;
@@ -48,7 +57,7 @@ public class GTBlocks {
 		CandentiniumOreGlowing = new BlockCandentiniumOre(ConfigSettings.CandentiniumOreGlowingID, true).setLightValue(0.625F).setUnlocalizedName("CandentiniumOre");
 		GlowglassBlock = new BlockGlowglassBlock(ConfigSettings.GlowglassBlockID, Material.glass, false).setHardness(0.3F).setUnlocalizedName("glowglassBlock");
 		GlowSandStoneBlock = new BlockGlowSandStoneBlock(ConfigSettings.GlowSandStoneBlockID).setHardness(0.8F).setUnlocalizedName("glowsandstoneBlock");
-		CandentiniumBlock = new BlockOreStorage(ConfigSettings.CandentiniumBlockID).setLightValue(0.625F).setUnlocalizedName("glowTools:tile.CandentiniumBlock").setCreativeTab(GlowTools.tabGlowTools);
+		CandentiniumBlock = new BlockOreStorage(ConfigSettings.CandentiniumBlockID).setHardness(4F).setResistance(10F).setLightValue(0.625F).setUnlocalizedName("glowTools:tile.CandentiniumBlock").setCreativeTab(GlowTools.tabGlowTools);
 		GlowGrassBlock = new BlockGlowGrassBlock(ConfigSettings.GlowGrassBlockID).setUnlocalizedName("glowgrassBlock");
 		GlowDirtBlock = new BlockGlowDirtBlock(ConfigSettings.GlowDirtBlockID).setUnlocalizedName("glowdirtBlock");
 		GlowCobbleBlock = new BlockGlowCobbleBlock(ConfigSettings.GlowCobbleBlockID).setHardness(2.0F).setResistance(10.0F).setUnlocalizedName("glowcobbleBlock");
@@ -57,7 +66,7 @@ public class GTBlocks {
 		DarkDoor = new BlockDarkDoor(ConfigSettings.DarkDoorID).setUnlocalizedName("DarkDoor");
 		GlowstoneInfuser = new BlockGlowstoneInfuser(ConfigSettings.GlowstoneInfuserID, false).setUnlocalizedName("GlowstoneInfuser");
 		GlowstoneInfuserActive = new BlockGlowstoneInfuser(ConfigSettings.GlowstoneInfuserActiveID, true).setUnlocalizedName("GlowstoneInfuserActive");
-		BlueGlassOre = new BlockBlueGlassOre(ConfigSettings.BlueGlassOreID).setHardness(1.0F).setResistance(3.0F).setUnlocalizedName("BlueGlassOre");
+		BlueGlassOre = new BlockBlueGlassOre(ConfigSettings.BlueGlassOreID).setHardness(1.0F).setResistance(3.0F).setLightValue(0.15F).setUnlocalizedName("BlueGlassOre");
 		GlowFarmland = new BlockGlowFarmland(ConfigSettings.GlowFarmlandID).setHardness(0.6F).setUnlocalizedName("GlowFarmBlock");
 		
 		GameRegistry.registerBlock(glowironBlock, "ZL123_glowironBlock");

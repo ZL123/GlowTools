@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools;
 
 import glowTools.blocks.BlockGlowstoneInfuser;
@@ -322,7 +331,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, 
 
             if (item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("WOOD")) return 200;
             if (item instanceof ItemSword && ((ItemSword) item).getToolMaterialName().equals("WOOD")) return 200;
-            if (item instanceof ItemHoe && ((ItemHoe) item).func_77842_f().equals("WOOD")) return 200;
+            if (item instanceof ItemHoe && ((ItemHoe) item).getMaterialName().equals("WOOD")) return 200;
             if (i == Item.stick.itemID) return 100;
             if (i == Item.coal.itemID) return 1600;
             if (i == Item.bucketLava.itemID) return 20000;
@@ -355,13 +364,18 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, 
     {
         return par1 == 0 ? field_102011_e : (par1 == 1 ? field_102010_d : field_102009_f);
     }
+    
+    public int[] getAccessibleSlotsFromSide(int par1)
+    {
+        return par1 == 0 ? field_102011_e : (par1 == 1 ? field_102010_d : field_102009_f);
+    }
 
-    public boolean func_102007_a(int par1, ItemStack par2ItemStack, int par3)
+    public boolean canInsertItem(int par1, ItemStack par2ItemStack, int par3)
     {
         return this.isStackValidForSlot(par1, par2ItemStack);
     }
 
-    public boolean func_102008_b(int par1, ItemStack par2ItemStack, int par3)
+    public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3)
     {
         return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
     }

@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools.blocks;
 
 import glowTools.items.GTItems;
@@ -16,8 +25,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDarkDoor extends BlockDoor
 {
-    private static final String[] field_94467_a = new String[] {"glowTools:tile.doorDark_lower", "glowTools:tile.doorDark_upper"};
-    private final int field_94465_b = 0;
+    private static final String[] doorIconNames = new String[] {"glowTools:tile.doorDark_lower", "glowTools:tile.doorDark_upper"};
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
     public BlockDarkDoor(int par1)
@@ -26,9 +34,9 @@ public class BlockDarkDoor extends BlockDoor
         this.setHardness(5.0F);
         this.setLightOpacity(15);
     }
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getIcon(int par1, int par2)
     {
-        return this.iconArray[this.field_94465_b];
+        return this.iconArray[0];
     }
     
     public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
@@ -85,23 +93,23 @@ public class BlockDarkDoor extends BlockDoor
                 }
             }
 
-            return this.iconArray[this.field_94465_b + (flag1 ? field_94467_a.length : 0) + (flag2 ? 1 : 0)];
+            return this.iconArray[0 + (flag1 ? doorIconNames.length : 0) + (flag2 ? 1 : 0)];
         }
         else
         {
-            return this.iconArray[this.field_94465_b];
+            return this.iconArray[0];
         }
     }
     
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.iconArray = new Icon[field_94467_a.length * 2];
+        this.iconArray = new Icon[doorIconNames.length * 2];
 
-        for (int i = 0; i < field_94467_a.length; ++i)
+        for (int i = 0; i < doorIconNames.length; ++i)
         {
-            this.iconArray[i] = par1IconRegister.registerIcon(field_94467_a[i]);
-            this.iconArray[i + field_94467_a.length] = new IconFlipped(this.iconArray[i], true, false);
+            this.iconArray[i] = par1IconRegister.registerIcon(doorIconNames[i]);
+            this.iconArray[i + doorIconNames.length] = new IconFlipped(this.iconArray[i], true, false);
         }
     }
     public int idDropped(int par1, Random par2Random, int par3)

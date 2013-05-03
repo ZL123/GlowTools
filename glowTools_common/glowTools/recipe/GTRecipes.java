@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) ZL123 2013
+ * 
+ * GlowTools is made available under the terms of the Lesser GNU Public License v3.
+ * (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @author ZL123
+ */
+
 package glowTools.recipe;
 
 import java.util.logging.Level;
@@ -77,7 +86,7 @@ public class GTRecipes {
 			'U', new ItemStack(Item.appleGold, 1, 1)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.Regenscepter2Item), new Object[]{"PQP", "RSR", "PQP", 'P', new ItemStack(Item.diamond), 'Q',
 			new ItemStack(GTItems.CandentiniumGem), 'R', new ItemStack(Block.blockGold), 'S', new ItemStack(GTItems.RegenscepterItem)});
-		GameRegistry.addRecipe(new ItemStack(GTItems.OmniscepterItem), new Object[]{GlowTools.getOmniScepterLine(1), GlowTools.getOmniScepterLine(2), GlowTools.getOmniScepterLine(3), 'A', new ItemStack(Block.blockDiamond), 'B',
+		GameRegistry.addRecipe(new ItemStack(GTItems.OmniscepterItem), new Object[]{getOmniScepterLine(1), getOmniScepterLine(2), getOmniScepterLine(3), 'A', new ItemStack(Block.blockDiamond), 'B',
 			new ItemStack(Block.blockEmerald), 'C', new ItemStack(GTItems.LightscepterItem), 'D', new ItemStack(GTItems.CloakInvis), 'E', new ItemStack(GTItems.Regenscepter2Item), 'F', new ItemStack(Item.diamond),
 			'G', new ItemStack(Item.emerald), 'H', new ItemStack(GTItems.CandentiniumGem)});
 		
@@ -102,7 +111,19 @@ public class GTRecipes {
 		GameRegistry.addSmelting(GTItems.glironshovelItem.itemID, new ItemStack(GTItems.glowironNugget), 0.7F);
 		GameRegistry.addSmelting(GTItems.glironaxeItem.itemID, new ItemStack(GTItems.glowironNugget), 0.7F);
 		GameRegistry.addSmelting(GTItems.glironhoeItem.itemID, new ItemStack(GTItems.glowironNugget), 0.7F);
-				
+		
 	}
 	
+	public static String getOmniScepterLine(int ln){
+		switch (ln) {
+		case 1:
+			return GlowTools.isOmniScepterHardMode() ? "AAA" : "FHF";
+		case 2:
+			return GlowTools.isOmniScepterHardMode() ? "CDE" : "CDE";
+		case 3:
+			return GlowTools.isOmniScepterHardMode() ? "BBB" : "GHG";
+		default:
+			return null;
+		}
+	}
 }
