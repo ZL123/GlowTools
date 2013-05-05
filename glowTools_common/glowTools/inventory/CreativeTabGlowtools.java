@@ -7,7 +7,7 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.inventory;
 
 import glowTools.items.GTItems;
 import net.minecraft.creativetab.CreativeTabs;

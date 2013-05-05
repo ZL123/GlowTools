@@ -7,8 +7,9 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.inventory;
 
+import glowTools.recipe.InfuserRecipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;

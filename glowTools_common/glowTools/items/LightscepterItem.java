@@ -10,12 +10,13 @@
 package glowTools.items;
 
 import glowTools.GlowTools;
-import glowTools.PlayerHelper;
 import glowTools.blocks.GTBlocks;
 
 import java.util.List;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.EnumToolMaterial;
@@ -50,12 +51,19 @@ public class LightscepterItem extends GlowScepter
             }
             else
             {
-                PlayerHelper.giveItemToPlayer(par2EntityPlayer, new ItemStack(GTItems.LightscepterItem));
+                giveItemToPlayer(par2EntityPlayer, new ItemStack(GTItems.LightscepterItem));
                 par3World.setBlockToAir(par4, par5, par6);
                 return true;
             }
         }
 	}
+	
+    public static void giveItemToPlayer(EntityPlayer player, ItemStack item) {
+        World world = player.worldObj;
+        if (item == null || item.stackSize <= 0 || world.isRemote) return;
+        Entity entity = new EntityItem(world, player.posX, player.posY + 0.5, player.posZ, item.copy());
+        world.spawnEntityInWorld(entity);
+    }
 	
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)

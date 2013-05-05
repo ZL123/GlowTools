@@ -7,7 +7,7 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.recipe;
 
 import net.minecraft.item.ItemStack;
 

@@ -11,9 +11,9 @@ package glowTools;
 
 import glowTools.blocks.*;
 import glowTools.config.*;
-import glowTools.container.*;
 import glowTools.entity.*;
 import glowTools.gui.*;
+import glowTools.inventory.*;
 import glowTools.items.*;
 import glowTools.lang.*;
 import glowTools.lib.*;

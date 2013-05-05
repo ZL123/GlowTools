@@ -9,7 +9,7 @@
 
 package glowTools.gui;
 
-import glowTools.container.ContainerInfuser;
+import glowTools.inventory.ContainerInfuser;
 import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;

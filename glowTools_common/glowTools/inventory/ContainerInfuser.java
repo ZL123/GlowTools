@@ -7,10 +7,9 @@
  * @author ZL123
  */
 
-package glowTools.container;
+package glowTools.inventory;
 
-import glowTools.InfuserRecipes;
-import glowTools.SlotInfuser;
+import glowTools.recipe.InfuserRecipes;
 import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;

@@ -9,8 +9,8 @@
 
 package glowTools.tileentity;
 
-import glowTools.InfuserRecipes;
 import glowTools.blocks.BlockGlowstoneInfuser;
+import glowTools.recipe.InfuserRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
