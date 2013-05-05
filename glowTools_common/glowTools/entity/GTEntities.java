@@ -9,10 +9,9 @@
 
 package glowTools.entity;
 
+import glowTools.GlowTools;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
-import glowTools.GlowTools;
-import glowTools.lib.Reference;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class GTEntities {

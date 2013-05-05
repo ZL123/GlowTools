@@ -9,8 +9,8 @@
 
 package glowTools.lib;
 
-import net.minecraft.creativetab.CreativeTabs;
 import glowTools.GlowTools;
+import net.minecraft.creativetab.CreativeTabs;
 
 public class Reference {
 	

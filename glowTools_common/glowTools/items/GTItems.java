@@ -15,16 +15,15 @@ import glowTools.lib.Reference;
 
 import java.util.logging.Level;
 
-import api.EnumTag;
-import api.ObjectTags;
-import api.ThaumcraftApi;
-
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.EnumHelper;
+import api.EnumTag;
+import api.ObjectTags;
+import api.ThaumcraftApi;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 

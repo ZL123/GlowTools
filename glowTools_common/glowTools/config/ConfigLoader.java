@@ -9,9 +9,6 @@
 
 package glowTools.config;
 
-import glowTools.GlowTools;
-import glowTools.blocks.GTBlocks;
-import glowTools.items.GTItems;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 

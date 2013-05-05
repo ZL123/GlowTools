@@ -10,9 +10,7 @@
 package glowTools.render;
 
 import glowTools.entity.EntityFallglowsand;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderFallingSand;
-import net.minecraft.entity.Entity;
 
 public class RenderFallglowsand extends RenderFallingSand
 {
