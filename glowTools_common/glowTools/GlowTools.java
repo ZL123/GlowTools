@@ -11,12 +11,17 @@ package glowTools;
 
 import glowTools.blocks.*;
 import glowTools.config.*;
+import glowTools.container.*;
 import glowTools.entity.*;
+import glowTools.gui.*;
 import glowTools.items.*;
+import glowTools.lang.*;
 import glowTools.lib.*;
+import glowTools.model.*;
 import glowTools.proxy.*;
 import glowTools.recipe.*;
-import glowTools.worldgen.*;
+import glowTools.tick.*;
+import glowTools.tileentity.*;
 import glowTools.worldgen.*;
 
 import java.util.List;
@@ -87,6 +92,7 @@ public class GlowTools
 		
 		//Initialize Blocks' Stuff
 		GTBlocks.init();
+		
 		//Initialize Items' Stuff
 		GTItems.init();
 		
@@ -102,9 +108,10 @@ public class GlowTools
 		/** Random Necessities Section */
 		
 		//Initialize World Generators
-		GTGen.gen();
+		GTGen.generate();
+		
 		//Loot
-		GTChestLoot.pop();
+		GTChestLoot.populate();
 		
 		//Register Entities
 		GTEntities.registerEntities();
@@ -113,10 +120,7 @@ public class GlowTools
         NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		
         //Language Instances
-        LanguageRegistry.instance().addStringLocalization("entity." + Reference.MODID + ".Skidglow.name", "Skidding Glow");
-        LanguageRegistry.instance().addStringLocalization("itemGroup.glowTools", "en_US", "GlowTools");
-        LanguageRegistry.instance().addStringLocalization("item.glironshovelItem.name", "en_GB", "Glowing Iron Spade");
-        LanguageRegistry.instance().addStringLocalization("item.redironshovelItem.name", "en_GB", "Red Iron Spade");
+        Names.load();
         
 		//Recipes
 		GTRecipes.recipes();
@@ -129,7 +133,7 @@ public class GlowTools
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		
+		GTItems.postInit();
 		
 		
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Finished Loading!", "");
@@ -138,19 +142,6 @@ public class GlowTools
 	
 	public static boolean isOmniScepterHardMode(){
 		return ConfigSettings.OmniscepterHardMode;
-	}
-	
-	public static String getOmniScepterLine(int ln){
-		switch (ln) {
-		case 1:
-			return isOmniScepterHardMode() ? "AAA" : "FHF";
-		case 2:
-			return isOmniScepterHardMode() ? "CDE" : "CDE";
-		case 3:
-			return isOmniScepterHardMode() ? "BBB" : "GHG";
-		default:
-			return null;
-		}
 	}
 	
 	public static int getUniqueEntityId()

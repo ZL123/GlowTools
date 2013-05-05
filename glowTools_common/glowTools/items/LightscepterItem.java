@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class LightscepterItem extends ItemSword
+public class LightscepterItem extends GlowScepter
 {
 	public LightscepterItem(int i, EnumToolMaterial par2EnumToolMaterial)
 	{
@@ -63,12 +63,6 @@ public class LightscepterItem extends ItemSword
         par3List.add("Brings forth the light");
         par3List.add("so it shall shine upon thee.");
     }
-	
-	@SideOnly(Side.CLIENT)
-	public EnumRarity getRarity(ItemStack par1ItemStack)
-	{
-		return EnumRarity.uncommon;
-	}
 	
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)

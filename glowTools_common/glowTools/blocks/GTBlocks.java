@@ -57,7 +57,7 @@ public class GTBlocks {
 		CandentiniumOreGlowing = new BlockCandentiniumOre(ConfigSettings.CandentiniumOreGlowingID, true).setLightValue(0.625F).setUnlocalizedName("CandentiniumOre");
 		GlowglassBlock = new BlockGlowglassBlock(ConfigSettings.GlowglassBlockID, Material.glass, false).setHardness(0.3F).setUnlocalizedName("glowglassBlock");
 		GlowSandStoneBlock = new BlockGlowSandStoneBlock(ConfigSettings.GlowSandStoneBlockID).setHardness(0.8F).setUnlocalizedName("glowsandstoneBlock");
-		CandentiniumBlock = new BlockOreStorage(ConfigSettings.CandentiniumBlockID).setHardness(4F).setResistance(10F).setLightValue(0.625F).setUnlocalizedName("glowTools:tile.CandentiniumBlock").setCreativeTab(GlowTools.tabGlowTools);
+		CandentiniumBlock = new BlockCandentiniumBlock(ConfigSettings.CandentiniumBlockID).setHardness(4F).setResistance(10F).setLightValue(0.625F).setUnlocalizedName("CandentiniumBlock");
 		GlowGrassBlock = new BlockGlowGrassBlock(ConfigSettings.GlowGrassBlockID).setUnlocalizedName("glowgrassBlock");
 		GlowDirtBlock = new BlockGlowDirtBlock(ConfigSettings.GlowDirtBlockID).setUnlocalizedName("glowdirtBlock");
 		GlowCobbleBlock = new BlockGlowCobbleBlock(ConfigSettings.GlowCobbleBlockID).setHardness(2.0F).setResistance(10.0F).setUnlocalizedName("glowcobbleBlock");
@@ -101,23 +101,6 @@ public class GTBlocks {
 		MinecraftForge.setBlockHarvestLevel(GlowstoneInfuser, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(GlowstoneInfuserActive, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(BlueGlassOre, "pickaxe", 1);
-		
-		LanguageRegistry.addName(glowironBlock, "Block of Glowing Iron");
-		LanguageRegistry.addName(redironBlock, "Block of Red Iron");
-		LanguageRegistry.addName(glowsandBlock, "Glowing Sand");
-		LanguageRegistry.addName(CandentiniumOre, "Candentinium Ore");
-		LanguageRegistry.addName(GlowglassBlock, "Glowing Glass");
-		LanguageRegistry.addName(GlowSandStoneBlock, "Glowing Sandstone");
-		LanguageRegistry.addName(CandentiniumBlock, "Block of Candentinium");
-		LanguageRegistry.addName(GlowGrassBlock, "Glowing Grass Block");
-		LanguageRegistry.addName(GlowDirtBlock, "Glowing Dirt Block");
-		LanguageRegistry.addName(GlowCobbleBlock, "Glowing Cobblestone");
-		LanguageRegistry.addName(GlowingStoneBlock, "Glowing Stone");
-		LanguageRegistry.addName(FlowStoneBlock, "Calcite");
-		LanguageRegistry.addName(DarkDoor, "Dark Door");
-		LanguageRegistry.addName(GlowstoneInfuser, "Glowstone Infuser (WIP)");
-		LanguageRegistry.addName(GlowstoneInfuserActive, "Glowstone Infuser (WIP)");
-		LanguageRegistry.addName(BlueGlassOre, "Glassy Blue Ore");
 		
 	}
 	

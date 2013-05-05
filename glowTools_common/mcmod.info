@@ -3,8 +3,8 @@
 	"modid": "ZL123_GlowTools",
 	"name": "GlowTools",
 	"version": "0.3a",
-	"mcversion": "1.5.1",
-	"description": "Glowing items, blocks, scepters and more!",
+	"mcversion": "1.5.2",
+	"description": "Glowing items, blocks, scepters, cloaks and more!",
 	"authors": ["ZL123"],
 	"credits": "Many people for ideas, help and being awesome! :D",
 	"logoFile": "",
@@ -12,8 +12,8 @@
 	"updateUrl": "",
 	"parent": "",
 	"requiredMods": [
-    "Forge@[7.7.1.656,)",
-    "FML@[5.1.28.656,)"
+    "Forge@[7.8.0.685,)",
+    "FML@[5.2.5.686,)"
     ],
 	"screenshots": [],
 	"dependencies": []

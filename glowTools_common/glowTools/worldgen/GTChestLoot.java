@@ -18,7 +18,7 @@ import net.minecraftforge.common.DungeonHooks;
 
 public class GTChestLoot {
 	
-	public static void pop(){
+	public static void populate(){
 		
 		//Dungeons
 		DungeonHooks.addDungeonMob("Skidding Glow", 50);

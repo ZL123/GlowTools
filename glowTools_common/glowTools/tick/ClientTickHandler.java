@@ -7,7 +7,7 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.tick;
 
 import java.util.EnumSet;
 

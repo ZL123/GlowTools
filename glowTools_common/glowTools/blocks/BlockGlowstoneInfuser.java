@@ -10,13 +10,9 @@
 package glowTools.blocks;
 
 import glowTools.GlowTools;
-import glowTools.TileEntityGsInfuser;
+import glowTools.tileentity.TileEntityGsInfuser;
 
 import java.util.Random;
-
-import api.EnumTag;
-import api.IAspectSource;
-import api.ObjectTags;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -38,36 +34,33 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGlowstoneInfuser extends BlockContainer
 {
-	private final Random infuserRand = new Random();
-	private final boolean isActive;
-	
+    private final Random infuserRand = new Random();
+
+    private final boolean isActive;
+
     private static boolean keepInfuserInventory = false;
     @SideOnly(Side.CLIENT)
-    private Icon field_94458_cO;
+    private Icon infuserIconTop;
     @SideOnly(Side.CLIENT)
-    private Icon field_94459_cP;
-	
-	public BlockGlowstoneInfuser(int par1, boolean par2)
-	{
-		super(par1, Material.rock);
-		this.setHardness(3.0F);
-		this.setResistance(15.0F);
-		this.setStepSound(soundGlassFootstep);
-		this.setLightValue(0.75F);
-		this.isActive = par2;
-	}
-	
+    private Icon infuserIconFront;
+
+    protected BlockGlowstoneInfuser(int par1, boolean par2)
+    {
+        super(par1, Material.glass);
+        this.isActive = par2;
+    }
+
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return GTBlocks.GlowstoneInfuser.blockID;
     }
-    
+
     public void onBlockAdded(World par1World, int par2, int par3, int par4)
     {
         super.onBlockAdded(par1World, par2, par3, par4);
         this.setDefaultDirection(par1World, par2, par3, par4);
     }
-    
+
     private void setDefaultDirection(World par1World, int par2, int par3, int par4)
     {
         if (!par1World.isRemote)
@@ -103,38 +96,29 @@ public class BlockGlowstoneInfuser extends BlockContainer
     }
 
     @SideOnly(Side.CLIENT)
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getIcon(int par1, int par2)
     {
-        return par1 == 1 ? this.field_94458_cO : (par1 == 0 ? this.field_94458_cO : (par1 != par2 ? this.blockIcon : this.field_94459_cP));
+        return par1 == 1 ? this.infuserIconTop : (par1 == 0 ? this.infuserIconTop : (par1 != par2 ? this.blockIcon : this.infuserIconFront));
     }
-    
+
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
         this.blockIcon = par1IconRegister.registerIcon("glowTools:tile.GlowstoneInfuser_sides");
-        this.field_94459_cP = par1IconRegister.registerIcon(this.isActive ? "glowTools:tile.GlowstoneInfuser_front_active" : "glowTools:tile.GlowstoneInfuser_front");
-        this.field_94458_cO = par1IconRegister.registerIcon("glowTools:tile.GlowstoneInfuser_sides");
+        this.infuserIconFront = par1IconRegister.registerIcon(this.isActive ? "glowTools:tile.GlowstoneInfuser_front_active" : "glowTools:tile.GlowstoneInfuser_front");
+        this.infuserIconTop = par1IconRegister.registerIcon("glowTools:tile.GlowstoneInfuser_sides");
     }
     
-    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
-    {
-        if (par1World.isRemote)
-        {
-            return true;
-        }
-        else
-        {
-            TileEntityGsInfuser tileentitygsinfuser = (TileEntityGsInfuser)par1World.getBlockTileEntity(par2, par3, par4);
-
-            if (tileentitygsinfuser != null)
-            {
-                par5EntityPlayer.openGui(GlowTools.instance, 1, par1World, par2, par3, par4);
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
+            TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+            if (tileEntity == null || player.isSneaking()) {
+                    return false;
             }
-            
-            return true;
-        }
+        player.openGui(GlowTools.instance, 1, world, x, y, z);
+        return true;
     }
-    
+
     public static void updateInfuserBlockState(boolean par0, World par1World, int par2, int par3, int par4)
     {
         int l = par1World.getBlockMetadata(par2, par3, par4);
@@ -159,18 +143,13 @@ public class BlockGlowstoneInfuser extends BlockContainer
             par1World.setBlockTileEntity(par2, par3, par4, tileentity);
         }
     }
-    public TileEntity getBlockEntity()
+
+    public TileEntity createNewTileEntity(World par1World)
     {
-    	return new TileEntityGsInfuser();
+        return new TileEntityGsInfuser();
     }
-    
-	@Override
-	public TileEntity createNewTileEntity(World par1World)
-	{
-		return new TileEntityGsInfuser();
-	}
-	
-	public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
+
+    public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
     {
         int l = MathHelper.floor_double((double)(par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
@@ -199,62 +178,56 @@ public class BlockGlowstoneInfuser extends BlockContainer
             ((TileEntityGsInfuser)par1World.getBlockTileEntity(par2, par3, par4)).func_94129_a(par6ItemStack.getDisplayName());
         }
     }
-	
-	public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6)
-    {
-        if (!keepInfuserInventory)
-        {
-            TileEntityGsInfuser tileentitygsinfuser = (TileEntityGsInfuser) par1World.getBlockTileEntity(par2, par3, par4);
 
-            if (tileentitygsinfuser != null)
-            {
-                for (int j1 = 0; j1 < tileentitygsinfuser.getSizeInventory(); ++j1)
-                {
-                    ItemStack itemstack = tileentitygsinfuser.getStackInSlot(j1);
-
-                    if (itemstack != null)
-                    {
-                        float f = this.infuserRand.nextFloat() * 0.8F + 0.1F;
-                        float f1 = this.infuserRand.nextFloat() * 0.8F + 0.1F;
-                        float f2 = this.infuserRand.nextFloat() * 0.8F + 0.1F;
-
-                        while (itemstack.stackSize > 0)
-                        {
-                            int k1 = this.infuserRand.nextInt(21) + 10;
-
-                            if (k1 > itemstack.stackSize)
-                            {
-                                k1 = itemstack.stackSize;
-                            }
-
-                            itemstack.stackSize -= k1;
-                            EntityItem entityitem = new EntityItem(par1World, (double)((float)par2 + f), (double)((float)par3 + f1), (double)((float)par4 + f2), new ItemStack(itemstack.itemID, k1, itemstack.getItemDamage()));
-
-                            if (itemstack.hasTagCompound())
-                            {
-                                entityitem.getEntityItem().setTagCompound((NBTTagCompound)itemstack.getTagCompound().copy());
-                            }
-
-                            float f3 = 0.05F;
-                            entityitem.motionX = (double)((float)this.infuserRand.nextGaussian() * f3);
-                            entityitem.motionY = (double)((float)this.infuserRand.nextGaussian() * f3 + 0.2F);
-                            entityitem.motionZ = (double)((float)this.infuserRand.nextGaussian() * f3);
-                            par1World.spawnEntityInWorld(entityitem);
-                        }
-                    }
-                }
-            }
-        }
-        super.breakBlock(par1World, par2, par3, par4, par5, par6);
+    @Override
+    public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
+            dropItems(world, x, y, z);
+            super.breakBlock(world, x, y, z, par5, par6);
     }
-	
-	public boolean func_96468_q_()
+    
+    private void dropItems(World world, int x, int y, int z){
+        Random rand = new Random();
+
+        TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+        if (!(tileEntity instanceof IInventory)) {
+                return;
+        }
+        IInventory inventory = (IInventory) tileEntity;
+
+        for (int i = 0; i < inventory.getSizeInventory(); i++) {
+                ItemStack item = inventory.getStackInSlot(i);
+
+                if (item != null && item.stackSize > 0) {
+                        float rx = rand.nextFloat() * 0.8F + 0.1F;
+                        float ry = rand.nextFloat() * 0.8F + 0.1F;
+                        float rz = rand.nextFloat() * 0.8F + 0.1F;
+
+                        EntityItem entityItem = new EntityItem(world, x + rx, y + ry, z + rz,
+                        new ItemStack(item.itemID, item.stackSize, item.getItemDamage()));
+
+                        float factor = 0.05F;
+                        entityItem.motionX = rand.nextGaussian() * factor;
+                        entityItem.motionY = rand.nextGaussian() * factor + 0.2F;
+                        entityItem.motionZ = rand.nextGaussian() * factor;
+                        world.spawnEntityInWorld(entityItem);
+                        item.stackSize = 0;
+                }
+        }
+}
+
+    public boolean hasComparatorInputOverride()
     {
         return true;
     }
-	
+
     public int getComparatorInputOverride(World par1World, int par2, int par3, int par4, int par5)
     {
         return Container.calcRedstoneFromInventory((IInventory)par1World.getBlockTileEntity(par2, par3, par4));
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return GTBlocks.GlowstoneInfuser.blockID;
     }
 }

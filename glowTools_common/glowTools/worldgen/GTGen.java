@@ -18,7 +18,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GTGen {
 	
-	public static void gen(){
+	public static void generate(){
 		GameRegistry.registerWorldGenerator(new WorldGenGlowOres());
 		GameRegistry.registerWorldGenerator(new WorldGenGlowGrass());
 	}

@@ -27,7 +27,6 @@ import net.minecraft.potion.Potion;
 import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class GTItems {
 	
@@ -97,27 +96,7 @@ public class GTItems {
 		InfernalCoalItem = new GlowItem(ConfigSettings.InfernalCoalItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("InfernalCoalItem");
 		BlueGlassShard = new GlowItem(ConfigSettings.BlueGlassShardID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("blueglassShard");
 		BlueFertilizerItem = new GlowItem(ConfigSettings.BlueFertilizerItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("bluefertilizerItem");
-		
-		//Item Language Registry
-		LanguageRegistry.addName(glowironItem, "Glowing Iron Ingot");
-		LanguageRegistry.addName(glowmoltItem, "Melted Glowstone");
-		LanguageRegistry.addName(redmoltItem, "Melted Redstone");
-		LanguageRegistry.addName(glowredItem, "Blazing Blend");
-		LanguageRegistry.addName(redironItem, "Red Iron Ingot");
-		LanguageRegistry.addName(SceptertipItem, "Scepter Tip");
-		LanguageRegistry.addName(RedironhandleItem, "Red-Iron-Tool Handle");
-		LanguageRegistry.addName(PorkappleItem, "Porkchop with Applesauce");
-		LanguageRegistry.addName(CandentiniumGem, "Candentinium Shard");
-		LanguageRegistry.addName(glowironNugget, "Glowing Iron Nugget");
-		LanguageRegistry.addName(redironNugget, "Red Iron Nugget");
-		LanguageRegistry.addName(pureCalciteItem, "Purified Calcite");
-		LanguageRegistry.addName(cloakCore, "Cloak Core");
-		LanguageRegistry.addName(ReflectorItem, "Light Reflector");
-		LanguageRegistry.addName(DarkDoorItem, "Dark Door");
-		LanguageRegistry.addName(InfernalCoalItem, "Infernal Coal");
-		LanguageRegistry.addName(BlueGlassShard, "Glassy Blue Shard");
-		LanguageRegistry.addName(BlueFertilizerItem, "Blue Fertilizer");
-		
+				
 		//Glow Iron Tools
 		EnumToolMaterial EnumToolMaterialGlowiron = EnumHelper.addToolMaterial("Glowiron", 2, 650, 10.0F, 3, 18);
 		glironswordItem = new glironswordItem(ConfigSettings.glironswordItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironswordItem");
@@ -125,11 +104,6 @@ public class GTItems {
 		glironshovelItem = new glironshovelItem(ConfigSettings.glironshovelItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironshovelItem");
 		glironaxeItem = new glironaxeItem(ConfigSettings.glironaxeItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironaxeItem");
 		glironhoeItem = new glironhoeItem(ConfigSettings.glironhoeItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironhoeItem");
-		LanguageRegistry.addName(glironswordItem, "Glowing Iron Sword");
-		LanguageRegistry.addName(glironpickItem, "Glowing Iron Pickaxe");
-		LanguageRegistry.addName(glironshovelItem, "Glowing Iron Shovel");
-		LanguageRegistry.addName(glironaxeItem, "Glowing Iron Axe");
-		LanguageRegistry.addName(glironhoeItem, "Glowing Iron Hoe");
 		
 		//Red Iron Tools
 		EnumToolMaterial EnumToolMaterialRediron = EnumHelper.addToolMaterial("Rediron", 2, 300, 5.0F, 5, 25);
@@ -138,22 +112,13 @@ public class GTItems {
 		redironshovelItem = new redironshovelItem(ConfigSettings.redironshovelItemID, EnumToolMaterialRediron).setUnlocalizedName("redironshovelItem");
 		redironaxeItem = new redironaxeItem(ConfigSettings.redironaxeItemID, EnumToolMaterialRediron).setUnlocalizedName("redironaxeItem");
 		redironhoeItem = new redironhoeItem(ConfigSettings.redironhoeItemID, EnumToolMaterialRediron).setUnlocalizedName("redironhoeItem");
-		LanguageRegistry.addName(redironswordItem, "Red Iron Sword");
-		LanguageRegistry.addName(redironpickItem, "Red Iron Pickaxe");
-		LanguageRegistry.addName(redironshovelItem, "Red Iron Shovel");
-		LanguageRegistry.addName(redironaxeItem, "Red Iron Axe");
-		LanguageRegistry.addName(redironhoeItem, "Red Iron Hoe");
-		
+				
 		//Scepters
 		EnumToolMaterial EnumToolMaterialScepter = EnumHelper.addToolMaterial("Scepter", -1, -1, 0F, 0, -1);
 		LightscepterItem = new LightscepterItem(ConfigSettings.LightscepterItemID, EnumToolMaterialScepter).setUnlocalizedName("LightscepterItem");
-		LanguageRegistry.addName(LightscepterItem, "Scepter of Light");
 		RegenscepterItem = new GlowScepter(ConfigSettings.RegenscepterItemID, EnumToolMaterialScepter).setUnlocalizedName("RegenscepterItem");
-		LanguageRegistry.addName(RegenscepterItem, "Scepter of Regeneration");
 		Regenscepter2Item = new GlowScepter(ConfigSettings.Regenscepter2ItemID, EnumToolMaterialScepter).setUnlocalizedName("Regenscepter2Item");
-		LanguageRegistry.addName(Regenscepter2Item, "Scepter of Regeneration Mk. II");
 		OmniscepterItem = new GlowScepter(ConfigSettings.OmniscepterItemID, EnumToolMaterialScepter).setUnlocalizedName("OmniscepterItem");
-		LanguageRegistry.addName(OmniscepterItem, "Omni-Scepter");
 		
 		/** Armor Section (Max Damage before it breaks, Damage Reduction, Enchantability) */
 		
@@ -163,20 +128,15 @@ public class GTItems {
 		GlironChest = new GlironArmor(ConfigSettings.GlironChestID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 1).setUnlocalizedName("GlironChest");
 		GlironLegs = new GlironArmor(ConfigSettings.GlironLegsID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 2).setUnlocalizedName("GlironLegs");
 		GlironBoots = new GlironArmor(ConfigSettings.GlironBootsID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 3).setUnlocalizedName("GlironBoots");
-		LanguageRegistry.addName(GlironHelm, "Stripey Glowing Iron Helmet");
-		LanguageRegistry.addName(GlironChest, "Stripey Glowing Iron Chestplate");
-		LanguageRegistry.addName(GlironLegs, "Stripey Glowing Iron Leggings");
-		LanguageRegistry.addName(GlironBoots, "Stripey Glowing Iron Boots");
 		
 		//Cloaks
 		EnumArmorMaterial EnumArmorMaterialCloak = EnumHelper.addArmorMaterial("Cloak", -1, new int[] {0, 2, 0, 0}, -1);
 		CloakInvis = new CloakInvis(ConfigSettings.CloakInvisID, EnumArmorMaterialCloak, GlowTools.proxy.addArmor("Cloak"), 1).setUnlocalizedName("CloakInvis");
-		LanguageRegistry.addName(CloakInvis, "Cloak of Invisibility");
 		GameRegistry.addRecipe(new ItemStack(CloakInvis), new Object[]{"XXX", "XYX", "XXX", 'X', ReflectorItem, 'Y', cloakCore});
 		
 	}
 	
-	public void postInit(){
+	public static void postInit(){
 		
 		/**
 		 * Thaumcraft Aspects

@@ -7,16 +7,19 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.container;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import glowTools.InfuserRecipes;
+import glowTools.SlotInfuser;
+import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ContainerInfuser extends Container
 {
@@ -28,9 +31,10 @@ public class ContainerInfuser extends Container
     public ContainerInfuser(InventoryPlayer par1InventoryPlayer, TileEntityGsInfuser par2TileEntityGsInfuser)
     {
         this.infuser = par2TileEntityGsInfuser;
-        this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 0, 56, 17));
-        this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 1, 56, 53));
-        this.addSlotToContainer(new SlotInfuser(par1InventoryPlayer.player, par2TileEntityGsInfuser, 2, 116, 35));
+        this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 0, 59, 17));
+        this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 1, 59, 53));
+        this.addSlotToContainer(new SlotInfuser(par1InventoryPlayer.player, par2TileEntityGsInfuser, 2, 126, 35));
+        this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 3, 35, 17));
         int i;
 
         for (i = 0; i < 3; ++i)
@@ -107,7 +111,7 @@ public class ContainerInfuser extends Container
     {
         return this.infuser.isUseableByPlayer(par1EntityPlayer);
     }
-
+    
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack itemstack = null;
@@ -120,14 +124,14 @@ public class ContainerInfuser extends Container
 
             if (par2 == 2)
             {
-                if (!this.mergeItemStack(itemstack1, 3, 39, true))
+                if (!this.mergeItemStack(itemstack1, 4, 40, true))
                 {
                     return null;
                 }
 
                 slot.onSlotChange(itemstack1, itemstack);
             }
-            else if (par2 != 1 && par2 != 0)
+            else if (par2 != 1 && par2 != 0 && par2 != 3)
             {
                 if (InfuserRecipes.infusing().getInfusingResult(itemstack1) != null)
                 {
@@ -143,19 +147,19 @@ public class ContainerInfuser extends Container
                         return null;
                     }
                 }
-                else if (par2 >= 3 && par2 < 30)
+                else if (par2 >= 4 && par2 < 31)
                 {
-                    if (!this.mergeItemStack(itemstack1, 30, 39, false))
+                    if (!this.mergeItemStack(itemstack1, 31, 40, false))
                     {
                         return null;
                     }
                 }
-                else if (par2 >= 30 && par2 < 39 && !this.mergeItemStack(itemstack1, 3, 30, false))
+                else if (par2 >= 31 && par2 < 40 && !this.mergeItemStack(itemstack1, 4, 31, false))
                 {
                     return null;
                 }
             }
-            else if (!this.mergeItemStack(itemstack1, 3, 39, false))
+            else if (!this.mergeItemStack(itemstack1, 4, 40, false))
             {
                 return null;
             }

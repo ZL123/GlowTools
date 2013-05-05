@@ -22,6 +22,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.EnumChatFormatting;
 
 public class GlowScepter extends ItemSword
 {
@@ -30,12 +31,6 @@ public class GlowScepter extends ItemSword
 		super(i, par2EnumToolMaterial);
 		this.setCreativeTab(GlowTools.tabGlowTools);
 	}
-	
-	@SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack par1ItemStack)
-    {
-        return EnumRarity.epic;
-    }
 	
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
@@ -59,6 +54,27 @@ public class GlowScepter extends ItemSword
         	par3List.add("wounds of mortality.");
         }
     }
+	
+	@Override
+    public String getItemDisplayName(ItemStack stack) {
+		if (this.itemID == GTItems.LightscepterItem.itemID)
+		{
+			return EnumChatFormatting.GOLD + super.getItemDisplayName(stack);
+		}
+		else if (this.itemID == GTItems.RegenscepterItem.itemID)
+		{
+			return EnumChatFormatting.RED + super.getItemDisplayName(stack);
+		}
+		else if (this.itemID == GTItems.Regenscepter2Item.itemID)
+		{
+			return EnumChatFormatting.DARK_PURPLE + super.getItemDisplayName(stack);
+		}
+		else if (this.itemID == GTItems.OmniscepterItem.itemID)
+		{
+			return EnumChatFormatting.GREEN + super.getItemDisplayName(stack);
+		}
+		else return null;
+	}
 	
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)

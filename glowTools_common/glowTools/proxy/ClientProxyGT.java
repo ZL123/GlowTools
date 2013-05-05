@@ -14,13 +14,13 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
-import glowTools.ClientTickHandler;
-import glowTools.ModelSkidglow;
-import glowTools.RenderFallglowsand;
-import glowTools.RenderSkidglow;
 import glowTools.entity.EntityFallglowsand;
 import glowTools.entity.EntitySkidglow;
+import glowTools.model.ModelSkidglow;
 import glowTools.proxy.CommonProxyGT;
+import glowTools.render.RenderFallglowsand;
+import glowTools.render.RenderSkidglow;
+import glowTools.tick.ClientTickHandler;
 
 public class ClientProxyGT extends CommonProxyGT
 {

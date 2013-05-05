@@ -7,17 +7,16 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.gui;
 
+import glowTools.container.ContainerInfuser;
+import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
-import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -32,6 +31,9 @@ public class GuiInfuser extends GuiContainer
         this.infuserInventory = par2TileEntityInfuser;
     }
 
+    /**
+     * Draw the foreground layer for the GuiContainer (everything in front of the items)
+     */
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
         String s = this.infuserInventory.isInvNameLocalized() ? this.infuserInventory.getInvName() : StatCollector.translateToLocal(this.infuserInventory.getInvName());
@@ -39,6 +41,9 @@ public class GuiInfuser extends GuiContainer
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
 
+    /**
+     * Draw the background layer for the GuiContainer (everything behind the items)
+     */
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -51,11 +56,10 @@ public class GuiInfuser extends GuiContainer
         if (this.infuserInventory.isBurning())
         {
             i1 = this.infuserInventory.getBurnTimeRemainingScaled(12);
-            this.drawTexturedModalRect(k + 59, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
+            this.drawTexturedModalRect(k + 56, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
         }
 
         i1 = this.infuserInventory.getCookProgressScaled(24);
         this.drawTexturedModalRect(k + 79, l + 34, 176, 14, i1 + 1, 16);
     }
 }
-

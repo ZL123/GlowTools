@@ -7,7 +7,7 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.render;
 
 import glowTools.entity.EntityFallglowsand;
 import net.minecraft.client.renderer.entity.Render;

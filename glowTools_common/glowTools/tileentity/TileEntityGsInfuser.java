@@ -5,14 +5,12 @@
  * (http://www.gnu.org/licenses/lgpl.html)
  * 
  * @author ZL123
- */
+*/ 
 
-package glowTools;
+package glowTools.tileentity;
 
+import glowTools.InfuserRecipes;
 import glowTools.blocks.BlockGlowstoneInfuser;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,19 +26,22 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.ForgeDummyContainer;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, net.minecraftforge.common.ISidedInventory
+public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
 {
-    private static final int[] field_102010_d = new int[] {0};
-    private static final int[] field_102011_e = new int[] {2, 1};
+    private static final int[] field_102010_d = new int[] {0, 3};
+    private static final int[] field_102011_e = new int[] {2};
     private static final int[] field_102009_f = new int[] {1};
 
-    private ItemStack[] infuserItemStacks = new ItemStack[3];
+    private ItemStack[] infuserItemStacks = new ItemStack[4];
 
     public int infuserBurnTime = 0;
     public int currentItemBurnTime = 0;
     public int infuserCookTime = 0;
-    private String field_94130_e;
+    private String field_94130_e = "Glowstone Infuser";
 
     public int getSizeInventory()
     {
@@ -124,17 +125,17 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, 
     public void readFromNBT(NBTTagCompound par1NBTTagCompound)
     {
         super.readFromNBT(par1NBTTagCompound);
-        NBTTagList nbttaglist = par1NBTTagCompound.getTagList("Items");
+        NBTTagList nbttaglist = par1NBTTagCompound.getTagList("Inventory");
         this.infuserItemStacks = new ItemStack[this.getSizeInventory()];
 
         for (int i = 0; i < nbttaglist.tagCount(); ++i)
         {
             NBTTagCompound nbttagcompound1 = (NBTTagCompound)nbttaglist.tagAt(i);
-            byte b0 = nbttagcompound1.getByte("Slot");
+            byte slot = nbttagcompound1.getByte("Slot");
 
-            if (b0 >= 0 && b0 < this.infuserItemStacks.length)
+            if (slot >= 0 && slot < this.infuserItemStacks.length)
             {
-                this.infuserItemStacks[b0] = ItemStack.loadItemStackFromNBT(nbttagcompound1);
+                this.infuserItemStacks[slot] = ItemStack.loadItemStackFromNBT(nbttagcompound1);
             }
         }
 
@@ -166,7 +167,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, 
             }
         }
 
-        par1NBTTagCompound.setTag("Items", nbttaglist);
+        par1NBTTagCompound.setTag("Inventory", nbttaglist);
 
         if (this.isInvNameLocalized())
         {
@@ -261,7 +262,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, 
             this.onInventoryChanged();
         }
     }
-    
+
     private boolean canSmelt()
     {
         if (this.infuserItemStacks[0] == null)
@@ -359,11 +360,6 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, 
     {
         return par1 == 2 ? false : (par1 == 1 ? isItemFuel(par2ItemStack) : true);
     }
-
-    public int[] getSizeInventorySide(int par1)
-    {
-        return par1 == 0 ? field_102011_e : (par1 == 1 ? field_102010_d : field_102009_f);
-    }
     
     public int[] getAccessibleSlotsFromSide(int par1)
     {
@@ -379,27 +375,8 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory, 
     {
         return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
     }
-
-    @Override
-    public int getStartInventorySide(ForgeDirection side)
-    {
-        if (ForgeDummyContainer.legacyFurnaceSides)
-        {
-            if (side == ForgeDirection.DOWN) return 1;
-            if (side == ForgeDirection.UP) return 0;
-            return 2;
-        }
-        else
-        {
-            if (side == ForgeDirection.DOWN) return 2;
-            if (side == ForgeDirection.UP) return 0;
-            return 1;
-        }
-    }
-
-    @Override
-    public int getSizeInventorySide(ForgeDirection side)
-    {
-        return 1;
+    
+    static {
+    	addMapping(TileEntityGsInfuser.class, "Glowstone Infuser");
     }
 }

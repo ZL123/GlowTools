@@ -7,9 +7,10 @@
  * @author ZL123
  */
 
-package glowTools;
+package glowTools.render;
 
 import glowTools.entity.EntitySkidglow;
+import glowTools.model.ModelSkidglow;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
