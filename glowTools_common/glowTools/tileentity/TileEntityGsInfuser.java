@@ -10,22 +10,16 @@
 package glowTools.tileentity;
 
 import glowTools.blocks.BlockGlowstoneInfuser;
-import glowTools.recipe.InfuserRecipes;
+import glowTools.items.GTItems;
+import glowTools.recipe.GsInfuserRecipes;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.ForgeDirection;
-import net.minecraftforge.common.ForgeDummyContainer;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -214,7 +208,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
 
         if (!this.worldObj.isRemote)
         {
-            if (this.infuserBurnTime == 0 && this.canSmelt())
+            if (this.infuserBurnTime == 0 && this.canInfuse())
             {
                 this.currentItemBurnTime = this.infuserBurnTime = getItemBurnTime(this.infuserItemStacks[1]);
 
@@ -234,14 +228,14 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
                 }
             }
 
-            if (this.isBurning() && this.canSmelt())
+            if (this.isBurning() && this.canInfuse())
             {
                 ++this.infuserCookTime;
 
                 if (this.infuserCookTime == 200)
                 {
                     this.infuserCookTime = 0;
-                    this.smeltItem();
+                    this.infuseItem();
                     flag1 = true;
                 }
             }
@@ -263,7 +257,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         }
     }
 
-    private boolean canSmelt()
+    private boolean canInfuse()
     {
         if (this.infuserItemStacks[0] == null)
         {
@@ -271,7 +265,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         }
         else
         {
-            ItemStack itemstack = InfuserRecipes.infusing().getInfusingResult(this.infuserItemStacks[0]);
+            ItemStack itemstack = GsInfuserRecipes.infusing().getInfusingResult(this.infuserItemStacks[0]);
             if (itemstack == null) return false;
             if (this.infuserItemStacks[2] == null) return true;
             if (!this.infuserItemStacks[2].isItemEqual(itemstack)) return false;
@@ -280,11 +274,11 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         }
     }
 
-    public void smeltItem()
+    public void infuseItem()
     {
-        if (this.canSmelt())
+        if (this.canInfuse())
         {
-            ItemStack itemstack = InfuserRecipes.infusing().getInfusingResult(this.infuserItemStacks[0]);
+            ItemStack itemstack = GsInfuserRecipes.infusing().getInfusingResult(this.infuserItemStacks[0]);
 
             if (this.infuserItemStacks[2] == null)
             {
@@ -314,30 +308,9 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         {
             int i = par0ItemStack.getItem().itemID;
             Item item = par0ItemStack.getItem();
-
-            if (par0ItemStack.getItem() instanceof ItemBlock && Block.blocksList[i] != null)
-            {
-                Block block = Block.blocksList[i];
-
-                if (block == Block.woodSingleSlab)
-                {
-                    return 150;
-                }
-
-                if (block.blockMaterial == Material.wood)
-                {
-                    return 300;
-                }
-            }
-
-            if (item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("WOOD")) return 200;
-            if (item instanceof ItemSword && ((ItemSword) item).getToolMaterialName().equals("WOOD")) return 200;
-            if (item instanceof ItemHoe && ((ItemHoe) item).getMaterialName().equals("WOOD")) return 200;
-            if (i == Item.stick.itemID) return 100;
-            if (i == Item.coal.itemID) return 1600;
-            if (i == Item.bucketLava.itemID) return 20000;
-            if (i == Block.sapling.blockID) return 100;
-            if (i == Item.blazeRod.itemID) return 2400;
+            
+            if (i == GTItems.InfernalCoalItem.itemID) return 2000;
+            if (i == Item.netherStar.itemID) return 300000;
             return GameRegistry.getFuelValue(par0ItemStack);
         }
     }

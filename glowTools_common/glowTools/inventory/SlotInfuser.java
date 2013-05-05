@@ -9,7 +9,7 @@
 
 package glowTools.inventory;
 
-import glowTools.recipe.InfuserRecipes;
+import glowTools.recipe.GsInfuserRecipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
@@ -65,7 +65,7 @@ public class SlotInfuser extends Slot
         if (!this.thePlayer.worldObj.isRemote)
         {
             int i = this.field_75228_b;
-            float f = InfuserRecipes.infusing().getExperience(par1ItemStack);
+            float f = GsInfuserRecipes.infusing().getExperience(par1ItemStack);
             int j;
 
             if (f == 0.0F)

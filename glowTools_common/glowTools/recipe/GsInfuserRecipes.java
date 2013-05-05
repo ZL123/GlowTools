@@ -19,34 +19,35 @@ import java.util.Map;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
-public class InfuserRecipes
+public class GsInfuserRecipes
 {
-    private static final InfuserRecipes infusingBase = new InfuserRecipes();
+    private static final GsInfuserRecipes infusingBase = new GsInfuserRecipes();
 
     private Map infusingList = new HashMap();
     private Map experienceList = new HashMap();
     private HashMap<List<Integer>, ItemStack> metaInfusingList = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, Float> metaExperience = new HashMap<List<Integer>, Float>();
-
-    public static final InfuserRecipes infusing()
+    private float normalxp = 0.8F;
+    
+    public static final GsInfuserRecipes infusing()
     {
         return infusingBase;
     }
 
-    private InfuserRecipes()
+    private GsInfuserRecipes()
     {
-        this.addInfusing(new ItemStack(Block.sand), new ItemStack(GTBlocks.glowsandBlock), 0.9F);
-        this.addInfusing(new ItemStack(Block.cobblestone), new ItemStack(GTBlocks.GlowCobbleBlock), 0.9F);
-        this.addInfusing(new ItemStack(Block.stone), new ItemStack(GTBlocks.GlowingStoneBlock), 0.9F);
-        this.addInfusing(new ItemStack(Block.glass), new ItemStack(GTBlocks.GlowglassBlock), 0.9F);
-        this.addInfusing(new ItemStack(Block.dirt), new ItemStack(GTBlocks.GlowDirtBlock), 0.9F);
-        this.addInfusing(new ItemStack(Block.sandStone, 1, 0), new ItemStack(GTBlocks.GlowSandStoneBlock), 0.9F);
+        this.addInfusing(Block.sand.blockID, new ItemStack(GTBlocks.glowsandBlock), normalxp);
+        this.addInfusing(Block.cobblestone.blockID, new ItemStack(GTBlocks.GlowCobbleBlock), normalxp);
+        this.addInfusing(Block.stone.blockID, new ItemStack(GTBlocks.GlowingStoneBlock), normalxp);
+        this.addInfusing(Block.glass.blockID, new ItemStack(GTBlocks.GlowglassBlock), normalxp);
+        this.addInfusing(Block.dirt.blockID, new ItemStack(GTBlocks.GlowDirtBlock), normalxp);
+        this.addInfusing(Block.sandStone.blockID, 0, new ItemStack(GTBlocks.GlowSandStoneBlock, 1, 0), normalxp);
     }
 
-    public void addInfusing(ItemStack par1ItemStack, ItemStack par2ItemStack, float par3)
+    public void addInfusing(int id, ItemStack stack, float xp)
     {
-        this.infusingList.put(par1ItemStack, par2ItemStack);
-        this.experienceList.put(Integer.valueOf(par2ItemStack.itemID), Float.valueOf(par3));
+        this.infusingList.put(Integer.valueOf(id), stack);
+        this.experienceList.put(Integer.valueOf(stack.itemID), Float.valueOf(xp));
     }
     
     public Map getInfusingList()
@@ -54,10 +55,10 @@ public class InfuserRecipes
         return this.infusingList;
     }
 
-    public void addInfusing(int itemID, int metadata, ItemStack itemstack, float experience)
+    public void addInfusing(int id, int meta, ItemStack stack, float xp)
     {
-        metaInfusingList.put(Arrays.asList(itemID, metadata), itemstack);
-        metaExperience.put(Arrays.asList(itemID, metadata), experience);
+        metaInfusingList.put(Arrays.asList(id, meta), stack);
+        metaExperience.put(Arrays.asList(id, meta), xp);
     }
 
     public ItemStack getInfusingResult(ItemStack item) 

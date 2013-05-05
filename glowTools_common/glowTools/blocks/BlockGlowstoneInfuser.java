@@ -38,7 +38,7 @@ public class BlockGlowstoneInfuser extends BlockContainer
 
     private final boolean isActive;
 
-    private static boolean keepInfuserInventory = false;
+    private static boolean keepInventory = true;
     @SideOnly(Side.CLIENT)
     private Icon infuserIconTop;
     @SideOnly(Side.CLIENT)
@@ -123,7 +123,7 @@ public class BlockGlowstoneInfuser extends BlockContainer
     {
         int l = par1World.getBlockMetadata(par2, par3, par4);
         TileEntity tileentity = par1World.getBlockTileEntity(par2, par3, par4);
-        keepInfuserInventory = true;
+        keepInventory = true;
 
         if (par0)
         {
@@ -134,7 +134,7 @@ public class BlockGlowstoneInfuser extends BlockContainer
             par1World.setBlock(par2, par3, par4, GTBlocks.GlowstoneInfuser.blockID);
         }
 
-        keepInfuserInventory = false;
+        keepInventory = true;
         par1World.setBlockMetadataWithNotify(par2, par3, par4, l, 2);
 
         if (tileentity != null)

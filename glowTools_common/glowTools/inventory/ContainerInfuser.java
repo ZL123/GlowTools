@@ -9,7 +9,7 @@
 
 package glowTools.inventory;
 
-import glowTools.recipe.InfuserRecipes;
+import glowTools.recipe.GsInfuserRecipes;
 import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -132,7 +132,7 @@ public class ContainerInfuser extends Container
             }
             else if (par2 != 1 && par2 != 0 && par2 != 3)
             {
-                if (InfuserRecipes.infusing().getInfusingResult(itemstack1) != null)
+                if (GsInfuserRecipes.infusing().getInfusingResult(itemstack1) != null)
                 {
                     if (!this.mergeItemStack(itemstack1, 0, 1, false))
                     {
