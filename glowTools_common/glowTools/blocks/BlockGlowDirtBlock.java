@@ -12,7 +12,6 @@ package glowTools.blocks;
 import glowTools.GlowTools;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockGlowDirtBlock extends BlockDirt
 {

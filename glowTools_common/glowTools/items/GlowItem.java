@@ -9,12 +9,10 @@
 
 package glowTools.items;
 
-import glowTools.GlowTools;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
 public class GlowItem extends Item
 {

@@ -9,43 +9,30 @@
 
 package glowTools;
 
-import glowTools.blocks.*;
-import glowTools.config.*;
-import glowTools.entity.*;
-import glowTools.gui.*;
-import glowTools.inventory.*;
-import glowTools.items.*;
-import glowTools.lang.*;
-import glowTools.lib.*;
-import glowTools.model.*;
-import glowTools.proxy.*;
-import glowTools.recipe.*;
-import glowTools.tick.*;
-import glowTools.tileentity.*;
-import glowTools.worldgen.*;
+import glowTools.blocks.GTBlocks;
+import glowTools.config.ConfigLoader;
+import glowTools.config.ConfigSettings;
+import glowTools.entity.EntitySkidglow;
+import glowTools.entity.GTEntities;
+import glowTools.gui.GuiHandler;
+import glowTools.inventory.CreativeTabGlowtools;
+import glowTools.items.GTItems;
+import glowTools.lang.Names;
+import glowTools.lib.Reference;
+import glowTools.proxy.CommonProxyGT;
+import glowTools.recipe.GTRecipes;
+import glowTools.recipe.GlowFuelHandler;
+import glowTools.worldgen.GTChestLoot;
+import glowTools.worldgen.GTGen;
 
 import java.util.List;
 import java.util.logging.Level;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockOreStorage;
-import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.item.EnumArmorMaterial;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.DungeonHooks;
-import net.minecraftforge.common.EnumHelper;
-import net.minecraftforge.common.MinecraftForge;
 
 import com.google.common.collect.Lists;
 
@@ -61,9 +48,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)

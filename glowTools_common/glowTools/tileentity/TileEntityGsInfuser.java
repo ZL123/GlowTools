@@ -12,7 +12,6 @@ package glowTools.tileentity;
 import glowTools.blocks.BlockGlowstoneInfuser;
 import glowTools.items.GTItems;
 import glowTools.recipe.GsInfuserRecipes;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;

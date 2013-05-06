@@ -10,15 +10,7 @@
 package glowTools.blocks;
 
 import glowTools.GlowTools;
-
-import java.util.List;
-
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockSandStone;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
 
 public class BlockGlowSandStoneBlock extends BlockSandStone
 {

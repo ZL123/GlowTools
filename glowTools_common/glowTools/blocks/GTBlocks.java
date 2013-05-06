@@ -15,13 +15,11 @@ import glowTools.lib.Reference;
 
 import java.util.logging.Level;
 
-import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GTBlocks {
 		

@@ -9,12 +9,13 @@
 
 package glowTools.recipe;
 
-import java.util.logging.Level;
-
 import glowTools.GlowTools;
 import glowTools.blocks.GTBlocks;
 import glowTools.items.GTItems;
 import glowTools.lib.Reference;
+
+import java.util.logging.Level;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
