@@ -128,6 +128,8 @@ public class GlowTools
 		//Eggs
 		registerEntityEgg(EntitySkidglow.class, 0x160E4A, 0x0B28E3);
 		
+		//Tile Entities
+		GameRegistry.registerTileEntity(TileEntityGsInfuser.class, "Glowstone Infuser");
 	}
 	
 	@PostInit

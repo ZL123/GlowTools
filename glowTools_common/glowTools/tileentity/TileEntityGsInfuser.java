@@ -35,6 +35,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
     public int infuserBurnTime = 0;
     public int currentItemBurnTime = 0;
     public int infuserCookTime = 0;
+    public int currentGlowFuelAmount = 0;
     private String field_94130_e = "Glowstone Infuser";
 
     public int getSizeInventory()
@@ -280,20 +281,20 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         {
             ItemStack itemstack = GsInfuserRecipes.infusing().getInfusingResult(this.infuserItemStacks[0]);
 
-            if (this.infuserItemStacks[2] == null)
+            if (infuserItemStacks[2] == null)
             {
-                this.infuserItemStacks[2] = itemstack.copy();
+                infuserItemStacks[2] = itemstack.copy();
             }
-            else if (this.infuserItemStacks[2].isItemEqual(itemstack))
+            else if (infuserItemStacks[2].isItemEqual(itemstack))
             {
                 infuserItemStacks[2].stackSize += itemstack.stackSize;
             }
 
-            --this.infuserItemStacks[0].stackSize;
+            --infuserItemStacks[0].stackSize;
 
-            if (this.infuserItemStacks[0].stackSize <= 0)
+            if (infuserItemStacks[0].stackSize <= 0)
             {
-                this.infuserItemStacks[0] = null;
+                infuserItemStacks[0] = null;
             }
         }
     }
@@ -347,9 +348,5 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
     public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3)
     {
         return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
-    }
-    
-    static {
-    	addMapping(TileEntityGsInfuser.class, "Glowstone Infuser");
     }
 }

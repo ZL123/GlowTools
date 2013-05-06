@@ -38,7 +38,6 @@ public class BlockGlowstoneInfuser extends BlockContainer
 
     private final boolean isActive;
 
-    private static boolean keepInventory = true;
     @SideOnly(Side.CLIENT)
     private Icon infuserIconTop;
     @SideOnly(Side.CLIENT)
@@ -123,7 +122,6 @@ public class BlockGlowstoneInfuser extends BlockContainer
     {
         int l = par1World.getBlockMetadata(par2, par3, par4);
         TileEntity tileentity = par1World.getBlockTileEntity(par2, par3, par4);
-        keepInventory = true;
 
         if (par0)
         {
@@ -134,7 +132,6 @@ public class BlockGlowstoneInfuser extends BlockContainer
             par1World.setBlock(par2, par3, par4, GTBlocks.GlowstoneInfuser.blockID);
         }
 
-        keepInventory = true;
         par1World.setBlockMetadataWithNotify(par2, par3, par4, l, 2);
 
         if (tileentity != null)
@@ -186,8 +183,6 @@ public class BlockGlowstoneInfuser extends BlockContainer
     }
     
     private void dropItems(World world, int x, int y, int z){
-        Random rand = new Random();
-
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
         if (!(tileEntity instanceof IInventory)) {
                 return;
@@ -198,17 +193,17 @@ public class BlockGlowstoneInfuser extends BlockContainer
                 ItemStack item = inventory.getStackInSlot(i);
 
                 if (item != null && item.stackSize > 0) {
-                        float rx = rand.nextFloat() * 0.8F + 0.1F;
-                        float ry = rand.nextFloat() * 0.8F + 0.1F;
-                        float rz = rand.nextFloat() * 0.8F + 0.1F;
+                        float rx = infuserRand.nextFloat() * 0.8F + 0.1F;
+                        float ry = infuserRand.nextFloat() * 0.8F + 0.1F;
+                        float rz = infuserRand.nextFloat() * 0.8F + 0.1F;
 
                         EntityItem entityItem = new EntityItem(world, x + rx, y + ry, z + rz,
                         new ItemStack(item.itemID, item.stackSize, item.getItemDamage()));
 
                         float factor = 0.05F;
-                        entityItem.motionX = rand.nextGaussian() * factor;
-                        entityItem.motionY = rand.nextGaussian() * factor + 0.2F;
-                        entityItem.motionZ = rand.nextGaussian() * factor;
+                        entityItem.motionX = infuserRand.nextGaussian() * factor;
+                        entityItem.motionY = infuserRand.nextGaussian() * factor + 0.2F;
+                        entityItem.motionZ = infuserRand.nextGaussian() * factor;
                         world.spawnEntityInWorld(entityItem);
                         item.stackSize = 0;
                 }
