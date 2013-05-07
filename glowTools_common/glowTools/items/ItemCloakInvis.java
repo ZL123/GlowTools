@@ -19,9 +19,9 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class CloakInvis extends ItemArmor
+public class ItemCloakInvis extends ItemArmor
 {
-	public CloakInvis(int par1, EnumArmorMaterial par2EnumArmorMaterial,
+	public ItemCloakInvis(int par1, EnumArmorMaterial par2EnumArmorMaterial,
 			int par3, int par4) {
 		super(par1, par2EnumArmorMaterial, par3, par4);
 		this.setCreativeTab(GlowTools.tabGlowTools);

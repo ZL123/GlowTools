@@ -46,7 +46,7 @@ public class WorldGenGlowOres implements IWorldGenerator
 				int randPosX = chunkX + rand.nextInt(16);
 				int randPosY = 32 + rand.nextInt(64);
 				int randPosZ = chunkZ + rand.nextInt(16);
-				(new WorldGenMinable(GTBlocks.BlueGlassOre.blockID, 14, Block.netherrack.blockID))
+				(new WorldGenMinable(GTBlocks.oreBlueGlass.blockID, 14, Block.netherrack.blockID))
 						.generate(world, rand, randPosX, randPosY, randPosZ);
 			}
 		}
@@ -61,7 +61,7 @@ public class WorldGenGlowOres implements IWorldGenerator
 				int randPosY = rand.nextInt(20);
 				int randPosZ = chunkZ + rand.nextInt(16);
 				//Up to 8 blocks per vein
-				(new WorldGenMinable(GTBlocks.CandentiniumOre.blockID, 8)).generate(world, rand,
+				(new WorldGenMinable(GTBlocks.oreCandentinium.blockID, 8)).generate(world, rand,
 						randPosX, randPosY, randPosZ);
 			}
 			
@@ -74,7 +74,7 @@ public class WorldGenGlowOres implements IWorldGenerator
 					int randPosX = chunkX + rand.nextInt(16);
 					int randPosY = rand.nextInt(72);
 					int randPosZ = chunkZ + rand.nextInt(16);
-					(new WorldGenMinable(GTBlocks.FlowStoneBlock.blockID, 120)).generate(world, rand,
+					(new WorldGenMinable(GTBlocks.blockFlowStone.blockID, 120)).generate(world, rand,
 						randPosX, randPosY, randPosZ);
 				}
 			}

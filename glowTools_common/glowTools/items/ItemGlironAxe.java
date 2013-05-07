@@ -16,10 +16,10 @@ import net.minecraft.item.ItemAxe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class glironaxeItem extends ItemAxe
+public class ItemGlironAxe extends ItemAxe
 {
 
-	public glironaxeItem(int i, EnumToolMaterial enumToolMaterialGlowiron)
+	public ItemGlironAxe(int i, EnumToolMaterial enumToolMaterialGlowiron)
 	{
 		super(i, enumToolMaterialGlowiron);
 		this.setCreativeTab(GlowTools.tabGlowTools);

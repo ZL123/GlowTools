@@ -40,7 +40,7 @@ public class WorldGenGlowGrass implements IWorldGenerator
 				if (world.getBlockId(randPosX, randPosY - 1, randPosZ) == Block.grass.blockID ||
 					world.getBlockId(randPosX, randPosY - 1, randPosZ) == Block.dirt.blockID)
 				{
-					world.setBlock(randPosX, randPosY, randPosZ, GTBlocks.GlowGrassBlock.blockID);
+					world.setBlock(randPosX, randPosY, randPosZ, GTBlocks.blockGlowGrass.blockID);
 				}
 			}
 		}

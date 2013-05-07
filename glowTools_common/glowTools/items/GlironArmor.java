@@ -34,9 +34,9 @@ public class GlironArmor extends ItemArmor
 	
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
-		if(stack.itemID == GTItems.GlironHelm.itemID ||stack.itemID == GTItems.GlironChest.itemID ||stack.itemID == GTItems.GlironBoots.itemID)
+		if(stack.itemID == GTItems.itemGlironHelm.itemID ||stack.itemID == GTItems.itemGlironChest.itemID ||stack.itemID == GTItems.itemGlironBoots.itemID)
 		{return "/mods/glowTools/textures/models/glowiron_1.png";}
-		if(stack.itemID == GTItems.GlironLegs.itemID)
+		if(stack.itemID == GTItems.itemGlironLegs.itemID)
 		{return "/mods/glowTools/textures/models/glowiron_2.png";}
 		else return "/glowTools/textures/models/glowiron_2.png";
 	}

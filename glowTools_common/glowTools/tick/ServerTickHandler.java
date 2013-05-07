@@ -24,27 +24,27 @@ public class ServerTickHandler implements ITickHandler
 {	private void onPlayerTick(EntityPlayer player) {
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
-		if(hand.getItem() == GTItems.LightscepterItem)
+		if(hand.getItem() == GTItems.itemScepterLight)
 		{player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 302, 0));}
 	}
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
-		if(hand.getItem() == GTItems.RegenscepterItem)
+		if(hand.getItem() == GTItems.itemScepterRegen)
 		{player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 302, 2));}
 	}
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
-		if(hand.getItem() == GTItems.Regenscepter2Item)
+		if(hand.getItem() == GTItems.itemScepterRegen2)
 		{player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 1202, 4));}
 	}
 		if(player.getCurrentItemOrArmor(3) != null)
 		{ItemStack chest = player.getCurrentItemOrArmor(3);
-		if(chest.getItem() == GTItems.CloakInvis)
+		if(chest.getItem() == GTItems.itemCloakInvis)
 		{player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 32, 0));}
 	}
 		if(player.getCurrentItemOrArmor(0) != null)
 		{ItemStack hand = player.getCurrentItemOrArmor(0);
-		if(hand.getItem() == GTItems.OmniscepterItem)
+		if(hand.getItem() == GTItems.itemScepterOmni)
 		{player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1202, 1));
 		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 1202, 5));
 		player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 1202, 1));

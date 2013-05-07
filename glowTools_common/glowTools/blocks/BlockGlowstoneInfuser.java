@@ -50,7 +50,7 @@ public class BlockGlowstoneInfuser extends BlockContainer
 
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return GTBlocks.GlowstoneInfuser.blockID;
+        return GTBlocks.blockGlowstoneInfuser.blockID;
     }
 
     public void onBlockAdded(World par1World, int par2, int par3, int par4)
@@ -124,11 +124,11 @@ public class BlockGlowstoneInfuser extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlock(par2, par3, par4, GTBlocks.GlowstoneInfuserActive.blockID);
+            par1World.setBlock(par2, par3, par4, GTBlocks.blockGlowstoneInfuserActive.blockID);
         }
         else
         {
-            par1World.setBlock(par2, par3, par4, GTBlocks.GlowstoneInfuser.blockID);
+            par1World.setBlock(par2, par3, par4, GTBlocks.blockGlowstoneInfuser.blockID);
         }
 
         par1World.setBlockMetadataWithNotify(par2, par3, par4, l, 2);
@@ -222,6 +222,6 @@ public class BlockGlowstoneInfuser extends BlockContainer
     @SideOnly(Side.CLIENT)
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return GTBlocks.GlowstoneInfuser.blockID;
+        return GTBlocks.blockGlowstoneInfuser.blockID;
     }
 }

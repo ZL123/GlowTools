@@ -9,75 +9,75 @@ public class Names {
 	public static void load(){
 		
 		//Blocks
-		LanguageRegistry.addName(GTBlocks.glowironBlock, "Block of Glowing Iron");
-		LanguageRegistry.addName(GTBlocks.redironBlock, "Block of Red Iron");
-		LanguageRegistry.addName(GTBlocks.glowsandBlock, "Glowing Sand");
-		LanguageRegistry.addName(GTBlocks.CandentiniumOre, "Candentinium Ore");
-		LanguageRegistry.addName(GTBlocks.GlowglassBlock, "Glowing Glass");
-		LanguageRegistry.addName(GTBlocks.GlowSandStoneBlock, "Glowing Sandstone");
-		LanguageRegistry.addName(GTBlocks.CandentiniumBlock, "Block of Candentinium");
-		LanguageRegistry.addName(GTBlocks.GlowGrassBlock, "Glowing Grass Block");
-		LanguageRegistry.addName(GTBlocks.GlowDirtBlock, "Glowing Dirt Block");
-		LanguageRegistry.addName(GTBlocks.GlowCobbleBlock, "Glowing Cobblestone");
-		LanguageRegistry.addName(GTBlocks.GlowingStoneBlock, "Glowing Stone");
-		LanguageRegistry.addName(GTBlocks.FlowStoneBlock, "Calcite");
-		LanguageRegistry.addName(GTBlocks.DarkDoor, "Dark Door");
-		LanguageRegistry.addName(GTBlocks.GlowstoneInfuser, "Glowstone Infuser (WIP)");
-		LanguageRegistry.addName(GTBlocks.GlowstoneInfuserActive, "Glowstone Infuser (WIP)");
-		LanguageRegistry.addName(GTBlocks.BlueGlassOre, "Glassy Blue Ore");
+		LanguageRegistry.addName(GTBlocks.blockGlowIron, "Block of Glowing Iron");
+		LanguageRegistry.addName(GTBlocks.blockRedIron, "Block of Red Iron");
+		LanguageRegistry.addName(GTBlocks.blockGlowSand, "Glowing Sand");
+		LanguageRegistry.addName(GTBlocks.oreCandentinium, "Candentinium Ore");
+		LanguageRegistry.addName(GTBlocks.blockGlowGlass, "Glowing Glass");
+		LanguageRegistry.addName(GTBlocks.blockGlowSandstone, "Glowing Sandstone");
+		LanguageRegistry.addName(GTBlocks.blockCandentinium, "Block of Candentinium");
+		LanguageRegistry.addName(GTBlocks.blockGlowGrass, "Glowing Grass Block");
+		LanguageRegistry.addName(GTBlocks.blockGlowDirt, "Glowing Dirt Block");
+		LanguageRegistry.addName(GTBlocks.blockGlowCobble, "Glowing Cobblestone");
+		LanguageRegistry.addName(GTBlocks.blockGlowingStone, "Glowing Stone");
+		LanguageRegistry.addName(GTBlocks.blockFlowStone, "Calcite");
+		LanguageRegistry.addName(GTBlocks.blockDoorDark, "Dark Door");
+		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuser, "Glowstone Infuser (WIP)");
+		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuserActive, "Glowstone Infuser (WIP)");
+		LanguageRegistry.addName(GTBlocks.oreBlueGlass, "Glassy Blue Ore");
 		
 		
 		//Items
-		LanguageRegistry.addName(GTItems.glowironItem, "Glowing Iron Ingot");
-		LanguageRegistry.addName(GTItems.glowmoltItem, "Melted Glowstone");
-		LanguageRegistry.addName(GTItems.redmoltItem, "Melted Redstone");
-		LanguageRegistry.addName(GTItems.glowredItem, "Blazing Blend");
-		LanguageRegistry.addName(GTItems.redironItem, "Red Iron Ingot");
-		LanguageRegistry.addName(GTItems.SceptertipItem, "Scepter Tip");
-		LanguageRegistry.addName(GTItems.RedironhandleItem, "Red-Iron-Tool Handle");
-		LanguageRegistry.addName(GTItems.PorkappleItem, "Porkchop with Applesauce");
-		LanguageRegistry.addName(GTItems.CandentiniumGem, "Candentinium Shard");
-		LanguageRegistry.addName(GTItems.glowironNugget, "Glowing Iron Nugget");
-		LanguageRegistry.addName(GTItems.redironNugget, "Red Iron Nugget");
-		LanguageRegistry.addName(GTItems.pureCalciteItem, "Purified Calcite");
-		LanguageRegistry.addName(GTItems.cloakCore, "Cloak Core");
-		LanguageRegistry.addName(GTItems.ReflectorItem, "Light Reflector");
-		LanguageRegistry.addName(GTItems.DarkDoorItem, "Dark Door");
-		LanguageRegistry.addName(GTItems.InfernalCoalItem, "Infernal Coal");
-		LanguageRegistry.addName(GTItems.BlueGlassShard, "Glassy Blue Shard");
-		LanguageRegistry.addName(GTItems.BlueFertilizerItem, "Blue Fertilizer");
+		LanguageRegistry.addName(GTItems.itemGlowIron, "Glowing Iron Ingot");
+		LanguageRegistry.addName(GTItems.itemGlowMolt, "Melted Glowstone");
+		LanguageRegistry.addName(GTItems.itemRedMolt, "Melted Redstone");
+		LanguageRegistry.addName(GTItems.itemGlowRed, "Blazing Blend");
+		LanguageRegistry.addName(GTItems.itemRedIron, "Red Iron Ingot");
+		LanguageRegistry.addName(GTItems.itemScepterTip, "Scepter Tip");
+		LanguageRegistry.addName(GTItems.itemRedIronHandle, "Red-Iron-Tool Handle");
+		LanguageRegistry.addName(GTItems.itemPorkApple, "Porkchop with Applesauce");
+		LanguageRegistry.addName(GTItems.gemCandentinium, "Candentinium Shard");
+		LanguageRegistry.addName(GTItems.nuggetGlowIron, "Glowing Iron Nugget");
+		LanguageRegistry.addName(GTItems.nuggetRedIron, "Red Iron Nugget");
+		LanguageRegistry.addName(GTItems.itemCalcitePure, "Purified Calcite");
+		LanguageRegistry.addName(GTItems.itemCloakCore, "Cloak Core");
+		LanguageRegistry.addName(GTItems.itemLightReflector, "Light Reflector");
+		LanguageRegistry.addName(GTItems.itemDarkDoor, "Dark Door");
+		LanguageRegistry.addName(GTItems.itemInfernalCoal, "Infernal Coal");
+		LanguageRegistry.addName(GTItems.shardBlueGlass, "Glassy Blue Shard");
+		LanguageRegistry.addName(GTItems.itemBlueFertilizer, "Blue Fertilizer");
 		
 		
 		//Tools
-		LanguageRegistry.addName(GTItems.glironswordItem, "Glowing Iron Sword");
-		LanguageRegistry.addName(GTItems.glironpickItem, "Glowing Iron Pickaxe");
-		LanguageRegistry.addName(GTItems.glironshovelItem, "Glowing Iron Shovel");
-		LanguageRegistry.addName(GTItems.glironaxeItem, "Glowing Iron Axe");
-		LanguageRegistry.addName(GTItems.glironhoeItem, "Glowing Iron Hoe");
+		LanguageRegistry.addName(GTItems.itemGlironSword, "Glowing Iron Sword");
+		LanguageRegistry.addName(GTItems.itemGlironPick, "Glowing Iron Pickaxe");
+		LanguageRegistry.addName(GTItems.itemGlironShovel, "Glowing Iron Shovel");
+		LanguageRegistry.addName(GTItems.itemGlironAxe, "Glowing Iron Axe");
+		LanguageRegistry.addName(GTItems.itemGlironHoe, "Glowing Iron Hoe");
 		
-		LanguageRegistry.addName(GTItems.redironswordItem, "Red Iron Sword");
-		LanguageRegistry.addName(GTItems.redironpickItem, "Red Iron Pickaxe");
-		LanguageRegistry.addName(GTItems.redironshovelItem, "Red Iron Shovel");
-		LanguageRegistry.addName(GTItems.redironaxeItem, "Red Iron Axe");
-		LanguageRegistry.addName(GTItems.redironhoeItem, "Red Iron Hoe");
+		LanguageRegistry.addName(GTItems.itemRedironSword, "Red Iron Sword");
+		LanguageRegistry.addName(GTItems.itemRedironPick, "Red Iron Pickaxe");
+		LanguageRegistry.addName(GTItems.itemRedironShovel, "Red Iron Shovel");
+		LanguageRegistry.addName(GTItems.itemRedironAxe, "Red Iron Axe");
+		LanguageRegistry.addName(GTItems.itemRedironHoe, "Red Iron Hoe");
 		
 		
 		//Scepters
-		LanguageRegistry.addName(GTItems.LightscepterItem, "Scepter of Light");
-		LanguageRegistry.addName(GTItems.RegenscepterItem, "Scepter of Regeneration");
-		LanguageRegistry.addName(GTItems.Regenscepter2Item, "Scepter of Regeneration Mk. II");
-		LanguageRegistry.addName(GTItems.OmniscepterItem, "Omni-Scepter");
+		LanguageRegistry.addName(GTItems.itemScepterLight, "Scepter of Light");
+		LanguageRegistry.addName(GTItems.itemScepterRegen, "Scepter of Regeneration");
+		LanguageRegistry.addName(GTItems.itemScepterRegen2, "Scepter of Regeneration Mk. II");
+		LanguageRegistry.addName(GTItems.itemScepterOmni, "Omni-Scepter");
 		
 		
 		//Armor
-		LanguageRegistry.addName(GTItems.GlironHelm, "Stripey Glowing Iron Helmet");
-		LanguageRegistry.addName(GTItems.GlironChest, "Stripey Glowing Iron Chestplate");
-		LanguageRegistry.addName(GTItems.GlironLegs, "Stripey Glowing Iron Leggings");
-		LanguageRegistry.addName(GTItems.GlironBoots, "Stripey Glowing Iron Boots");
+		LanguageRegistry.addName(GTItems.itemGlironHelm, "Stripey Glowing Iron Helmet");
+		LanguageRegistry.addName(GTItems.itemGlironChest, "Stripey Glowing Iron Chestplate");
+		LanguageRegistry.addName(GTItems.itemGlironLegs, "Stripey Glowing Iron Leggings");
+		LanguageRegistry.addName(GTItems.itemGlironBoots, "Stripey Glowing Iron Boots");
 		
 		
 		//Cloaks
-		LanguageRegistry.addName(GTItems.CloakInvis, "Cloak of Invisibility");
+		LanguageRegistry.addName(GTItems.itemCloakInvis, "Cloak of Invisibility");
 		
 		
 		//Other

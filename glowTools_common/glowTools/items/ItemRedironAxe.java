@@ -12,16 +12,15 @@ package glowTools.items;
 import glowTools.GlowTools;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemSpade;
+import net.minecraft.item.ItemAxe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class glironshovelItem extends ItemSpade
+public class ItemRedironAxe extends ItemAxe
 {
-
-	public glironshovelItem(int i, EnumToolMaterial enumToolMaterialGlowiron)
+	public ItemRedironAxe(int par1, EnumToolMaterial par2EnumToolMaterial)
 	{
-		super(i, enumToolMaterialGlowiron);
+		super(par1, par2EnumToolMaterial);
 		this.setCreativeTab(GlowTools.tabGlowTools);
 	}
     @SideOnly(Side.CLIENT)

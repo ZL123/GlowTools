@@ -12,15 +12,16 @@ package glowTools.items;
 import glowTools.GlowTools;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemPickaxe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class redironhoeItem extends ItemHoe
+public class ItemGlironPick extends ItemPickaxe
 {
-	public redironhoeItem(int par1, EnumToolMaterial par2EnumToolMaterial)
+
+	public ItemGlironPick(int i, EnumToolMaterial enumToolMaterialGlowiron)
 	{
-		super(par1, par2EnumToolMaterial);
+		super(i, enumToolMaterialGlowiron);
 		this.setCreativeTab(GlowTools.tabGlowTools);
 	}
     @SideOnly(Side.CLIENT)
@@ -29,4 +30,3 @@ public class redironhoeItem extends ItemHoe
     	this.itemIcon = par1IconRegister.registerIcon("glowTools:" + this.getUnlocalizedName());
     }
 }
-

@@ -28,7 +28,7 @@ public class BlockBlueGlassOre extends BlockOre
 	
 	public int idDropped(int par1, Random rand, int par3)
 	{
-		return GTItems.BlueGlassShard.itemID;
+		return GTItems.shardBlueGlass.itemID;
 	}
 	
 	public int quantityDropped(Random rand)

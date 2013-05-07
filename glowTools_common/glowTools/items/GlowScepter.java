@@ -10,6 +10,8 @@
 package glowTools.items;
 
 import glowTools.GlowTools;
+import glowTools.blocks.GTBlocks;
+import glowTools.config.ConfigSettings;
 
 import java.util.List;
 
@@ -19,6 +21,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,7 +36,7 @@ public class GlowScepter extends ItemSword
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
-        if(this.itemID == GTItems.OmniscepterItem.itemID)
+        if(this.itemID == GTItems.itemScepterOmni.itemID)
         {
         	par3List.add("May you use thine precious");
         	par3List.add("staff bequeathen to thee");
@@ -41,37 +44,70 @@ public class GlowScepter extends ItemSword
         	par3List.add("and protector to the fullness");
         	par3List.add("of all thine kingdom.");
         }
-        else if(this.itemID == GTItems.RegenscepterItem.itemID)
+        else if(this.itemID == GTItems.itemScepterRegen.itemID)
         {
         	par3List.add("Assists thee in thine");
         	par3List.add("beast-slaying duties.");
         }
-        else if(this.itemID == GTItems.Regenscepter2Item.itemID)
+        else if(this.itemID == GTItems.itemScepterRegen2.itemID)
         {
         	par3List.add("Relieves thee of thine");
         	par3List.add("wounds of mortality.");
+        }
+        else if(this.itemID == GTItems.itemScepterLight.itemID)
+        {
+        	par3List.add("Brings forth the light");
+            par3List.add("so it shall shine upon thee.");
         }
     }
 	
 	@Override
     public String getItemDisplayName(ItemStack stack) {
-		if (this.itemID == GTItems.LightscepterItem.itemID)
+		if (this.itemID == GTItems.itemScepterLight.itemID)
 		{
 			return EnumChatFormatting.GOLD + super.getItemDisplayName(stack);
 		}
-		else if (this.itemID == GTItems.RegenscepterItem.itemID)
+		else if (this.itemID == GTItems.itemScepterRegen.itemID)
 		{
 			return EnumChatFormatting.RED + super.getItemDisplayName(stack);
 		}
-		else if (this.itemID == GTItems.Regenscepter2Item.itemID)
+		else if (this.itemID == GTItems.itemScepterRegen2.itemID)
 		{
 			return EnumChatFormatting.DARK_PURPLE + super.getItemDisplayName(stack);
 		}
-		else if (this.itemID == GTItems.OmniscepterItem.itemID)
+		else if (this.itemID == GTItems.itemScepterOmni.itemID)
 		{
 			return EnumChatFormatting.GREEN + super.getItemDisplayName(stack);
 		}
 		else return null;
+	}
+	
+	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
+    {
+		if (this.itemID != GTItems.itemScepterLight.itemID)
+		{
+			return false;
+		}
+		else if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
+        {
+            return false;
+        }
+        else
+        {
+            int var11 = par3World.getBlockId(par4, par5, par6);
+            int var12 = par3World.getBlockId(par4, par5 + 1, par6);
+
+            if (par7 == 0 || var12 != 0 || var11 != GTBlocks.blockCandentinium.blockID)
+            {
+                return false;
+            }
+            else
+            {
+                GlowTools.giveItemToPlayer(par2EntityPlayer, new ItemStack(GTItems.itemScepterLight));
+                par3World.setBlockToAir(par4, par5, par6);
+                return true;
+            }
+        }
 	}
 	
     @SideOnly(Side.CLIENT)

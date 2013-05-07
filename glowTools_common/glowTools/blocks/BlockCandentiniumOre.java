@@ -60,17 +60,17 @@ public class BlockCandentiniumOre extends Block
     {
         this.sparkle(par1World, par2, par3, par4);
 
-        if (this.blockID == GTBlocks.CandentiniumOre.blockID)
+        if (this.blockID == GTBlocks.oreCandentinium.blockID)
         {
-            par1World.setBlock(par2, par3, par4, GTBlocks.CandentiniumOreGlowing.blockID);
+            par1World.setBlock(par2, par3, par4, GTBlocks.oreCandentiniumGlowing.blockID);
         }
     }
     
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
-        if (this.blockID == GTBlocks.CandentiniumOreGlowing.blockID)
+        if (this.blockID == GTBlocks.oreCandentiniumGlowing.blockID)
         {
-            par1World.setBlock(par2, par3, par4, GTBlocks.CandentiniumOreGlowing.blockID);
+            par1World.setBlock(par2, par3, par4, GTBlocks.oreCandentiniumGlowing.blockID);
         }
     }
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
@@ -86,7 +86,7 @@ public class BlockCandentiniumOre extends Block
 
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return GTItems.CandentiniumGem.itemID;
+        return GTItems.gemCandentinium.itemID;
     }
     
     @Override
@@ -155,7 +155,7 @@ public class BlockCandentiniumOre extends Block
     
     protected ItemStack createStackedBlock(int par1)
     {
-        return new ItemStack(GTBlocks.CandentiniumOre);
+        return new ItemStack(GTBlocks.oreCandentinium);
     }
 
 }

@@ -22,6 +22,7 @@ import glowTools.lib.Reference;
 import glowTools.proxy.CommonProxyGT;
 import glowTools.recipe.GTRecipes;
 import glowTools.recipe.GlowFuelHandler;
+import glowTools.tileentity.TileEntityGsInfuser;
 import glowTools.worldgen.GTChestLoot;
 import glowTools.worldgen.GTGen;
 
@@ -32,7 +33,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import com.google.common.collect.Lists;
 
@@ -48,6 +52,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -159,5 +164,12 @@ public class GlowTools
             glowValue = Math.max(glowValue, handler.getGlowAmount(itemStack));
         }
         return glowValue;
+    }
+    
+    public static void giveItemToPlayer(EntityPlayer player, ItemStack item) {
+        World world = player.worldObj;
+        if (item == null || item.stackSize <= 0 || world.isRemote) return;
+        Entity entity = new EntityItem(world, player.posX, player.posY + 0.5, player.posZ, item.copy());
+        world.spawnEntityInWorld(entity);
     }
 }

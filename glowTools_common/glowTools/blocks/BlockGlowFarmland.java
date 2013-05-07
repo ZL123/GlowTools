@@ -51,13 +51,13 @@ public class BlockGlowFarmland extends BlockFarmland
     
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return GTBlocks.GlowDirtBlock.idDropped(0, par2Random, par3);
+        return GTBlocks.blockGlowDirt.idDropped(0, par2Random, par3);
     }
     
     @SideOnly(Side.CLIENT)
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return GTBlocks.GlowDirtBlock.blockID;
+        return GTBlocks.blockGlowDirt.blockID;
     }
     
     @Override

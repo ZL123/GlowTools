@@ -30,108 +30,107 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class GTItems {
 	
 	//Items
-	public static Item glowironItem;
-	public static Item glowmoltItem;
-	public static Item redmoltItem;
-	public static Item glowredItem;
-	public static Item redironItem;
-	public static Item SceptertipItem;
-	public static Item RedironhandleItem;
-	public static Item PorkappleItem;
-	public static Item CandentiniumGem;
-	public static Item glowironNugget;
-	public static Item redironNugget;
-	public static Item pureCalciteItem;
-	public static Item cloakCore;
-	public static Item ReflectorItem;
-	public static Item DarkDoorItem;
-	public static Item InfernalCoalItem;
-	public static Item BlueGlassShard;
-	public static Item BlueFertilizerItem;
+	public static Item itemGlowIron;
+	public static Item itemGlowMolt;
+	public static Item itemRedMolt;
+	public static Item itemGlowRed;
+	public static Item itemRedIron;
+	public static Item itemScepterTip;
+	public static Item itemRedIronHandle;
+	public static Item itemPorkApple;
+	public static Item gemCandentinium;
+	public static Item nuggetGlowIron;
+	public static Item nuggetRedIron;
+	public static Item itemCalcitePure;
+	public static Item itemCloakCore;
+	public static Item itemLightReflector;
+	public static Item itemDarkDoor;
+	public static Item itemInfernalCoal;
+	public static Item shardBlueGlass;
+	public static Item itemBlueFertilizer;
 	
 	//Tools
-	public static Item glironswordItem;
-	public static Item glironpickItem;
-	public static Item glironshovelItem;
-	public static Item glironaxeItem;
-	public static Item glironhoeItem;
-	public static Item redironswordItem;
-	public static Item redironpickItem;
-	public static Item redironshovelItem;
-	public static Item redironaxeItem;
-	public static Item redironhoeItem;
-	public static Item LightscepterItem;
-	public static Item RegenscepterItem;
-	public static Item Regenscepter2Item;
-	public static Item OmniscepterItem;
+	public static Item itemGlironSword;
+	public static Item itemGlironPick;
+	public static Item itemGlironShovel;
+	public static Item itemGlironAxe;
+	public static Item itemGlironHoe;
+	public static Item itemRedironSword;
+	public static Item itemRedironPick;
+	public static Item itemRedironShovel;
+	public static Item itemRedironAxe;
+	public static Item itemRedironHoe;
+	public static Item itemScepterLight;
+	public static Item itemScepterRegen;
+	public static Item itemScepterRegen2;
+	public static Item itemScepterOmni;
 	
 	//Armor
-	public static Item GlironHelm;
-	public static Item GlironChest;
-	public static Item GlironLegs;
-	public static Item GlironBoots;
-	public static Item CloakInvis;	
-	
+	public static Item itemGlironHelm;
+	public static Item itemGlironChest;
+	public static Item itemGlironLegs;
+	public static Item itemGlironBoots;
+	public static Item itemCloakInvis;	
 	
 	
 	public static void init(){
 		//Items
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Loading Items...", "");
-		glowironItem = new GlowItem(ConfigSettings.glowironItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowironItem");
-		glowmoltItem = new GlowItem(ConfigSettings.glowmoltItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowmoltItem");
-		redmoltItem = new GlowItem(ConfigSettings.redmoltItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redmoltItem");
-		glowredItem = new GlowItem(ConfigSettings.glowredItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowredItem");
-		redironItem = new GlowItem(ConfigSettings.redironItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redironItem");
-		SceptertipItem = new GlowItem(ConfigSettings.SceptertipItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("SceptertipItem");
-		RedironhandleItem = new GlowItem(ConfigSettings.RedironhandleItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("RedironhandleItem");
-		PorkappleItem = new GlowFood(ConfigSettings.PorkappleItemID, 10, 0.9F, true).setPotionEffect(Potion.resistance.id, 5, 0, 0.5F).setUnlocalizedName("PorkappleItem");
-		CandentiniumGem = new GlowItem(ConfigSettings.CandentiniumGemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("CandentiniumGem");
-		glowironNugget = new GlowItem(ConfigSettings.glowironNuggetID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowironNugget");
-		redironNugget = new GlowItem(ConfigSettings.redironNuggetID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redironNugget");
-		pureCalciteItem = new GlowItem(ConfigSettings.pureCalciteItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("pureCalciteItem");
-		cloakCore = new GlowItem(ConfigSettings.cloakCoreID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("cloakCore");
-		ReflectorItem = new GlowItem(ConfigSettings.ReflectorItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("ReflectorItem");
-		DarkDoorItem = new DarkDoorItem(ConfigSettings.DarkDoorItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("darkDoorItem");
-		InfernalCoalItem = new GlowItem(ConfigSettings.InfernalCoalItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("InfernalCoalItem");
-		BlueGlassShard = new GlowItem(ConfigSettings.BlueGlassShardID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("blueglassShard");
-		BlueFertilizerItem = new GlowItem(ConfigSettings.BlueFertilizerItemID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("bluefertilizerItem");
+		itemGlowIron = new GlowItem(ConfigSettings.itemGlowIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowironItem");
+		itemGlowMolt = new GlowItem(ConfigSettings.itemGlowMoltID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowmoltItem");
+		itemRedMolt = new GlowItem(ConfigSettings.itemRedMoltID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redmoltItem");
+		itemGlowRed = new GlowItem(ConfigSettings.itemGlowRedID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowredItem");
+		itemRedIron = new GlowItem(ConfigSettings.itemRedIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redironItem");
+		itemScepterTip = new GlowItem(ConfigSettings.itemScepterTipID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("SceptertipItem");
+		itemRedIronHandle = new GlowItem(ConfigSettings.itemRedIronHandleID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("RedironhandleItem");
+		itemPorkApple = new GlowFood(ConfigSettings.itemPorkAppleID, 10, 0.9F, true).setPotionEffect(Potion.resistance.id, 5, 0, 0.5F).setUnlocalizedName("PorkappleItem");
+		gemCandentinium = new GlowItem(ConfigSettings.gemCandentiniumID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("CandentiniumGem");
+		nuggetGlowIron = new GlowItem(ConfigSettings.nuggetGlowIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowironNugget");
+		nuggetRedIron = new GlowItem(ConfigSettings.nuggetRedIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redironNugget");
+		itemCalcitePure = new GlowItem(ConfigSettings.itemCalcitePureID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("pureCalciteItem");
+		itemCloakCore = new GlowItem(ConfigSettings.itemCloakCoreID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("cloakCore");
+		itemLightReflector = new GlowItem(ConfigSettings.itemLightReflectorID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("ReflectorItem");
+		itemDarkDoor = new ItemDarkDoor(ConfigSettings.itemDarkDoorID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("darkDoorItem");
+		itemInfernalCoal = new GlowItem(ConfigSettings.itemInfernalCoalID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("InfernalCoalItem");
+		shardBlueGlass = new GlowItem(ConfigSettings.shardBlueGlassID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("blueglassShard");
+		itemBlueFertilizer = new GlowItem(ConfigSettings.itemBlueFertilizerID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("bluefertilizerItem");
 				
 		//Glow Iron Tools
 		EnumToolMaterial EnumToolMaterialGlowiron = EnumHelper.addToolMaterial("Glowiron", 2, 650, 10.0F, 3, 18);
-		glironswordItem = new glironswordItem(ConfigSettings.glironswordItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironswordItem");
-		glironpickItem = new glironpickItem(ConfigSettings.glironpickItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironpickItem");
-		glironshovelItem = new glironshovelItem(ConfigSettings.glironshovelItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironshovelItem");
-		glironaxeItem = new glironaxeItem(ConfigSettings.glironaxeItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironaxeItem");
-		glironhoeItem = new glironhoeItem(ConfigSettings.glironhoeItemID, EnumToolMaterialGlowiron).setUnlocalizedName("glironhoeItem");
+		itemGlironSword = new ItemGlironSword(ConfigSettings.itemGlironSwordID, EnumToolMaterialGlowiron).setUnlocalizedName("glironswordItem");
+		itemGlironPick = new ItemGlironPick(ConfigSettings.itemGlironPickID, EnumToolMaterialGlowiron).setUnlocalizedName("glironpickItem");
+		itemGlironShovel = new ItemGlironShovel(ConfigSettings.itemGlironShovelID, EnumToolMaterialGlowiron).setUnlocalizedName("glironshovelItem");
+		itemGlironAxe = new ItemGlironAxe(ConfigSettings.itemGlironAxeID, EnumToolMaterialGlowiron).setUnlocalizedName("glironaxeItem");
+		itemGlironHoe = new ItemGlironHoe(ConfigSettings.itemGlironHoeID, EnumToolMaterialGlowiron).setUnlocalizedName("glironhoeItem");
 		
 		//Red Iron Tools
 		EnumToolMaterial EnumToolMaterialRediron = EnumHelper.addToolMaterial("Rediron", 2, 300, 5.0F, 5, 25);
-		redironswordItem = new redironswordItem(ConfigSettings.redironswordItemID, EnumToolMaterialRediron).setUnlocalizedName("redironswordItem");
-		redironpickItem = new redironpickItem(ConfigSettings.redironpickItemID, EnumToolMaterialRediron).setUnlocalizedName("redironpickItem");
-		redironshovelItem = new redironshovelItem(ConfigSettings.redironshovelItemID, EnumToolMaterialRediron).setUnlocalizedName("redironshovelItem");
-		redironaxeItem = new redironaxeItem(ConfigSettings.redironaxeItemID, EnumToolMaterialRediron).setUnlocalizedName("redironaxeItem");
-		redironhoeItem = new redironhoeItem(ConfigSettings.redironhoeItemID, EnumToolMaterialRediron).setUnlocalizedName("redironhoeItem");
+		itemRedironSword = new ItemRedironSword(ConfigSettings.itemRedironSwordID, EnumToolMaterialRediron).setUnlocalizedName("redironswordItem");
+		itemRedironPick = new ItemRedironPick(ConfigSettings.itemRedironPickID, EnumToolMaterialRediron).setUnlocalizedName("redironpickItem");
+		itemRedironShovel = new ItemRedironShovel(ConfigSettings.itemRedironShovelID, EnumToolMaterialRediron).setUnlocalizedName("redironshovelItem");
+		itemRedironAxe = new ItemRedironAxe(ConfigSettings.itemRedironAxeID, EnumToolMaterialRediron).setUnlocalizedName("redironaxeItem");
+		itemRedironHoe = new ItemRedironHoe(ConfigSettings.itemRedironHoeID, EnumToolMaterialRediron).setUnlocalizedName("redironhoeItem");
 				
 		//Scepters
 		EnumToolMaterial EnumToolMaterialScepter = EnumHelper.addToolMaterial("Scepter", -1, -1, 0F, 0, -1);
-		LightscepterItem = new LightscepterItem(ConfigSettings.LightscepterItemID, EnumToolMaterialScepter).setUnlocalizedName("LightscepterItem");
-		RegenscepterItem = new GlowScepter(ConfigSettings.RegenscepterItemID, EnumToolMaterialScepter).setUnlocalizedName("RegenscepterItem");
-		Regenscepter2Item = new GlowScepter(ConfigSettings.Regenscepter2ItemID, EnumToolMaterialScepter).setUnlocalizedName("Regenscepter2Item");
-		OmniscepterItem = new GlowScepter(ConfigSettings.OmniscepterItemID, EnumToolMaterialScepter).setUnlocalizedName("OmniscepterItem");
+		itemScepterLight = new GlowScepter(ConfigSettings.itemScepterLightID, EnumToolMaterialScepter).setUnlocalizedName("LightscepterItem");
+		itemScepterRegen = new GlowScepter(ConfigSettings.itemScepterRegenID, EnumToolMaterialScepter).setUnlocalizedName("RegenscepterItem");
+		itemScepterRegen2 = new GlowScepter(ConfigSettings.itemScepterRegen2ID, EnumToolMaterialScepter).setUnlocalizedName("Regenscepter2Item");
+		itemScepterOmni = new GlowScepter(ConfigSettings.itemScepterOmniID, EnumToolMaterialScepter).setUnlocalizedName("OmniscepterItem");
 		
 		/** Armor Section (Max Damage before it breaks, Damage Reduction, Enchantability) */
 		
 		//Glow Iron Armor
 		EnumArmorMaterial EnumArmorMaterialGlowiron = EnumHelper.addArmorMaterial("Glowiron", 25, new int[] {2, 7, 6, 2}, 18);
-		GlironHelm = new GlironArmor(ConfigSettings.GlironHelmID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 0).setUnlocalizedName("GlironHelm");
-		GlironChest = new GlironArmor(ConfigSettings.GlironChestID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 1).setUnlocalizedName("GlironChest");
-		GlironLegs = new GlironArmor(ConfigSettings.GlironLegsID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 2).setUnlocalizedName("GlironLegs");
-		GlironBoots = new GlironArmor(ConfigSettings.GlironBootsID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 3).setUnlocalizedName("GlironBoots");
+		itemGlironHelm = new GlironArmor(ConfigSettings.itemGlironHelmID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 0).setUnlocalizedName("GlironHelm");
+		itemGlironChest = new GlironArmor(ConfigSettings.itemGlironChestID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 1).setUnlocalizedName("GlironChest");
+		itemGlironLegs = new GlironArmor(ConfigSettings.itemGlironLegsID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 2).setUnlocalizedName("GlironLegs");
+		itemGlironBoots = new GlironArmor(ConfigSettings.itemGlironBootsID, EnumArmorMaterialGlowiron, GlowTools.proxy.addArmor("Gliron"), 3).setUnlocalizedName("GlironBoots");
 		
 		//Cloaks
 		EnumArmorMaterial EnumArmorMaterialCloak = EnumHelper.addArmorMaterial("Cloak", -1, new int[] {0, 2, 0, 0}, -1);
-		CloakInvis = new CloakInvis(ConfigSettings.CloakInvisID, EnumArmorMaterialCloak, GlowTools.proxy.addArmor("Cloak"), 1).setUnlocalizedName("CloakInvis");
-		GameRegistry.addRecipe(new ItemStack(CloakInvis), new Object[]{"XXX", "XYX", "XXX", 'X', ReflectorItem, 'Y', cloakCore});
+		itemCloakInvis = new ItemCloakInvis(ConfigSettings.itemCloakInvisID, EnumArmorMaterialCloak, GlowTools.proxy.addArmor("Cloak"), 1).setUnlocalizedName("CloakInvis");
+		GameRegistry.addRecipe(new ItemStack(itemCloakInvis), new Object[]{"XXX", "XYX", "XXX", 'X', itemLightReflector, 'Y', itemCloakCore});
 		
 	}
 	
@@ -142,8 +141,8 @@ public class GTItems {
 		 */
 		
 		
-		ThaumcraftApi.registerObjectTag(glowmoltItem.itemID, -1, (new ObjectTags()).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1).add(EnumTag.FIRE, 1));
-		ThaumcraftApi.registerObjectTag(redmoltItem.itemID, -1, (new ObjectTags()).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2).add(EnumTag.FIRE, 1));
+		ThaumcraftApi.registerObjectTag(itemGlowMolt.itemID, -1, (new ObjectTags()).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1).add(EnumTag.FIRE, 1));
+		ThaumcraftApi.registerObjectTag(itemRedMolt.itemID, -1, (new ObjectTags()).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2).add(EnumTag.FIRE, 1));
 		
 	}
 	

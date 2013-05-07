@@ -114,11 +114,11 @@ public class BlockDarkDoor extends BlockDoor
     }
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return GTItems.DarkDoorItem.itemID;
+        return GTItems.itemDarkDoor.itemID;
     }
     
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return GTItems.DarkDoorItem.itemID;
+        return GTItems.itemDarkDoor.itemID;
     }
 }

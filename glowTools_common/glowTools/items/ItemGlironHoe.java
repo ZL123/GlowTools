@@ -16,10 +16,10 @@ import net.minecraft.item.ItemHoe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class glironhoeItem extends ItemHoe
+public class ItemGlironHoe extends ItemHoe
 {
 
-	public glironhoeItem(int i, EnumToolMaterial enumToolMaterialGlowiron)
+	public ItemGlironHoe(int i, EnumToolMaterial enumToolMaterialGlowiron)
 	{
 		super(i, enumToolMaterialGlowiron);
 		this.setCreativeTab(GlowTools.tabGlowTools);

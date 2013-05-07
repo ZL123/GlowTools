@@ -21,10 +21,10 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class DarkDoorItem extends ItemDoor
+public class ItemDarkDoor extends ItemDoor
 {
     private Material doorMaterial;
-	public DarkDoorItem(int par1) {
+	public ItemDarkDoor(int par1) {
 		super(par1, Material.iron);
 		this.maxStackSize = 16;
 	}
@@ -39,7 +39,7 @@ public class DarkDoorItem extends ItemDoor
             ++par5;
             Block block;
 
-            block = GTBlocks.DarkDoor;
+            block = GTBlocks.blockDoorDark;
 
             if (par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack) && par2EntityPlayer.canPlayerEdit(par4, par5 + 1, par6, par7, par1ItemStack))
             {

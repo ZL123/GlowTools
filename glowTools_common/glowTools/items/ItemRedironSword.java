@@ -16,9 +16,9 @@ import net.minecraft.item.ItemSword;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class redironswordItem extends ItemSword
+public class ItemRedironSword extends ItemSword
 {
-	public redironswordItem(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemRedironSword(int par1, EnumToolMaterial par2EnumToolMaterial)
 	{
 		super(par1, par2EnumToolMaterial);
 		this.setCreativeTab(GlowTools.tabGlowTools);

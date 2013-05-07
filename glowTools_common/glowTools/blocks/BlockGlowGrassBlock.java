@@ -40,9 +40,9 @@ public class BlockGlowGrassBlock extends BlockGrass
                     int var9 = par4 + par5Random.nextInt(3) - 1;
                     int var10 = par1World.getBlockId(var7, var8 + 1, var9);
 
-                    if (par1World.getBlockId(var7, var8, var9) == GTBlocks.GlowDirtBlock.blockID && par1World.getBlockLightValue(var7, var8 + 1, var9) >= 4 && par1World.getBlockLightOpacity(var7, var8 + 1, var9) <= 2)
+                    if (par1World.getBlockId(var7, var8, var9) == GTBlocks.blockGlowDirt.blockID && par1World.getBlockLightValue(var7, var8 + 1, var9) >= 4 && par1World.getBlockLightOpacity(var7, var8 + 1, var9) <= 2)
                     {
-                        par1World.setBlock(var7, var8, var9, GTBlocks.GlowGrassBlock.blockID);
+                        par1World.setBlock(var7, var8, var9, GTBlocks.blockGlowGrass.blockID);
                     }
                 }
             }
@@ -51,7 +51,7 @@ public class BlockGlowGrassBlock extends BlockGrass
     
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return GTBlocks.GlowDirtBlock.idDropped(0, par2Random, par3);
+        return GTBlocks.blockGlowDirt.idDropped(0, par2Random, par3);
     }
     
 }

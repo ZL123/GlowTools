@@ -24,7 +24,7 @@ public class GlowItem extends Item
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
-    	if (this.itemID == GTItems.BlueGlassShard.itemID)
+    	if (this.itemID == GTItems.shardBlueGlass.itemID)
     	{
     		this.itemIcon = par1IconRegister.registerIcon("glowTools:item.NetherBlueShard");
     	}

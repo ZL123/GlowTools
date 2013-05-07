@@ -21,7 +21,7 @@ public class CreativeTabGlowtools extends CreativeTabs {
 	
 	public ItemStack getIconItemStack()
 	{
-		return new ItemStack(GTItems.LightscepterItem);
+		return new ItemStack(GTItems.itemScepterLight);
 	}
 
 }
