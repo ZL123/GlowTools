@@ -22,6 +22,7 @@ import glowTools.lib.Reference;
 import glowTools.proxy.CommonProxyGT;
 import glowTools.recipe.GTRecipes;
 import glowTools.recipe.GlowFuelHandler;
+import glowTools.tileentity.TileEntityGsInfuser;
 import glowTools.worldgen.GTChestLoot;
 import glowTools.worldgen.GTGen;
 
@@ -48,6 +49,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -139,7 +141,7 @@ public class GlowTools
 		return startEntityId;	
 	}
 	
-	public static void registerEntityEgg(Class <? extends Entity> entity, int primaryColor, int secondaryColor)
+    public static void registerEntityEgg(Class <? extends Entity> entity, int primaryColor, int secondaryColor)
 	{
 		int id = getUniqueEntityId();
 		EntityList.IDtoClassMapping.put(id, entity);

@@ -23,8 +23,8 @@ public class GsInfuserRecipes
 {
     private static final GsInfuserRecipes infusingBase = new GsInfuserRecipes();
 
-    private Map infusingList = new HashMap();
-    private Map experienceList = new HashMap();
+    private Map<Integer, ItemStack> infusingList = new HashMap<Integer, ItemStack>();
+    private Map<Integer, Float> experienceList = new HashMap<Integer, Float>();
     private HashMap<List<Integer>, ItemStack> metaInfusingList = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, Float> metaExperience = new HashMap<List<Integer>, Float>();
     private float normalxp = 0.8F;
@@ -50,7 +50,7 @@ public class GsInfuserRecipes
         this.experienceList.put(Integer.valueOf(stack.itemID), Float.valueOf(xp));
     }
     
-    public Map getInfusingList()
+    public Map<Integer, ItemStack> getInfusingList()
     {
         return this.infusingList;
     }
@@ -67,12 +67,12 @@ public class GsInfuserRecipes
         {
             return null;
         }
-        ItemStack ret = (ItemStack)metaInfusingList.get(Arrays.asList(item.itemID, item.getItemDamage()));
+        ItemStack ret = metaInfusingList.get(Arrays.asList(item.itemID, item.getItemDamage()));
         if (ret != null) 
         {
             return ret;
         }
-        return (ItemStack)infusingList.get(Integer.valueOf(item.itemID));
+        return infusingList.get(Integer.valueOf(item.itemID));
     }
 
     public float getExperience(ItemStack item)
@@ -88,7 +88,7 @@ public class GsInfuserRecipes
         }
         if (ret < 0 && experienceList.containsKey(item.itemID))
         {
-            ret = ((Float)experienceList.get(item.itemID)).floatValue();
+            ret = experienceList.get(item.itemID).floatValue();
         }
         return (ret < 0 ? 0 : ret);
     }
