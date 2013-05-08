@@ -144,7 +144,7 @@ public class GlowTools
 		return startEntityId;	
 	}
 	
-	public static void registerEntityEgg(Class <? extends Entity> entity, int primaryColor, int secondaryColor)
+    public static void registerEntityEgg(Class <? extends Entity> entity, int primaryColor, int secondaryColor)
 	{
 		int id = getUniqueEntityId();
 		EntityList.IDtoClassMapping.put(id, entity);
