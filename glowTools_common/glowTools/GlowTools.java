@@ -17,7 +17,7 @@ import glowTools.entity.GTEntities;
 import glowTools.gui.GuiHandler;
 import glowTools.inventory.CreativeTabGlowtools;
 import glowTools.items.GTItems;
-import glowTools.lang.Names;
+import glowTools.lang.Register;
 import glowTools.lib.Reference;
 import glowTools.proxy.CommonProxyGT;
 import glowTools.recipe.GTRecipes;
@@ -109,7 +109,7 @@ public class GlowTools
         NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		
         //Language Instances
-        Names.load();
+        Register.load();
         
 		//Recipes
 		GTRecipes.recipes();

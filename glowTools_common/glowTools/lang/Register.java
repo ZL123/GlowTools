@@ -1,12 +1,15 @@
 package glowTools.lang;
 
+import glowTools.blocks.BlockGlowingRock;
 import glowTools.blocks.GTBlocks;
 import glowTools.items.GTItems;
 import glowTools.lib.Reference;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class Names {
-	public static void load(){
+public class Register {
+	
+	public static void load() {
 		
 		//Blocks
 		LanguageRegistry.addName(GTBlocks.blockGlowIron, "Block of Glowing Iron");
@@ -14,17 +17,20 @@ public class Names {
 		LanguageRegistry.addName(GTBlocks.blockGlowSand, "Glowing Sand");
 		LanguageRegistry.addName(GTBlocks.oreCandentinium, "Candentinium Ore");
 		LanguageRegistry.addName(GTBlocks.blockGlowGlass, "Glowing Glass");
-		LanguageRegistry.addName(GTBlocks.blockGlowSandstone, "Glowing Sandstone");
 		LanguageRegistry.addName(GTBlocks.blockCandentinium, "Block of Candentinium");
 		LanguageRegistry.addName(GTBlocks.blockGlowGrass, "Glowing Grass Block");
 		LanguageRegistry.addName(GTBlocks.blockGlowDirt, "Glowing Dirt Block");
-		LanguageRegistry.addName(GTBlocks.blockGlowCobble, "Glowing Cobblestone");
-		LanguageRegistry.addName(GTBlocks.blockGlowingStone, "Glowing Stone");
 		LanguageRegistry.addName(GTBlocks.blockFlowStone, "Calcite");
 		LanguageRegistry.addName(GTBlocks.blockDoorDark, "Dark Door");
 		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuser, "Glowstone Infuser (WIP)");
 		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuserActive, "Glowstone Infuser (WIP)");
 		LanguageRegistry.addName(GTBlocks.oreBlueGlass, "Glassy Blue Ore");
+		
+		
+		//Metadata Blocks
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), "Glowing Sandstone");
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.cobbleMetaNumber), "Glowing Cobblestone");
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.stoneMetaNumber), "Glowing Stone");
 		
 		
 		//Items

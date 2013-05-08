@@ -50,10 +50,10 @@ public class GuiInfuser extends GuiContainer
         if (this.infuserInventory.isBurning())
         {
             i1 = this.infuserInventory.getBurnTimeRemainingScaled(12);
-            this.drawTexturedModalRect(k + 60, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
+            this.drawTexturedModalRect(k + 59, l + 38 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
         }
 
         i1 = this.infuserInventory.getCookProgressScaled(24);
-        this.drawTexturedModalRect(k + 86, l + 35, 176, 14, i1 + 1, 16);
+        this.drawTexturedModalRect(k + 87, l + 37, 176, 14, i1 + 1, 16);
     }
 }

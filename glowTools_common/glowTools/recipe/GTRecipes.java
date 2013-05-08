@@ -10,6 +10,7 @@
 package glowTools.recipe;
 
 import glowTools.GlowTools;
+import glowTools.blocks.BlockGlowingRock;
 import glowTools.blocks.GTBlocks;
 import glowTools.items.GTItems;
 import glowTools.lib.Reference;
@@ -19,6 +20,7 @@ import java.util.logging.Level;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -46,14 +48,13 @@ public class GTRecipes {
 		GameRegistry.addSmelting(GTBlocks.oreCandentinium.blockID, new ItemStack(GTItems.gemCandentinium), 0.7F);
 		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowGlass, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.glass), 'Y', new ItemStack(Block.glowStone)});
 		GameRegistry.addSmelting(GTBlocks.blockGlowSand.blockID, new ItemStack(GTBlocks.blockGlowGlass), 0.4F);
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowSandstone), new Object[]{"XX", "XX", 'X', GTBlocks.blockGlowSand});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowSandstone, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.sandStone), 'Y', new ItemStack(Block.glowStone)});
-		GameRegistry.addRecipe(new ItemStack(Block.sand, 4), new Object[]{"X", 'X', new ItemStack(GTBlocks.blockGlowSandstone)});
+		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), new Object[]{"XX", "XX", 'X', GTBlocks.blockGlowSand});
+		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 8, BlockGlowingRock.sandStoneMetaNumber), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.sandStone), 'Y', new ItemStack(Block.glowStone)});
+		GameRegistry.addRecipe(new ItemStack(Block.sand, 4), new Object[]{"X", 'X', new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber)});
 		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockCandentinium), new Object[]{"XXX", "XXX", "XXX", 'X', GTItems.gemCandentinium});
 		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowDirt, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.dirt), 'Y', new ItemStack(Block.glowStone)});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowCobble, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.cobblestone), 'Y', new ItemStack(Block.glowStone)});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingStone, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.stone), 'Y', new ItemStack(Block.glowStone)});
-		GameRegistry.addSmelting(GTBlocks.blockGlowCobble.blockID, new ItemStack(GTBlocks.blockGlowingStone), 0.2F);
+		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.cobbleMetaNumber), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.cobblestone), 'Y', new ItemStack(Block.glowStone)});
+		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.stoneMetaNumber), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.stone), 'Y', new ItemStack(Block.glowStone)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemGlowIron), new Object[]{"XXX", "XXX", "XXX", 'X', GTItems.nuggetGlowIron});
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemRedIron), new Object[]{"XXX", "XXX", "XXX", 'X', GTItems.nuggetRedIron});
 		GameRegistry.addRecipe(new ItemStack(GTItems.nuggetGlowIron, 9), new Object[]{"X", 'X', GTItems.itemGlowIron});

@@ -96,7 +96,7 @@ public class BlockGlowstoneInfuser extends BlockContainer
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int par1, int par2)
     {
-        return par1 == 1 ? this.infuserIconTop : (par1 == 0 ? this.infuserIconTop : (par1 != par2 ? this.blockIcon : this.infuserIconFront));
+    	return par1 == 1 ? this.infuserIconTop : (par1 == 0 ? this.infuserIconTop : (par1 != par2 ? this.blockIcon : this.infuserIconFront));
     }
 
     @SideOnly(Side.CLIENT)

@@ -18,18 +18,16 @@ public class ConfigSettings {
 	public static int oreCandentiniumID;
 	public static int oreCandentiniumGlowingID;
 	public static int blockGlowGlassID;
-	public static int blockGlowSandstoneID;
 	public static int blockCandentiniumID;
 	public static int blockGlowGrassID;
 	public static int blockGlowDirtID;
-	public static int blockGlowCobbleID;
-	public static int blockGlowingStoneID;
 	public static int blockFlowStoneID;
 	public static int blockDoorDarkID;
 	public static int blockGlowstoneInfuserID;
 	public static int blockGlowstoneInfuserActiveID;
 	public static int oreBlueGlassID;
 	public static int blockGlowFarmID;
+	public static int blockGlowingRockID;
 	
 	//Item IDs
 	public static int itemGlowIronID;

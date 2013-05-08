@@ -26,12 +26,12 @@ public class ConfigLoader
 		ConfigSettings.oreCandentiniumID = config.getBlock("Candentinium Ore ID", 3003).getInt();
 		ConfigSettings.oreCandentiniumGlowingID = config.getBlock("Glowing Candentinium Ore ID", 3004).getInt();
 		ConfigSettings.blockGlowGlassID = config.getBlock("Glowing Glass ID", 3005).getInt();
-		ConfigSettings.blockGlowSandstoneID = config.getBlock("Glowing Sandstone ID", 3006).getInt();
+		ConfigSettings.blockGlowingRockID = config.getBlock("Glowing Sandstone/Cobblestone/Stone ID", 3006).getInt();
 		ConfigSettings.blockCandentiniumID = config.getBlock("Block of Candentinium ID", 3007).getInt();
 		ConfigSettings.blockGlowGrassID = config.getBlock("Glowing Grass ID", 3008).getInt();
 		ConfigSettings.blockGlowDirtID = config.getBlock("Glowing Dirt ID", 3009).getInt();
-		ConfigSettings.blockGlowCobbleID = config.getBlock("Glowing Cobblestone ID", 3010).getInt();
-		ConfigSettings.blockGlowingStoneID = config.getBlock("Glowing Stone ID", 3011).getInt();
+		//ConfigSettings.x = config.getBlock("ID", 3010).getInt();
+		//ConfigSettings.x = config.getBlock("ID", 3011).getInt();
 		ConfigSettings.blockFlowStoneID = config.getBlock("Calcite ID", 3012).getInt();
 		ConfigSettings.blockDoorDarkID = config.getBlock("Dark Door Block ID", 3013).getInt();
 		ConfigSettings.blockGlowstoneInfuserID = config.getBlock("Glowstone Infuser ID", 3014).getInt();

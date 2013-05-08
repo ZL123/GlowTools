@@ -9,6 +9,7 @@
 
 package glowTools.recipe;
 
+import glowTools.blocks.BlockGlowingRock;
 import glowTools.blocks.GTBlocks;
 
 import java.util.Arrays;
@@ -37,11 +38,11 @@ public class GsInfuserRecipes
     private GsInfuserRecipes()
     {
         this.addInfusing(Block.sand.blockID, new ItemStack(GTBlocks.blockGlowSand), normalxp);
-        this.addInfusing(Block.cobblestone.blockID, new ItemStack(GTBlocks.blockGlowCobble), normalxp);
-        this.addInfusing(Block.stone.blockID, new ItemStack(GTBlocks.blockGlowingStone), normalxp);
+        this.addInfusing(Block.cobblestone.blockID, new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.cobbleMetaNumber), normalxp);
+        this.addInfusing(Block.stone.blockID, new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.stoneMetaNumber), normalxp);
         this.addInfusing(Block.glass.blockID, new ItemStack(GTBlocks.blockGlowGlass), normalxp);
         this.addInfusing(Block.dirt.blockID, new ItemStack(GTBlocks.blockGlowDirt), normalxp);
-        this.addInfusing(Block.sandStone.blockID, 0, new ItemStack(GTBlocks.blockGlowSandstone, 1, 0), normalxp);
+        this.addInfusing(Block.sandStone.blockID, 0, new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), normalxp);
     }
 
     public void addInfusing(int id, ItemStack stack, float xp)
