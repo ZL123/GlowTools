@@ -136,6 +136,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         this.infuserBurnTime = par1NBTTagCompound.getShort("BurnTime");
         this.infuserCookTime = par1NBTTagCompound.getShort("CookTime");
         this.currentItemBurnTime = getItemBurnTime(this.infuserItemStacks[1]);
+        this.currentGlowFuelAmount = par1NBTTagCompound.getShort("GlowAmount");
 
         if (par1NBTTagCompound.hasKey("CustomName"))
         {
@@ -148,6 +149,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         super.writeToNBT(par1NBTTagCompound);
         par1NBTTagCompound.setShort("BurnTime", (short)this.infuserBurnTime);
         par1NBTTagCompound.setShort("CookTime", (short)this.infuserCookTime);
+        par1NBTTagCompound.setShort("GlowAmount", (short)this.currentGlowFuelAmount);
         NBTTagList nbttaglist = new NBTTagList();
 
         for (int i = 0; i < this.infuserItemStacks.length; ++i)

@@ -32,7 +32,7 @@ public class ContainerInfuser extends Container
         this.infuser = par2TileEntityGsInfuser;
         this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 0, 59, 19));
         this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 1, 59, 55));
-        this.addSlotToContainer(new SlotInfuser(par1InventoryPlayer.player, par2TileEntityGsInfuser, 2, 126, 35));
+        this.addSlotToContainer(new SlotInfuser(par1InventoryPlayer.player, par2TileEntityGsInfuser, 2, 126, 37));
         this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 3, 35, 19));
         int i;
 

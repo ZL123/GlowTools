@@ -9,6 +9,8 @@
 
 package glowTools.tick;
 
+import glowTools.lib.Reference;
+
 import java.util.EnumSet;
 
 import net.minecraft.client.Minecraft;
@@ -47,7 +49,9 @@ public class ClientTickHandler implements ITickHandler
     }
 
     @Override
-    public String getLabel() { return null; }
+    public String getLabel() {
+    	return Reference.MODID + ": " + getClass().getSimpleName();
+    }
 
 
     public void onRenderTick() {}

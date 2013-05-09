@@ -56,8 +56,8 @@ public class GTBlocks {
 		blockGlowDirt = new BlockGlowDirtBlock(ConfigSettings.blockGlowDirtID).setUnlocalizedName("glowdirtBlock");
 		blockFlowStone = new BlockFlowStoneBlock(ConfigSettings.blockFlowStoneID).setUnlocalizedName("FlowStoneBlock");
 		blockDoorDark = new BlockDarkDoor(ConfigSettings.blockDoorDarkID).setUnlocalizedName("DarkDoor");
-		blockGlowstoneInfuser = new BlockGlowstoneInfuser(ConfigSettings.blockGlowstoneInfuserID, false).setUnlocalizedName("GlowstoneInfuser");
-		blockGlowstoneInfuserActive = new BlockGlowstoneInfuser(ConfigSettings.blockGlowstoneInfuserActiveID, true).setUnlocalizedName("GlowstoneInfuserActive");
+		blockGlowstoneInfuser = new BlockGlowstoneInfuser(ConfigSettings.blockGlowstoneInfuserID, false).setLightValue(0.2F).setUnlocalizedName("GlowstoneInfuser");
+		blockGlowstoneInfuserActive = new BlockGlowstoneInfuser(ConfigSettings.blockGlowstoneInfuserActiveID, true).setLightValue(0.3F).setUnlocalizedName("GlowstoneInfuserActive");
 		oreBlueGlass = new BlockBlueGlassOre(ConfigSettings.oreBlueGlassID).setHardness(1.0F).setResistance(3.0F).setLightValue(0.15F).setUnlocalizedName("BlueGlassOre");
 		blockGlowFarm = new BlockGlowFarmland(ConfigSettings.blockGlowFarmID).setHardness(0.6F).setUnlocalizedName("GlowFarmBlock");
 		blockGlowingRock = new BlockGlowingRock(ConfigSettings.blockGlowingRockID).setHardness(0.8F).setResistance(10.0F).setUnlocalizedName("glowBlock");
