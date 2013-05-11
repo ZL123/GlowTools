@@ -11,6 +11,8 @@ package glowTools.recipe;
 
 import glowTools.blocks.BlockGlowingRock;
 import glowTools.blocks.GTBlocks;
+import glowTools.items.CraftingItems;
+import glowTools.items.GTItems;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class GsInfuserRecipes
@@ -43,6 +46,8 @@ public class GsInfuserRecipes
         this.addInfusing(Block.glass.blockID, new ItemStack(GTBlocks.blockGlowGlass), normalxp);
         this.addInfusing(Block.dirt.blockID, new ItemStack(GTBlocks.blockGlowDirt), normalxp);
         this.addInfusing(Block.sandStone.blockID, 0, new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), normalxp);
+        this.addInfusing(Item.ingotIron.itemID, new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), normalxp);
+        this.addInfusing(Block.blockIron.blockID, new ItemStack(GTBlocks.blockGlowIron), normalxp);
     }
 
     public void addInfusing(int id, ItemStack stack, float xp)

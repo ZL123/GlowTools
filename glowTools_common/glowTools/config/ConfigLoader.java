@@ -39,6 +39,7 @@ public class ConfigLoader
 		ConfigSettings.oreBlueGlassID = config.getBlock("Glassy Blue Ore ID", 3016).getInt();
 		ConfigSettings.blockGlowFarmID = config.getBlock("Enriched Farmland ID", 3017).getInt();
 		
+		
 		ConfigSettings.itemGlironSwordID = config.getItem("Glowing Iron Sword ID", 4205).getInt();
 		ConfigSettings.itemGlironPickID = config.getItem("Glowing Iron Pickaxe ID", 4206).getInt();
 		ConfigSettings.itemGlironShovelID = config.getItem("Glowing Iron Shovel ID", 4207).getInt();
