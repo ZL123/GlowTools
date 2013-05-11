@@ -21,12 +21,10 @@ import glowTools.lang.Register;
 import glowTools.lib.Reference;
 import glowTools.proxy.CommonProxyGT;
 import glowTools.recipe.GTRecipes;
-import glowTools.recipe.GlowFuelHandler;
 import glowTools.tileentity.TileEntityGsInfuser;
 import glowTools.worldgen.GTChestLoot;
 import glowTools.worldgen.GTGen;
 
-import java.util.List;
 import java.util.logging.Level;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -37,9 +35,6 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
-import com.google.common.collect.Lists;
-
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -59,15 +54,13 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GlowTools
 {
-	/** Declaration */
 	@Instance(Reference.MODID)
 	public static GlowTools instance;
 	
 	@SidedProxy(clientSide = Reference.CLIENTPROXY, serverSide = Reference.SERVERPROXY)
 	public static CommonProxyGT proxy;
 	
-	static int startEntityId = 300;
-    private static List<GlowFuelHandler> glowHandlers = Lists.newArrayList();
+	protected static int startEntityId = 300;
 	
     public static CreativeTabs tabGlowTools = new CreativeTabGlowtools("glowTools");
     
@@ -92,9 +85,7 @@ public class GlowTools
 	{
 		proxy.registerRenderThings();
 		proxy.registerServerTickHandler();
-
 		
-		/** Random Necessities Section */
 		
 		//Initialize World Generators
 		GTGen.generate();
@@ -150,21 +141,6 @@ public class GlowTools
 		EntityList.IDtoClassMapping.put(id, entity);
 		EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
 	}
-	
-    public static void registerGlowHandler(GlowFuelHandler handler)
-    {
-        glowHandlers.add(handler);
-    }
-        
-    public static int getGlowValue(ItemStack itemStack)
-    {
-        int glowValue = 0;
-        for (GlowFuelHandler handler : glowHandlers)
-        {
-            glowValue = Math.max(glowValue, handler.getGlowAmount(itemStack));
-        }
-        return glowValue;
-    }
     
     public static void giveItemToPlayer(EntityPlayer player, ItemStack item) {
         World world = player.worldObj;

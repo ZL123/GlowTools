@@ -10,6 +10,7 @@
 package glowTools.blocks;
 
 import glowTools.GlowTools;
+import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 
 import java.util.Random;
@@ -28,7 +29,12 @@ public class BlockBlueGlassOre extends BlockOre
 	
 	public int idDropped(int par1, Random rand, int par3)
 	{
-		return GTItems.shardBlueGlass.itemID;
+		return GTItems.craftingItems.itemID;
+	}
+	
+	public int damageDropped(int par1)
+	{
+		return CraftingItems.blueGlassShardMetaNumber;
 	}
 	
 	public int quantityDropped(Random rand)

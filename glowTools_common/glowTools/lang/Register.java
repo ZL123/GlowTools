@@ -2,6 +2,7 @@ package glowTools.lang;
 
 import glowTools.blocks.BlockGlowingRock;
 import glowTools.blocks.GTBlocks;
+import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 import glowTools.lib.Reference;
 import net.minecraft.item.ItemStack;
@@ -34,24 +35,27 @@ public class Register {
 		
 		
 		//Items
-		LanguageRegistry.addName(GTItems.itemGlowIron, "Glowing Iron Ingot");
-		LanguageRegistry.addName(GTItems.itemGlowMolt, "Melted Glowstone");
-		LanguageRegistry.addName(GTItems.itemRedMolt, "Melted Redstone");
-		LanguageRegistry.addName(GTItems.itemGlowRed, "Blazing Blend");
-		LanguageRegistry.addName(GTItems.itemRedIron, "Red Iron Ingot");
-		LanguageRegistry.addName(GTItems.itemScepterTip, "Scepter Tip");
-		LanguageRegistry.addName(GTItems.itemRedIronHandle, "Red-Iron-Tool Handle");
 		LanguageRegistry.addName(GTItems.itemPorkApple, "Porkchop with Applesauce");
-		LanguageRegistry.addName(GTItems.gemCandentinium, "Candentinium Shard");
-		LanguageRegistry.addName(GTItems.nuggetGlowIron, "Glowing Iron Nugget");
-		LanguageRegistry.addName(GTItems.nuggetRedIron, "Red Iron Nugget");
-		LanguageRegistry.addName(GTItems.itemCalcitePure, "Purified Calcite");
-		LanguageRegistry.addName(GTItems.itemCloakCore, "Cloak Core");
-		LanguageRegistry.addName(GTItems.itemLightReflector, "Light Reflector");
 		LanguageRegistry.addName(GTItems.itemDarkDoor, "Dark Door");
-		LanguageRegistry.addName(GTItems.itemInfernalCoal, "Infernal Coal");
-		LanguageRegistry.addName(GTItems.shardBlueGlass, "Glassy Blue Shard");
 		LanguageRegistry.addName(GTItems.itemBlueFertilizer, "Blue Fertilizer");
+		
+		
+		//Metadata Items
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), "Glowing Iron Ingot");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.redIronMetaNumber), "Red Iron Ingot");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowMoltMetaNumber), "Melted Glowstone");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.redMoltMetaNumber), "Melted Redstone");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.blazeMoltMetaNumber), "Blazing Blend");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.scepterTipMetaNumber), "Scepter Tip");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.redIronHandleMetaNumber), "Red-Iron-Tool Handle");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber), "Shard of Candentinium");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.nuggetGlowIronMetaNumber), "Glowing Iron Nugget");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.nuggetRedIronMetaNumber), "Red Iron Nugget");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.pureCalciteMetaNumber), "Purified Calcite");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.cloakCoreMetaNumber), "Cloak Core");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.lightReflectorMetaNumber), "Light Reflector");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.infernalCoalMetaNumber), "Infernal Coal");
+		LanguageRegistry.addName(new ItemStack(GTItems.craftingItems, 1, CraftingItems.blueGlassShardMetaNumber), "Glassy Blue Shard");
 		
 		
 		//Tools

@@ -9,6 +9,7 @@
 
 package glowTools.blocks;
 
+import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 
 import java.util.Random;
@@ -86,7 +87,12 @@ public class BlockCandentiniumOre extends Block
 
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return GTItems.gemCandentinium.itemID;
+        return GTItems.craftingItems.itemID;
+    }
+    
+    public int damageDropped(int par1)
+    {
+    	return CraftingItems.candentiniumMetaNumber;
     }
     
     @Override

@@ -10,6 +10,7 @@
 package glowTools.tileentity;
 
 import glowTools.blocks.BlockGlowstoneInfuser;
+import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 import glowTools.recipe.GsInfuserRecipes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -309,9 +310,10 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         else
         {
             int i = par0ItemStack.getItem().itemID;
+            int j = par0ItemStack.getItemDamage();
             Item item = par0ItemStack.getItem();
             
-            if (i == GTItems.itemInfernalCoal.itemID) return 2000;
+            if (i == GTItems.craftingItems.itemID && j == CraftingItems.infernalCoalMetaNumber) return 2000;
             if (i == Item.netherStar.itemID) return 300000;
             return GameRegistry.getFuelValue(par0ItemStack);
         }

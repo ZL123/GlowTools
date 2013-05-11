@@ -30,24 +30,10 @@ public class ConfigSettings {
 	public static int blockGlowingRockID;
 	
 	//Item IDs
-	public static int itemGlowIronID;
-	public static int itemGlowMoltID;
-	public static int itemRedMoltID;
-	public static int itemGlowRedID;
-	public static int itemRedIronID;
-	public static int itemScepterTipID;
-	public static int itemRedIronHandleID;
 	public static int itemPorkAppleID;
-	public static int gemCandentiniumID;
-	public static int nuggetGlowIronID;
-	public static int nuggetRedIronID;
-	public static int itemCalcitePureID;
-	public static int itemCloakCoreID;
-	public static int itemLightReflectorID;
 	public static int itemDarkDoorID;
-	public static int itemInfernalCoalID;
-	public static int shardBlueGlassID;
 	public static int itemBlueFertilizerID;
+	public static int craftingItemsID;
 	
 	//Tool IDs
 	public static int itemGlironSwordID;

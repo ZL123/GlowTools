@@ -30,24 +30,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class GTItems {
 	
 	//Items
-	public static Item itemGlowIron;
-	public static Item itemGlowMolt;
-	public static Item itemRedMolt;
-	public static Item itemGlowRed;
-	public static Item itemRedIron;
-	public static Item itemScepterTip;
-	public static Item itemRedIronHandle;
 	public static Item itemPorkApple;
-	public static Item gemCandentinium;
-	public static Item nuggetGlowIron;
-	public static Item nuggetRedIron;
-	public static Item itemCalcitePure;
-	public static Item itemCloakCore;
-	public static Item itemLightReflector;
 	public static Item itemDarkDoor;
-	public static Item itemInfernalCoal;
-	public static Item shardBlueGlass;
 	public static Item itemBlueFertilizer;
+	public static Item craftingItems;
 	
 	//Tools
 	public static Item itemGlironSword;
@@ -76,25 +62,11 @@ public class GTItems {
 	public static void init(){
 		//Items
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Loading Items...", "");
-		itemGlowIron = new GlowItem(ConfigSettings.itemGlowIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowironItem");
-		itemGlowMolt = new GlowItem(ConfigSettings.itemGlowMoltID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowmoltItem");
-		itemRedMolt = new GlowItem(ConfigSettings.itemRedMoltID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redmoltItem");
-		itemGlowRed = new GlowItem(ConfigSettings.itemGlowRedID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowredItem");
-		itemRedIron = new GlowItem(ConfigSettings.itemRedIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redironItem");
-		itemScepterTip = new GlowItem(ConfigSettings.itemScepterTipID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("SceptertipItem");
-		itemRedIronHandle = new GlowItem(ConfigSettings.itemRedIronHandleID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("RedironhandleItem");
 		itemPorkApple = new GlowFood(ConfigSettings.itemPorkAppleID, 10, 0.9F, true).setPotionEffect(Potion.resistance.id, 5, 0, 0.5F).setUnlocalizedName("PorkappleItem");
-		gemCandentinium = new GlowItem(ConfigSettings.gemCandentiniumID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("CandentiniumGem");
-		nuggetGlowIron = new GlowItem(ConfigSettings.nuggetGlowIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("glowironNugget");
-		nuggetRedIron = new GlowItem(ConfigSettings.nuggetRedIronID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("redironNugget");
-		itemCalcitePure = new GlowItem(ConfigSettings.itemCalcitePureID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("pureCalciteItem");
-		itemCloakCore = new GlowItem(ConfigSettings.itemCloakCoreID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("cloakCore");
-		itemLightReflector = new GlowItem(ConfigSettings.itemLightReflectorID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("ReflectorItem");
 		itemDarkDoor = new ItemDarkDoor(ConfigSettings.itemDarkDoorID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("darkDoorItem");
-		itemInfernalCoal = new GlowItem(ConfigSettings.itemInfernalCoalID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("InfernalCoalItem");
-		shardBlueGlass = new GlowItem(ConfigSettings.shardBlueGlassID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("blueglassShard");
 		itemBlueFertilizer = new GlowItem(ConfigSettings.itemBlueFertilizerID).setCreativeTab(Reference.CREATIVETAB).setUnlocalizedName("bluefertilizerItem");
-				
+		craftingItems = new CraftingItems(ConfigSettings.craftingItemsID).setCreativeTab(Reference.CREATIVETAB);
+		
 		//Glow Iron Tools
 		EnumToolMaterial EnumToolMaterialGlowiron = EnumHelper.addToolMaterial("Glowiron", 2, 650, 10.0F, 3, 18);
 		itemGlironSword = new ItemGlironSword(ConfigSettings.itemGlironSwordID, EnumToolMaterialGlowiron).setUnlocalizedName("glironswordItem");
@@ -130,7 +102,6 @@ public class GTItems {
 		//Cloaks
 		EnumArmorMaterial EnumArmorMaterialCloak = EnumHelper.addArmorMaterial("Cloak", -1, new int[] {0, 2, 0, 0}, -1);
 		itemCloakInvis = new ItemCloakInvis(ConfigSettings.itemCloakInvisID, EnumArmorMaterialCloak, GlowTools.proxy.addArmor("Cloak"), 1).setUnlocalizedName("CloakInvis");
-		GameRegistry.addRecipe(new ItemStack(itemCloakInvis), new Object[]{"XXX", "XYX", "XXX", 'X', itemLightReflector, 'Y', itemCloakCore});
 		
 	}
 	
@@ -141,8 +112,8 @@ public class GTItems {
 		 */
 		
 		
-		ThaumcraftApi.registerObjectTag(itemGlowMolt.itemID, -1, (new ObjectTags()).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1).add(EnumTag.FIRE, 1));
-		ThaumcraftApi.registerObjectTag(itemRedMolt.itemID, -1, (new ObjectTags()).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2).add(EnumTag.FIRE, 1));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, 2, (new ObjectTags()).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1).add(EnumTag.FIRE, 1));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, 3, (new ObjectTags()).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2).add(EnumTag.FIRE, 1));
 		
 	}
 	

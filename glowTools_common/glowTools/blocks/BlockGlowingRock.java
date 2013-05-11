@@ -1,6 +1,7 @@
 package glowTools.blocks;
 
 import glowTools.GlowTools;
+import glowTools.lib.Reference;
 
 import java.util.List;
 
@@ -29,13 +30,12 @@ public class BlockGlowingRock extends Block {
 	public static final int sandStoneMetaNumber = 0;
 	public static final int cobbleMetaNumber = 1;
 	public static final int stoneMetaNumber = 2;
-	public static final int numberOfMetas = 3;
 	
-	public static final String[] blockNames = {"Glowing Sandstone", "Glowing Cobblestone", "Glowing Stone"};
+	public static final String[] BLOCK_NAMES = {"Glowing Sandstone", "Glowing Cobblestone", "Glowing Stone"};
 	
 	public BlockGlowingRock(int id) {
 		super(id, Material.rock);
-		setCreativeTab(GlowTools.tabGlowTools);
+		setCreativeTab(Reference.CREATIVETAB);
 		setLightValue(1.0F);
 	}
 	
@@ -67,7 +67,7 @@ public class BlockGlowingRock extends Block {
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int id, CreativeTabs tabs, List par3List)
 	{
-		for(int i = 0; i < numberOfMetas; i++)
+		for(int i = 0; i < BLOCK_NAMES.length; i++)
 		{
 			par3List.add(new ItemStack(id, 1, i));
 		}
