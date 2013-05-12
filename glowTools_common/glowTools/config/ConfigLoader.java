@@ -20,6 +20,9 @@ public class ConfigLoader
 		
 		config.load();
 		
+		/**
+		 * Block IDs
+		 */
 		ConfigSettings.blockGlowIronID = config.getBlock("Block of Glowing Iron ID", 3000).getInt();
 		ConfigSettings.blockRedIronID = config.getBlock("Block of Red Iron ID", 3001).getInt();
 		ConfigSettings.blockGlowSandID = config.getBlock("Glowing Sand ID", 3002).getInt();
@@ -40,6 +43,9 @@ public class ConfigLoader
 		ConfigSettings.blockGlowFarmID = config.getBlock("Enriched Farmland ID", 3017).getInt();
 		
 		
+		/**
+		 * Item IDs
+		 */
 		ConfigSettings.itemGlironSwordID = config.getItem("Glowing Iron Sword ID", 4205).getInt();
 		ConfigSettings.itemGlironPickID = config.getItem("Glowing Iron Pickaxe ID", 4206).getInt();
 		ConfigSettings.itemGlironShovelID = config.getItem("Glowing Iron Shovel ID", 4207).getInt();
@@ -73,6 +79,20 @@ public class ConfigLoader
 		//ConfigSettings.j = config.getItem("ID", 4235).getInt();
 		ConfigSettings.itemBlueFertilizerID = config.getItem("Blue Fertilizer ID", 4236).getInt();
 		
+		
+		/**
+		 * Achievement IDs
+		 */
+		ConfigSettings.achievementScepterTipID = config.get("Achievement", "Scepter Tip Achievement ID", 1372).getInt();
+		ConfigSettings.achievementLightScepterID = config.get("Achievement", "Light Scepter Achievement ID", 1373).getInt();
+		ConfigSettings.achievementRegenScepterID = config.get("Achievement", "Regen Scepter Achievement ID", 1374).getInt();
+		ConfigSettings.achievementRegen2ScepterID = config.get("Achievement", "Regen Scepter 2 Achievement ID", 1375).getInt();
+		ConfigSettings.achievementOmniScepterID = config.get("Achievement", "Omni-scepter Achievement ID", 1376).getInt();
+		
+		
+		/**
+		 * Hard Mode
+		 */
 		ConfigSettings.OmniscepterHardMode = config.get("Hard Mode", "Omniscepter Hard Mode", true).getBoolean(true);
 		
 		config.save();

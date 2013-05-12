@@ -9,13 +9,16 @@
 
 package glowTools;
 
+import glowTools.achievement.GTAchievements;
 import glowTools.blocks.GTBlocks;
 import glowTools.config.ConfigLoader;
 import glowTools.config.ConfigSettings;
 import glowTools.entity.EntitySkidglow;
 import glowTools.entity.GTEntities;
 import glowTools.gui.GuiHandler;
+import glowTools.handler.GTCraftingHandler;
 import glowTools.inventory.CreativeTabGlowtools;
+import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 import glowTools.lang.Register;
 import glowTools.lib.Reference;
@@ -34,7 +37,9 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Achievement;
 import net.minecraft.world.World;
+import net.minecraftforge.common.AchievementPage;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -61,8 +66,8 @@ public class GlowTools
 	public static CommonProxyGT proxy;
 	
 	protected static int startEntityId = 300;
-	
     public static CreativeTabs tabGlowTools = new CreativeTabGlowtools("glowTools");
+    public static GTCraftingHandler craftingHandler = new GTCraftingHandler();
     
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
@@ -110,6 +115,14 @@ public class GlowTools
 		
 		//Tile Entities
 		GameRegistry.registerTileEntity(TileEntityGsInfuser.class, "Glowstone Infuser");
+		
+		//Crafting Handler
+		GameRegistry.registerCraftingHandler(craftingHandler);
+		
+		//Achievements
+	    GTAchievements chieves = new GTAchievements();
+		chieves.addAchievementLocalizations();
+		AchievementPage.registerAchievementPage(GTAchievements.pageGlowTools);
 	}
 	
 	@PostInit
@@ -122,12 +135,11 @@ public class GlowTools
 	}
 	
 	
-	public static boolean isOmniScepterHardMode(){
+	public static boolean isOmniScepterHardMode() {
 		return ConfigSettings.OmniscepterHardMode;
 	}
 	
-	public static int getUniqueEntityId()
-	{
+	public static int getUniqueEntityId() {
 		do
 		{startEntityId++;}
 		while(EntityList.getStringFromID(startEntityId) != null);
@@ -135,8 +147,7 @@ public class GlowTools
 		return startEntityId;	
 	}
 	
-    public static void registerEntityEgg(Class <? extends Entity> entity, int primaryColor, int secondaryColor)
-	{
+    public static void registerEntityEgg(Class <? extends Entity> entity, int primaryColor, int secondaryColor) {
 		int id = getUniqueEntityId();
 		EntityList.IDtoClassMapping.put(id, entity);
 		EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));

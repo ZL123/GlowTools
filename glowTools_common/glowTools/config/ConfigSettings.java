@@ -58,6 +58,13 @@ public class ConfigSettings {
 	public static int itemGlironBootsID;
 	public static int itemCloakInvisID;
 	
+	//Achievement IDs
+	public static int achievementLightScepterID;
+	public static int achievementRegenScepterID;
+	public static int achievementScepterTipID;
+	public static int achievementRegen2ScepterID;
+	public static int achievementOmniScepterID;
+	
 	//Hard Mode
 	public static boolean OmniscepterHardMode;
 	
