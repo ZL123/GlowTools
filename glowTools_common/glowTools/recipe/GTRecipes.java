@@ -72,8 +72,7 @@ public class GTRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(GTItems.itemBlueFertilizer, 2), new Object[]{new ItemStack(GTItems.craftingItems, 1, CraftingItems.blueGlassShardMetaNumber), new ItemStack(Item.bucketWater)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.craftingItems, 1, CraftingItems.scepterTipMetaNumber), new Object[]{" X ", "XYX", " X ", 'X', Item.diamond, 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Block.slowSand, 4), new Object[]{new ItemStack(Block.sand), new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowMoltMetaNumber), new ItemStack(GTItems.craftingItems, 1, CraftingItems.redMoltMetaNumber), new ItemStack(Item.bucketLava)});
-		
-		
+			
 		//Armor
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemGlironHelm), new Object[]{"XYX", "X X", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemGlironChest), new Object[]{"X X", "YXY", "XXX", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});

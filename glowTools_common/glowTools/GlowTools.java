@@ -18,7 +18,6 @@ import glowTools.entity.GTEntities;
 import glowTools.gui.GuiHandler;
 import glowTools.handler.GTCraftingHandler;
 import glowTools.inventory.CreativeTabGlowtools;
-import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 import glowTools.lang.Register;
 import glowTools.lib.Reference;
@@ -37,7 +36,6 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.Achievement;
 import net.minecraft.world.World;
 import net.minecraftforge.common.AchievementPage;
 import cpw.mods.fml.common.FMLLog;
@@ -82,7 +80,11 @@ public class GlowTools
 		
 		//Initialize Items' Stuff
 		GTItems.init();
-		
+
+		//Achievements
+		GTAchievements chieves = new GTAchievements();
+		AchievementPage.registerAchievementPage(GTAchievements.pageGlowTools);
+		chieves.addAchievementLocalizations();
 	}
 	
 	@Init
@@ -118,11 +120,6 @@ public class GlowTools
 		
 		//Crafting Handler
 		GameRegistry.registerCraftingHandler(craftingHandler);
-		
-		//Achievements
-	    GTAchievements chieves = new GTAchievements();
-		chieves.addAchievementLocalizations();
-		AchievementPage.registerAchievementPage(GTAchievements.pageGlowTools);
 	}
 	
 	@PostInit

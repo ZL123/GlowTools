@@ -23,7 +23,6 @@ public class GTCraftingHandler implements ICraftingHandler {
 	public void onCrafting(EntityPlayer player, ItemStack stack, IInventory craftMatrix) {
 		
 		if(stack.itemID == GTItems.craftingItems.itemID && stack.getItemDamage() == CraftingItems.scepterTipMetaNumber) {
-
 			player.addStat(GTAchievements.buildScepterTip, 1);
 		}
 		else if(stack.itemID == GTItems.itemScepterLight.itemID) {
@@ -37,6 +36,9 @@ public class GTCraftingHandler implements ICraftingHandler {
 		}
 		else if(stack.itemID == GTItems.itemScepterOmni.itemID) {
 			player.addStat(GTAchievements.buildOmniScepter, 1);
+		}
+		else if(stack.itemID == GTItems.craftingItems.itemID && stack.getItemDamage() == CraftingItems.cloakCoreMetaNumber) {
+			player.addStat(GTAchievements.buildCloakCore, 1);
 		}
 	}
 

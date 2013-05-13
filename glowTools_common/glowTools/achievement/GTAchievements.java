@@ -14,6 +14,7 @@ import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
 import net.minecraftforge.common.AchievementPage;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -21,7 +22,7 @@ public class GTAchievements {
 	
 	public static Achievement buildScepterTip = new Achievement(ConfigSettings.achievementScepterTipID,
 			"buildScepterTip", 0, -2, new ItemStack(GTItems.craftingItems, 1, CraftingItems.scepterTipMetaNumber),
-			(Achievement)null).setIndependent().registerAchievement();
+			AchievementList.diamonds).setIndependent().registerAchievement();
 	public static Achievement buildLightScepter = new Achievement(ConfigSettings.achievementLightScepterID,
 			"buildLightScepter", -2, -4, GTItems.itemScepterLight, buildScepterTip).registerAchievement().setSpecial();
 	public static Achievement buildRegenScepter = new Achievement(ConfigSettings.achievementRegenScepterID,
@@ -30,9 +31,13 @@ public class GTAchievements {
 			"buildRegen2Scepter", -4, -3, GTItems.itemScepterRegen2, buildRegenScepter).registerAchievement().setSpecial();
 	public static Achievement buildOmniScepter = new Achievement(ConfigSettings.achievementOmniScepterID,
 			"buildOmniScepter", -5, -4, GTItems.itemScepterOmni, buildRegen2Scepter).registerAchievement().setSpecial();
+	public static Achievement buildCloakCore = new Achievement(ConfigSettings.achievementCloakCoreID,
+			"buildCloakCore", 4, -2, new ItemStack(GTItems.craftingItems, 1, CraftingItems.cloakCoreMetaNumber),
+			AchievementList.diamonds).setIndependent().registerAchievement();
+	
 	
 	public static AchievementPage pageGlowTools = new AchievementPage("GlowTools", buildScepterTip, buildLightScepter,
-			buildRegenScepter, buildRegen2Scepter, buildOmniScepter);
+			buildRegenScepter, buildRegen2Scepter, buildOmniScepter, buildCloakCore);
 	
     public void addAchievementLocalizations() {
     	addAchievementName("buildScepterTip", "Scepter Tipper");
@@ -49,6 +54,9 @@ public class GTAchievements {
     	
     	addAchievementName("buildOmniScepter", "All-powerful");
     	addAchievementDesc("buildOmniScepter", "Put together the Ultimate Scepter!");
+    	
+    	addAchievementName("buildCloakCore", "Hard Core");
+    	addAchievementDesc("buildCloakCore", "Use some Wool, Candentinium and Diamonds");
     }
 
 	protected void addAchievementName(String name, String localization) {

@@ -4,8 +4,8 @@ Changelog:
     + Dungeon/Pyramid/Mineshaft/Smithy/Stronghold loot!
     + More Fancy Tooltip Stuff!
     + Nether Ore!
-    + Glowing Farmland
-    + Blue Fertilizer
+    = Changed a few item/block IDs and metadatas!
+    + Achievements!
     
     v0.3 (1.5.1)
     + Omni-Scepter :D

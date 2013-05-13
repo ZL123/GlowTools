@@ -64,6 +64,7 @@ public class ConfigSettings {
 	public static int achievementScepterTipID;
 	public static int achievementRegen2ScepterID;
 	public static int achievementOmniScepterID;
+	public static int achievementCloakCoreID;
 	
 	//Hard Mode
 	public static boolean OmniscepterHardMode;
