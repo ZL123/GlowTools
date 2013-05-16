@@ -9,10 +9,12 @@
 
 package glowTools.tileentity;
 
+import glowTools.GlowTools;
 import glowTools.blocks.BlockGlowstoneInfuser;
 import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
 import glowTools.recipe.GsInfuserRecipes;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
@@ -36,6 +38,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
     public int currentItemBurnTime = 0;
     public int infuserCookTime = 0;
     public int currentGlowFuelAmount = 0;
+    public final int glowFuelCapacity = 360;
     private String field_94130_e = "Glowstone Infuser";
 
     public int getSizeInventory()
@@ -193,6 +196,12 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
 
         return this.infuserBurnTime * par1 / this.currentItemBurnTime;
     }
+    
+    @SideOnly(Side.CLIENT)
+    public int getGlowFuelAmountScaled(int par1)
+    {
+    	return this.currentGlowFuelAmount * par1 / glowFuelCapacity;
+    }
 
     public boolean isBurning()
     {
@@ -230,6 +239,25 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
                     }
                 }
             }
+            
+            if (infuserItemStacks[3] != null)
+            {
+            	if (isGlowFuel(infuserItemStacks[3]))
+            	{
+            		if (!(getItemGlowFuelAmount(infuserItemStacks[3]) > glowFuelCapacity - currentGlowFuelAmount))
+            		{
+            			currentGlowFuelAmount += getItemGlowFuelAmount(infuserItemStacks[3]);
+                		if(infuserItemStacks[3].stackSize == 1)
+                		{
+                			infuserItemStacks[3] = null;
+                		}
+                		else
+                		{
+                    		--this.infuserItemStacks[3].stackSize;
+                		}
+            		}
+            	}
+            }
 
             if (this.isBurning() && this.canInfuse())
             {
@@ -259,12 +287,20 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
             this.onInventoryChanged();
         }
     }
-
+    
+    public int getGlowFuelAmount() {
+    	return currentGlowFuelAmount;
+    }
+    
     private boolean canInfuse()
     {
         if (this.infuserItemStacks[0] == null)
         {
             return false;
+        }
+        else if (this.currentGlowFuelAmount < 1)
+        {
+        	return false;
         }
         else
         {
@@ -298,6 +334,8 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
             {
                 infuserItemStacks[0] = null;
             }
+            
+            currentGlowFuelAmount -= 1;
         }
     }
 
@@ -318,15 +356,37 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
             return GameRegistry.getFuelValue(par0ItemStack);
         }
     }
+    
+    public static int getItemGlowFuelAmount(ItemStack stack) {
+    	if (stack == null) {
+    		return 0;
+    	}
+    	else {
+    		int i = stack.getItem().itemID;
+            int j = stack.getItemDamage();
+            Item item = stack.getItem();
+            
+            if (i == GTItems.craftingItems.itemID && j == CraftingItems.glowMoltMetaNumber) return 8;
+            if (i == GTItems.craftingItems.itemID && j == CraftingItems.blazeMoltMetaNumber) return 30;
+            if (i == Block.torchWood.blockID) return 1;
+            return GlowTools.getFuelValue(stack);
+            
+    	}
+    }
 
     public static boolean isItemFuel(ItemStack par0ItemStack)
     {
         return getItemBurnTime(par0ItemStack) > 0;
     }
+    
+    public static boolean isGlowFuel(ItemStack stack)
+    {
+        return getItemGlowFuelAmount(stack) > 0;
+    }
 
     public boolean isUseableByPlayer(EntityPlayer par1EntityPlayer)
     {
-        return this.worldObj.getBlockTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : par1EntityPlayer.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 64.0D;
+        return this.worldObj.getBlockTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : par1EntityPlayer.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 67.5D;
     }
 
     public void openChest() {}
@@ -335,7 +395,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
 
     public boolean isStackValidForSlot(int par1, ItemStack par2ItemStack)
     {
-        return par1 == 2 ? false : (par1 == 1 ? isItemFuel(par2ItemStack) : true);
+        return par1 == 2 ? false : (par1 == 1 ? isItemFuel(par2ItemStack) : (par1 == 3 ? isGlowFuel(par2ItemStack) : true));
     }
     
     public int[] getAccessibleSlotsFromSide(int par1)
@@ -343,13 +403,13 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         return par1 == 0 ? field_102011_e : (par1 == 1 ? field_102010_d : field_102009_f);
     }
 
-    public boolean canInsertItem(int par1, ItemStack par2ItemStack, int par3)
+    public boolean canInsertItem(int slot, ItemStack item, int side)
     {
-        return this.isStackValidForSlot(par1, par2ItemStack);
+        return this.isStackValidForSlot(slot, item);
     }
 
-    public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3)
+    public boolean canExtractItem(int slot, ItemStack item, int side)
     {
-        return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
+        return side != 0 || slot != 1 || item.itemID == Item.bucketEmpty.itemID;
     }
 }

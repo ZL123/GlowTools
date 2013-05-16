@@ -7,8 +7,9 @@
  * @author ZL123
  */
 
-package glowTools.gui;
+package glowTools.handler;
 
+import glowTools.gui.GuiInfuser;
 import glowTools.inventory.ContainerInfuser;
 import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.entity.player.EntityPlayer;

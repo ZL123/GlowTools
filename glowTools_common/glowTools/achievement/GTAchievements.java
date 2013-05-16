@@ -34,10 +34,12 @@ public class GTAchievements {
 	public static Achievement buildCloakCore = new Achievement(ConfigSettings.achievementCloakCoreID,
 			"buildCloakCore", 4, -2, new ItemStack(GTItems.craftingItems, 1, CraftingItems.cloakCoreMetaNumber),
 			AchievementList.diamonds).setIndependent().registerAchievement();
+	public static Achievement buildCloakInvis = new Achievement(ConfigSettings.achievementCloakInvisID,
+			"buildCloakInvis", 6, -3, new ItemStack(GTItems.itemCloakInvis), buildCloakCore).registerAchievement();
 	
 	
 	public static AchievementPage pageGlowTools = new AchievementPage("GlowTools", buildScepterTip, buildLightScepter,
-			buildRegenScepter, buildRegen2Scepter, buildOmniScepter, buildCloakCore);
+			buildRegenScepter, buildRegen2Scepter, buildOmniScepter, buildCloakCore, buildCloakInvis);
 	
     public void addAchievementLocalizations() {
     	addAchievementName("buildScepterTip", "Scepter Tipper");
@@ -47,7 +49,7 @@ public class GTAchievements {
     	addAchievementDesc("buildLightScepter", "Create a Scepter of Light");
     	
     	addAchievementName("buildRegenScepter", "Good for your health");
-    	addAchievementDesc("buildRegenScepter", "Craft a Scepter of Regeneration");
+    	addAchievementDesc("buildRegenScepter", "Make a Scepter of Regeneration");
     	
     	addAchievementName("buildRegen2Scepter", "Quite generous!");
     	addAchievementDesc("buildRegen2Scepter", "Construct a better Regeneration Scepter");
@@ -57,6 +59,10 @@ public class GTAchievements {
     	
     	addAchievementName("buildCloakCore", "Hard Core");
     	addAchievementDesc("buildCloakCore", "Use some Wool, Candentinium and Diamonds");
+    	
+    	addAchievementName("buildCloakInvis", "Time to Ambush!");
+    	addAchievementDesc("buildCloakInvis", "Craft a Cloak of Invisibility");
+    	
     }
 
 	protected void addAchievementName(String name, String localization) {

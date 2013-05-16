@@ -89,6 +89,7 @@ public class ConfigLoader
 		ConfigSettings.achievementRegen2ScepterID = config.get("Achievement", "Regen Scepter 2 Achievement ID", 1375).getInt();
 		ConfigSettings.achievementOmniScepterID = config.get("Achievement", "Omni-scepter Achievement ID", 1376).getInt();
 		ConfigSettings.achievementCloakCoreID = config.get("Achievement", "Cloak Core Achievement ID", 1377).getInt();
+		ConfigSettings.achievementCloakInvisID = config.get("Achievement", "Cloak of Invisibility Achievement", 1378).getInt();
 		
 		
 		/**

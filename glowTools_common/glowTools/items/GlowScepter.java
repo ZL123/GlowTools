@@ -84,30 +84,30 @@ public class GlowScepter extends ItemSword
 	
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
     {
-		if (this.itemID != GTItems.itemScepterLight.itemID)
+		if (this.itemID == GTItems.itemScepterLight.itemID)
 		{
-			return false;
-		}
-		else if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
-        {
-            return false;
-        }
-        else
-        {
-            int var11 = par3World.getBlockId(par4, par5, par6);
-            int var12 = par3World.getBlockId(par4, par5 + 1, par6);
+			if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
+	        {
+	            return false;
+	        }
+	        else
+	        {
+	            int var11 = par3World.getBlockId(par4, par5, par6);
+	            int var12 = par3World.getBlockId(par4, par5 + 1, par6);
 
-            if (par7 == 0 || var12 != 0 || var11 != GTBlocks.blockCandentinium.blockID)
-            {
-                return false;
-            }
-            else
-            {
-                GlowTools.giveItemToPlayer(par2EntityPlayer, new ItemStack(GTItems.itemScepterLight));
-                par3World.setBlockToAir(par4, par5, par6);
-                return true;
-            }
-        }
+	            if (par7 == 0 || var12 != 0 || var11 != GTBlocks.blockCandentinium.blockID)
+	            {
+	                return false;
+	            }
+	            else
+	            {
+	                GlowTools.giveItemToPlayer(par2EntityPlayer, new ItemStack(GTItems.itemScepterLight));
+	                par3World.setBlockToAir(par4, par5, par6);
+	                return true;
+	            }
+	        }
+		}
+		else return false;
 	}
 	
     @SideOnly(Side.CLIENT)

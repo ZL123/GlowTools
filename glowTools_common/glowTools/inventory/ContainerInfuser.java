@@ -111,6 +111,7 @@ public class ContainerInfuser extends Container
         return this.infuser.isUseableByPlayer(par1EntityPlayer);
     }
     
+    @Override
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack itemstack = null;
@@ -145,6 +146,13 @@ public class ContainerInfuser extends Container
                     {
                         return null;
                     }
+                }
+                else if (TileEntityGsInfuser.isGlowFuel(itemstack1))
+                {
+                	if (!this.mergeItemStack(itemstack1, 3, 4, false))
+                	{
+                		return null;
+                	}
                 }
                 else if (par2 >= 4 && par2 < 31)
                 {

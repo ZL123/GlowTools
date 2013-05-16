@@ -15,8 +15,9 @@ import glowTools.config.ConfigLoader;
 import glowTools.config.ConfigSettings;
 import glowTools.entity.EntitySkidglow;
 import glowTools.entity.GTEntities;
-import glowTools.gui.GuiHandler;
 import glowTools.handler.GTCraftingHandler;
+import glowTools.handler.GuiHandler;
+import glowTools.handler.IGlowFuelHandler;
 import glowTools.inventory.CreativeTabGlowtools;
 import glowTools.items.GTItems;
 import glowTools.lang.Register;
@@ -27,7 +28,10 @@ import glowTools.tileentity.TileEntityGsInfuser;
 import glowTools.worldgen.GTChestLoot;
 import glowTools.worldgen.GTGen;
 
+import java.util.List;
 import java.util.logging.Level;
+
+import com.google.common.collect.Lists;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -39,6 +43,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.AchievementPage;
 import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.IFuelHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -66,6 +71,7 @@ public class GlowTools
 	protected static int startEntityId = 300;
     public static CreativeTabs tabGlowTools = new CreativeTabGlowtools("glowTools");
     public static GTCraftingHandler craftingHandler = new GTCraftingHandler();
+    private static List<IGlowFuelHandler> glowFuelHandlers = Lists.newArrayList();
     
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
@@ -155,5 +161,15 @@ public class GlowTools
         if (item == null || item.stackSize <= 0 || world.isRemote) return;
         Entity entity = new EntityItem(world, player.posX, player.posY + 0.5, player.posZ, item.copy());
         world.spawnEntityInWorld(entity);
+    }
+    
+    public static int getFuelValue(ItemStack stack)
+    {
+        int fuelValue = 0;
+        for (IGlowFuelHandler handler : glowFuelHandlers)
+        {
+            fuelValue = Math.max(fuelValue, handler.getBurnTime(stack));
+        }
+        return fuelValue;
     }
 }
