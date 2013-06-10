@@ -50,6 +50,7 @@ public class ConfigSettings {
 	public static int itemScepterRegenID;
 	public static int itemScepterRegen2ID;
 	public static int itemScepterOmniID;
+	public static int itemScepterInfuseID;
 	
 	//Armor IDs
 	public static int itemGlironHelmID;
@@ -69,5 +70,8 @@ public class ConfigSettings {
 	
 	//Hard Mode
 	public static boolean OmniscepterHardMode;
+	
+	//Durability
+	public static int itemScepterInfuseDurability;
 	
 }

@@ -10,6 +10,7 @@
 package glowTools.items;
 
 import glowTools.GlowTools;
+import glowTools.blocks.GTBlocks;
 import glowTools.config.ConfigSettings;
 import glowTools.lib.Reference;
 
@@ -50,6 +51,7 @@ public class GTItems {
 	public static Item itemScepterRegen;
 	public static Item itemScepterRegen2;
 	public static Item itemScepterOmni;
+	public static Item itemScepterInfuse;
 	
 	//Armor
 	public static Item itemGlironHelm;
@@ -89,6 +91,7 @@ public class GTItems {
 		itemScepterRegen = new GlowScepter(ConfigSettings.itemScepterRegenID, EnumToolMaterialScepter).setUnlocalizedName("RegenscepterItem");
 		itemScepterRegen2 = new GlowScepter(ConfigSettings.itemScepterRegen2ID, EnumToolMaterialScepter).setUnlocalizedName("Regenscepter2Item");
 		itemScepterOmni = new GlowScepter(ConfigSettings.itemScepterOmniID, EnumToolMaterialScepter).setUnlocalizedName("OmniscepterItem");
+		itemScepterInfuse = new ItemScepterInfuse(ConfigSettings.itemScepterInfuseID, EnumToolMaterialScepter).setUnlocalizedName("itemScepterInfuse");
 		
 		/** Armor Section (Max Damage before it breaks, Damage Reduction, Enchantability) */
 		
@@ -111,10 +114,24 @@ public class GTItems {
 		 * Thaumcraft Aspects
 		 */
 		
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, CraftingItems.glowMoltMetaNumber, (new ObjectTags()).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1).add(EnumTag.PURE, 1));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, CraftingItems.redMoltMetaNumber, (new ObjectTags()).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2).add(EnumTag.PURE, 1));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, CraftingItems.glowingIronMetaNumber, (new ObjectTags()).add(EnumTag.METAL, 8).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, CraftingItems.redIronMetaNumber, (new ObjectTags()).add(EnumTag.METAL, 8).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, CraftingItems.blazeMoltMetaNumber, (new ObjectTags()).add(EnumTag.FIRE, 1).add(EnumTag.LIGHT, 1).add(EnumTag.MECHANISM, 1).add(EnumTag.POWER, 1));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, CraftingItems.candentiniumMetaNumber, (new ObjectTags()).add(EnumTag.CRYSTAL, 3).add(EnumTag.LIGHT, 4).add(EnumTag.MAGIC, 1));
+		ThaumcraftApi.registerObjectTag(craftingItems.itemID, CraftingItems.blueGlassShardMetaNumber, (new ObjectTags()).add(EnumTag.CRYSTAL, 3).add(EnumTag.FIRE, 4).add(EnumTag.MAGIC, 1));
+		ThaumcraftApi.registerObjectTag(itemPorkApple.itemID, -1, (new ObjectTags()).add(EnumTag.FLESH, 4).add(EnumTag.LIFE, 5));
+		ThaumcraftApi.registerObjectTag(itemGlironHelm.itemID, -1, (new ObjectTags()).add(EnumTag.METAL, 24).add(EnumTag.LIGHT, 19).add(EnumTag.CRYSTAL, 7).add(EnumTag.ARMOR, 3));
+		ThaumcraftApi.registerObjectTag(itemGlironChest.itemID, -1, (new ObjectTags()).add(EnumTag.METAL, 48).add(EnumTag.LIGHT, 28).add(EnumTag.CRYSTAL, 7).add(EnumTag.ARMOR, 8));
+		ThaumcraftApi.registerObjectTag(itemGlironLegs.itemID, -1, (new ObjectTags()).add(EnumTag.METAL, 40).add(EnumTag.LIGHT, 25).add(EnumTag.CRYSTAL, 7).add(EnumTag.ARMOR, 7));
+		ThaumcraftApi.registerObjectTag(itemGlironBoots.itemID, -1, (new ObjectTags()).add(EnumTag.METAL, 32).add(EnumTag.LIGHT, 13).add(EnumTag.ARMOR, 3));
+		ThaumcraftApi.registerObjectTag(itemScepterLight.itemID, -1, (new ObjectTags()).add(EnumTag.FIRE, 16).add(EnumTag.LIGHT, 38).add(EnumTag.MAGIC, 16).add(EnumTag.TOOL, 14).add(EnumTag.VALUABLE, 20));
+		ThaumcraftApi.registerObjectTag(itemScepterRegen.itemID, -1, (new ObjectTags()).add(EnumTag.FIRE, 16).add(EnumTag.HEAL, 38).add(EnumTag.MAGIC, 20).add(EnumTag.TOOL, 14).add(EnumTag.VALUABLE, 36));
+		ThaumcraftApi.registerObjectTag(itemScepterRegen2.itemID, -1, (new ObjectTags()).add(EnumTag.FIRE, 16).add(EnumTag.HEAL, 77).add(EnumTag.MAGIC, 40).add(EnumTag.TOOL, 14).add(EnumTag.VALUABLE, 62));
+		ThaumcraftApi.registerObjectTag(itemScepterOmni.itemID, -1, (new ObjectTags()).add(EnumTag.FIRE, 40).add(EnumTag.CONTROL, 92).add(EnumTag.MAGIC, 92).add(EnumTag.TOOL, 20).add(EnumTag.VALUABLE, 87));
+		ThaumcraftApi.registerObjectTag(itemScepterInfuse.itemID, -1, (new ObjectTags()).add(EnumTag.FIRE, 16).add(EnumTag.LIGHT, 38).add(EnumTag.MAGIC, 16).add(EnumTag.TOOL, 14).add(EnumTag.VALUABLE, 20));
 		
-		ThaumcraftApi.registerObjectTag(craftingItems.itemID, 2, (new ObjectTags()).add(EnumTag.LIGHT, 3).add(EnumTag.VISION, 1).add(EnumTag.FIRE, 1));
-		ThaumcraftApi.registerObjectTag(craftingItems.itemID, 3, (new ObjectTags()).add(EnumTag.MECHANISM, 2).add(EnumTag.POWER, 2).add(EnumTag.FIRE, 1));
 		
 	}
-	
 }

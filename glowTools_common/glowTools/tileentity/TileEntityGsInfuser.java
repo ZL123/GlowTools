@@ -13,6 +13,7 @@ import glowTools.GlowTools;
 import glowTools.blocks.BlockGlowstoneInfuser;
 import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
+import glowTools.lib.Reference;
 import glowTools.recipe.GsInfuserRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -38,7 +39,6 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
     public int currentItemBurnTime = 0;
     public int infuserCookTime = 0;
     public int currentGlowFuelAmount = 0;
-    public final int glowFuelCapacity = 360;
     private String field_94130_e = "Glowstone Infuser";
 
     public int getSizeInventory()
@@ -197,10 +197,9 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         return this.infuserBurnTime * par1 / this.currentItemBurnTime;
     }
     
-    @SideOnly(Side.CLIENT)
     public int getGlowFuelAmountScaled(int par1)
     {
-    	return this.currentGlowFuelAmount * par1 / glowFuelCapacity;
+    	return this.currentGlowFuelAmount * par1 / Reference.GSINFUSER_GLOWFUEL_CAPACITY;
     }
 
     public boolean isBurning()
@@ -244,7 +243,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
             {
             	if (isGlowFuel(infuserItemStacks[3]))
             	{
-            		if (!(getItemGlowFuelAmount(infuserItemStacks[3]) > glowFuelCapacity - currentGlowFuelAmount))
+            		if (!(getItemGlowFuelAmount(infuserItemStacks[3]) > Reference.GSINFUSER_GLOWFUEL_CAPACITY - currentGlowFuelAmount))
             		{
             			currentGlowFuelAmount += getItemGlowFuelAmount(infuserItemStacks[3]);
                 		if(infuserItemStacks[3].stackSize == 1)
@@ -357,6 +356,10 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         }
     }
     
+    /**
+     * Returns how much GlowFuel Power an itemstack possesses.
+     * @param stack
+     */
     public static int getItemGlowFuelAmount(ItemStack stack) {
     	if (stack == null) {
     		return 0;
@@ -366,9 +369,9 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
             int j = stack.getItemDamage();
             Item item = stack.getItem();
             
-            if (i == GTItems.craftingItems.itemID && j == CraftingItems.glowMoltMetaNumber) return 8;
-            if (i == GTItems.craftingItems.itemID && j == CraftingItems.blazeMoltMetaNumber) return 30;
-            if (i == Block.torchWood.blockID) return 1;
+            if (i == GTItems.craftingItems.itemID && j == CraftingItems.glowMoltMetaNumber) return Reference.FUELAMOUNT_GLOWMOLT;
+            if (i == GTItems.craftingItems.itemID && j == CraftingItems.blazeMoltMetaNumber) return Reference.FUELAMOUNT_BLAZEMOLT;
+            if (i == Block.torchWood.blockID) return Reference.FUELAMOUNT_TORCH;
             return GlowTools.getFuelValue(stack);
             
     	}
@@ -379,6 +382,10 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         return getItemBurnTime(par0ItemStack) > 0;
     }
     
+    /**
+     * True if the Itemstack passed works as GlowFuel.
+     * @param stack
+     */
     public static boolean isGlowFuel(ItemStack stack)
     {
         return getItemGlowFuelAmount(stack) > 0;

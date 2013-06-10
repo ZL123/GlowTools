@@ -86,6 +86,7 @@ public class Register {
 		LanguageRegistry.addName(GTItems.itemScepterRegen, "Scepter of Regeneration");
 		LanguageRegistry.addName(GTItems.itemScepterRegen2, "Scepter of Regeneration Mk. II");
 		LanguageRegistry.addName(GTItems.itemScepterOmni, "Omni-Scepter");
+		LanguageRegistry.addName(GTItems.itemScepterInfuse, "Scepter of Infusion");
 		
 		
 		//Armor

@@ -9,7 +9,9 @@
 
 package glowTools.tick;
 
+import glowTools.gui.GuiInfuser;
 import glowTools.lib.Reference;
+import glowTools.tileentity.TileEntityGsInfuser;
 
 import java.util.EnumSet;
 
@@ -20,6 +22,9 @@ import cpw.mods.fml.common.TickType;
 
 public class ClientTickHandler implements ITickHandler
 {
+	private GuiInfuser guiGSInfuser;
+	private TileEntityGsInfuser teGSInfuser;
+	
     @Override
     public void tickStart(EnumSet<TickType> type, Object... tickData) {}
 
@@ -52,7 +57,6 @@ public class ClientTickHandler implements ITickHandler
     public String getLabel() {
     	return Reference.MODID + ": " + getClass().getSimpleName();
     }
-
 
     public void onRenderTick() {}
 

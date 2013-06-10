@@ -132,6 +132,7 @@ public class GlowTools
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		GTItems.postInit();
+		GTBlocks.postInit();
 		
 		
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Finished Loading!", "");

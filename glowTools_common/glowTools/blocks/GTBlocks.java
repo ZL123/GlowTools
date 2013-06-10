@@ -18,6 +18,9 @@ import java.util.logging.Level;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
+import api.EnumTag;
+import api.ObjectTags;
+import api.ThaumcraftApi;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -94,4 +97,14 @@ public class GTBlocks {
 		
 	}
 	
+	public static void postInit() {
+		
+		/**
+		 * Thaumcraft Aspects
+		 */
+		
+		ThaumcraftApi.registerObjectTag(blockGlowstoneInfuser.blockID, -1, (new ObjectTags()).add(EnumTag.LIGHT, 32).add(EnumTag.ROCK, 8).add(EnumTag.FIRE, 8));
+	
+	
+	}
 }

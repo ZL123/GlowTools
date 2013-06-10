@@ -78,6 +78,7 @@ public class ConfigLoader
 		//ConfigSettings.i = config.getItem("ID", 4234).getInt();
 		//ConfigSettings.j = config.getItem("ID", 4235).getInt();
 		ConfigSettings.itemBlueFertilizerID = config.getItem("Blue Fertilizer ID", 4236).getInt();
+		ConfigSettings.itemScepterInfuseID = config.getItem("Scepter of Infusion ID", 4237).getInt();
 		
 		
 		/**
@@ -96,6 +97,13 @@ public class ConfigLoader
 		 * Hard Mode
 		 */
 		ConfigSettings.OmniscepterHardMode = config.get("Hard Mode", "Omniscepter Hard Mode", true).getBoolean(true);
+		
+		
+		/**
+		 * Durability
+		 */
+		
+		ConfigSettings.itemScepterInfuseDurability = config.get("Durability", "Scepter of Infusion", 32).getInt();
 		
 		config.save();
 	}

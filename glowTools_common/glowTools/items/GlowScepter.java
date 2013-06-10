@@ -11,25 +11,28 @@ package glowTools.items;
 
 import glowTools.GlowTools;
 import glowTools.blocks.GTBlocks;
-import glowTools.config.ConfigSettings;
 
 import java.util.List;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
+import net.minecraft.item.ItemTool;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GlowScepter extends ItemSword
+public class GlowScepter extends ItemTool
 {
+	public static final Block[] effectiveAgainst = new Block[] {};
+	public static final int dmgVsEntity = 0;
+	
 	public GlowScepter(int i, EnumToolMaterial par2EnumToolMaterial)
 	{
-		super(i, par2EnumToolMaterial);
+		super(i, dmgVsEntity, par2EnumToolMaterial, effectiveAgainst);
 		this.setCreativeTab(GlowTools.tabGlowTools);
 	}
 	
@@ -42,7 +45,7 @@ public class GlowScepter extends ItemSword
         	par3List.add("staff bequeathen to thee");
         	par3List.add("as thine righteous guardian");
         	par3List.add("and protector to the fullness");
-        	par3List.add("of all thine kingdom.");
+        	par3List.add("of all thine Kingdom.");
         }
         else if(this.itemID == GTItems.itemScepterRegen.itemID)
         {
@@ -79,7 +82,7 @@ public class GlowScepter extends ItemSword
 		{
 			return EnumChatFormatting.GREEN + super.getItemDisplayName(stack);
 		}
-		else return null;
+		else return super.getItemDisplayName(stack);
 	}
 	
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)

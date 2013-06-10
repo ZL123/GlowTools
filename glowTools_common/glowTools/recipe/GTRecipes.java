@@ -72,7 +72,8 @@ public class GTRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(GTItems.itemBlueFertilizer, 2), new Object[]{new ItemStack(GTItems.craftingItems, 1, CraftingItems.blueGlassShardMetaNumber), new ItemStack(Item.bucketWater)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.craftingItems, 1, CraftingItems.scepterTipMetaNumber), new Object[]{" X ", "XYX", " X ", 'X', Item.diamond, 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Block.slowSand, 4), new Object[]{new ItemStack(Block.sand), new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowMoltMetaNumber), new ItemStack(GTItems.craftingItems, 1, CraftingItems.redMoltMetaNumber), new ItemStack(Item.bucketLava)});
-			
+		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowstoneInfuser), new Object[]{"XXX", "YZY", "XXX", Character.valueOf('X'), Block.glowStone, Character.valueOf('Y'), new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber), Character.valueOf('Z'), Block.furnaceIdle});
+		
 		//Armor
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemGlironHelm), new Object[]{"XYX", "X X", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemGlironChest), new Object[]{"X X", "YXY", "XXX", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});
@@ -94,6 +95,8 @@ public class GTRecipes {
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemScepterOmni), new Object[]{getOmniScepterLine(1), getOmniScepterLine(2), getOmniScepterLine(3), 'A', new ItemStack(Block.blockDiamond), 'B',
 			new ItemStack(Block.blockEmerald), 'C', new ItemStack(GTItems.itemScepterLight), 'D', new ItemStack(GTItems.itemCloakInvis), 'E', new ItemStack(GTItems.itemScepterRegen2), 'F', new ItemStack(Item.diamond),
 			'G', new ItemStack(Item.emerald), 'H', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});
+		GameRegistry.addRecipe(new ItemStack(GTItems.itemScepterInfuse), new Object[]{" T ", " R ", "BIB", Character.valueOf('T'), new ItemStack(GTItems.craftingItems, 1, CraftingItems.scepterTipMetaNumber), Character.valueOf('R'), Item.blazeRod, Character.valueOf('B'),
+			new ItemStack(GTItems.craftingItems.itemID, 1, CraftingItems.blazeMoltMetaNumber), Character.valueOf('I'), GTBlocks.blockGlowstoneInfuser});
 		
 		//Cloaks
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemCloakInvis), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.lightReflectorMetaNumber), 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.cloakCoreMetaNumber)});
@@ -123,16 +126,19 @@ public class GTRecipes {
 	}
 	
 	/**
-	 * 'A' = Block of Diamond |
-	 * 'B' = Block of Emerald |
-	 * 'C' = Scepter of Light |
-	 * 'D' = Cloak of Invisibility |
-	 * 'E' = Scepter of Regeneration Mk. II |
-	 * 'F' = Diamond |
-	 * 'G' = Emerald |
+	 * Gets a line from the Omniscepter crafting recipe.
+	 */
+	
+	/* 'A' = Block of Diamond
+	 * 'B' = Block of Emerald
+	 * 'C' = Scepter of Light
+	 * 'D' = Cloak of Invisibility
+	 * 'E' = Scepter of Regeneration Mk. II
+	 * 'F' = Diamond
+	 * 'G' = Emerald
 	 * 'H' = Candentinium Shard
 	 */
-	public static String getOmniScepterLine(int ln){
+	public static String getOmniScepterLine(int ln) {
 		switch (ln) {
 		case 1:
 			return GlowTools.isOmniScepterHardMode() ? "AAA" : "FHF";
