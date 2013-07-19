@@ -33,7 +33,7 @@ public class ConfigLoader
 		ConfigSettings.blockCandentiniumID = config.getBlock("Block of Candentinium ID", 3007).getInt();
 		ConfigSettings.blockGlowGrassID = config.getBlock("Glowing Grass ID", 3008).getInt();
 		ConfigSettings.blockGlowDirtID = config.getBlock("Glowing Dirt ID", 3009).getInt();
-		//ConfigSettings.x = config.getBlock("ID", 3010).getInt();
+		ConfigSettings.blockGlowingWoodID = config.getBlock("Glowing Wood Blocks", 3010).getInt();
 		//ConfigSettings.y = config.getBlock("ID", 3011).getInt();
 		ConfigSettings.blockFlowStoneID = config.getBlock("Calcite ID", 3012).getInt();
 		ConfigSettings.blockDoorDarkID = config.getBlock("Dark Door Block ID", 3013).getInt();

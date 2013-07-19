@@ -18,9 +18,6 @@ import java.util.logging.Level;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
-import api.EnumTag;
-import api.ObjectTags;
-import api.ThaumcraftApi;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -41,8 +38,8 @@ public class GTBlocks {
 	public static Block blockGlowstoneInfuser;
 	public static Block blockGlowstoneInfuserActive;
 	public static Block oreBlueGlass;
-	public static Block blockGlowFarm;
 	public static Block blockGlowingRock;
+	public static Block blockGlowingWood;
 	
 	public static void init(){
 		
@@ -59,11 +56,11 @@ public class GTBlocks {
 		blockGlowDirt = new BlockGlowDirtBlock(ConfigSettings.blockGlowDirtID).setUnlocalizedName("glowdirtBlock");
 		blockFlowStone = new BlockFlowStoneBlock(ConfigSettings.blockFlowStoneID).setUnlocalizedName("FlowStoneBlock");
 		blockDoorDark = new BlockDarkDoor(ConfigSettings.blockDoorDarkID).setUnlocalizedName("DarkDoor");
-		blockGlowstoneInfuser = new BlockGlowstoneInfuser(ConfigSettings.blockGlowstoneInfuserID, false).setLightValue(0.2F).setUnlocalizedName("GlowstoneInfuser");
+		blockGlowstoneInfuser = new BlockGlowstoneInfuser(ConfigSettings.blockGlowstoneInfuserID, false).setLightValue(0.2F).setUnlocalizedName("GlowstoneInfuser").setCreativeTab(GlowTools.tabGlowTools);
 		blockGlowstoneInfuserActive = new BlockGlowstoneInfuser(ConfigSettings.blockGlowstoneInfuserActiveID, true).setLightValue(0.3F).setUnlocalizedName("GlowstoneInfuserActive");
 		oreBlueGlass = new BlockBlueGlassOre(ConfigSettings.oreBlueGlassID).setHardness(1.0F).setResistance(3.0F).setLightValue(0.15F).setUnlocalizedName("BlueGlassOre");
-		blockGlowFarm = new BlockGlowFarmland(ConfigSettings.blockGlowFarmID).setHardness(0.6F).setUnlocalizedName("GlowFarmBlock");
-		blockGlowingRock = new BlockGlowingRock(ConfigSettings.blockGlowingRockID).setHardness(0.8F).setResistance(10.0F).setUnlocalizedName("glowBlock");
+		blockGlowingRock = new BlockGlowingRock(ConfigSettings.blockGlowingRockID).setHardness(1.2F).setResistance(10.0F).setUnlocalizedName("glowRock");
+		blockGlowingWood = new BlockGlowingWood(ConfigSettings.blockGlowingWoodID).setHardness(2.0F).setUnlocalizedName("glowWood");
 		
 		GameRegistry.registerBlock(blockGlowIron, "ZL123_glowironBlock");
 		GameRegistry.registerBlock(blockRedIron, "ZL123_redironBlock");
@@ -79,8 +76,8 @@ public class GTBlocks {
 		GameRegistry.registerBlock(blockGlowstoneInfuser, "ZL123_glowstoneInfuser");
 		GameRegistry.registerBlock(blockGlowstoneInfuserActive, "ZL123_glowstoneInfuserActive");
 		GameRegistry.registerBlock(oreBlueGlass, "ZL123_blueglassOre");
-		GameRegistry.registerBlock(blockGlowFarm, "ZL123_glowFarmland");
 		GameRegistry.registerBlock(blockGlowingRock, ItemBlockGlowingRock.class, "ZL123_blockGlowing");
+		GameRegistry.registerBlock(blockGlowingWood, ItemBlockGlowingWood.class, "ZL123_blockGlowingWood");
 		
 		MinecraftForge.setBlockHarvestLevel(blockGlowIron, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(blockRedIron, "pickaxe", 1);
@@ -94,17 +91,9 @@ public class GTBlocks {
 		MinecraftForge.setBlockHarvestLevel(oreBlueGlass, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(blockGlowingRock, "pickaxe", 0);
 		
-		
 	}
 	
 	public static void postInit() {
 		
-		/**
-		 * Thaumcraft Aspects
-		 */
-		
-		ThaumcraftApi.registerObjectTag(blockGlowstoneInfuser.blockID, -1, (new ObjectTags()).add(EnumTag.LIGHT, 32).add(EnumTag.ROCK, 8).add(EnumTag.FIRE, 8));
-	
-	
 	}
 }

@@ -10,6 +10,7 @@
 package glowTools.recipe;
 
 import glowTools.blocks.BlockGlowingRock;
+import glowTools.blocks.BlockGlowingWood;
 import glowTools.blocks.GTBlocks;
 import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
@@ -48,6 +49,14 @@ public class GsInfuserRecipes
         this.addInfusing(Block.sandStone.blockID, 0, new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), normalxp);
         this.addInfusing(Item.ingotIron.itemID, new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), normalxp);
         this.addInfusing(Block.blockIron.blockID, new ItemStack(GTBlocks.blockGlowIron), normalxp);
+        this.addInfusing(Block.planks.blockID, 0, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankOakMetaNumber), normalxp);
+        this.addInfusing(Block.planks.blockID, 1, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankSpruceMetaNumber), normalxp);
+        this.addInfusing(Block.planks.blockID, 2, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankBirchMetaNumber), normalxp);
+        this.addInfusing(Block.planks.blockID, 3, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankJungleMetaNumber), normalxp);
+        this.addInfusing(Block.wood.blockID, 0, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logOakMetaNumber), normalxp);
+        this.addInfusing(Block.wood.blockID, 1, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logSpruceMetaNumber), normalxp);
+        this.addInfusing(Block.wood.blockID, 2, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logBirchMetaNumber), normalxp);
+        this.addInfusing(Block.wood.blockID, 3, new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logJungleMetaNumber), normalxp);
     }
 
     public void addInfusing(int id, ItemStack stack, float xp)

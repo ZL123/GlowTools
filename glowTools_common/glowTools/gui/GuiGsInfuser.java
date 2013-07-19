@@ -9,10 +9,12 @@
 
 package glowTools.gui;
 
-import glowTools.inventory.ContainerInfuser;
+import glowTools.handler.GTPacketHandler;
+import glowTools.inventory.ContainerGsInfuser;
 import glowTools.lib.Reference;
 import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
@@ -22,20 +24,19 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiInfuser extends GuiContainer
+public class GuiGsInfuser extends GuiContainer
 {
     private TileEntityGsInfuser infuserInventory;
     
-    public GuiInfuser(InventoryPlayer par1InventoryPlayer, TileEntityGsInfuser par2TileEntityInfuser)
+    public GuiGsInfuser(InventoryPlayer par1InventoryPlayer, TileEntityGsInfuser par2TileEntityInfuser)
     {
-        super(new ContainerInfuser(par1InventoryPlayer, par2TileEntityInfuser));
+        super(new ContainerGsInfuser(par1InventoryPlayer, par2TileEntityInfuser));
         this.infuserInventory = par2TileEntityInfuser;
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
         String s = this.infuserInventory.isInvNameLocalized() ? this.infuserInventory.getInvName() : StatCollector.translateToLocal(this.infuserInventory.getInvName());
-        fontRenderer.drawString(Integer.toString(this.infuserInventory.getGlowFuelAmount()), this.xSize / 4 - 1 - this.fontRenderer.getStringWidth(Integer.toString(this.infuserInventory.getGlowFuelAmount())) / 2, this.ySize / 3, 0xffff33);
         this.fontRenderer.drawString(s, this.xSize / 2 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }

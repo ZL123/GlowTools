@@ -10,6 +10,7 @@
 package glowTools.blocks;
 
 import glowTools.GlowTools;
+import glowTools.inventory.ContainerGsInfuser;
 import glowTools.tileentity.TileEntityGsInfuser;
 
 import java.util.Random;
@@ -34,7 +35,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockGlowstoneInfuser extends BlockContainer
 {
     private final Random infuserRand = new Random();
-
     private final boolean isActive;
 
     private static boolean keepInfuserInventory = false;
@@ -115,6 +115,7 @@ public class BlockGlowstoneInfuser extends BlockContainer
                     return false;
             }
         player.openGui(GlowTools.instance, 1, world, x, y, z);
+        
         return true;
     }
 

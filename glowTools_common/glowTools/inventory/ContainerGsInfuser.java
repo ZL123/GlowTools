@@ -9,6 +9,7 @@
 
 package glowTools.inventory;
 
+import glowTools.gui.GuiGsInfuser;
 import glowTools.recipe.GsInfuserRecipes;
 import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,14 +21,16 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ContainerInfuser extends Container
+public class ContainerGsInfuser extends Container
 {
     private TileEntityGsInfuser infuser;
+    private GuiGsInfuser gui;
     private int lastCookTime = 0;
     private int lastBurnTime = 0;
     private int lastItemBurnTime = 0;
+    private int lastGlowFuelAmount = 0;
 
-    public ContainerInfuser(InventoryPlayer par1InventoryPlayer, TileEntityGsInfuser par2TileEntityGsInfuser)
+    public ContainerGsInfuser(InventoryPlayer par1InventoryPlayer, TileEntityGsInfuser par2TileEntityGsInfuser)
     {
         this.infuser = par2TileEntityGsInfuser;
         this.addSlotToContainer(new Slot(par2TileEntityGsInfuser, 0, 59, 19));
@@ -56,6 +59,7 @@ public class ContainerInfuser extends Container
         par1ICrafting.sendProgressBarUpdate(this, 0, this.infuser.infuserCookTime);
         par1ICrafting.sendProgressBarUpdate(this, 1, this.infuser.infuserBurnTime);
         par1ICrafting.sendProgressBarUpdate(this, 2, this.infuser.currentItemBurnTime);
+        par1ICrafting.sendProgressBarUpdate(this, 3, this.infuser.currentGlowFuelAmount);
     }
 
     public void detectAndSendChanges()
@@ -80,11 +84,18 @@ public class ContainerInfuser extends Container
             {
                 icrafting.sendProgressBarUpdate(this, 2, this.infuser.currentItemBurnTime);
             }
+            
+            if (this.lastGlowFuelAmount != this.infuser.currentGlowFuelAmount)
+            {
+            	icrafting.sendProgressBarUpdate(this, 3, this.infuser.currentGlowFuelAmount);
+            }
+            
         }
-
+        
         this.lastCookTime = this.infuser.infuserCookTime;
         this.lastBurnTime = this.infuser.infuserBurnTime;
         this.lastItemBurnTime = this.infuser.currentItemBurnTime;
+        this.lastGlowFuelAmount = this.infuser.currentGlowFuelAmount;
     }
 
     @SideOnly(Side.CLIENT)
@@ -103,6 +114,11 @@ public class ContainerInfuser extends Container
         if (par1 == 2)
         {
             this.infuser.currentItemBurnTime = par2;
+        }
+        
+        if (par1 == 3)
+        {
+        	this.infuser.currentItemBurnTime = par2;
         }
     }
 

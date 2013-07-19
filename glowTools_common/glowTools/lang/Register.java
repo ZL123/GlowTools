@@ -10,6 +10,7 @@
 package glowTools.lang;
 
 import glowTools.blocks.BlockGlowingRock;
+import glowTools.blocks.BlockGlowingWood;
 import glowTools.blocks.GTBlocks;
 import glowTools.items.CraftingItems;
 import glowTools.items.GTItems;
@@ -32,21 +33,29 @@ public class Register {
 		LanguageRegistry.addName(GTBlocks.blockGlowDirt, "Glowing Dirt Block");
 		LanguageRegistry.addName(GTBlocks.blockFlowStone, "Calcite");
 		LanguageRegistry.addName(GTBlocks.blockDoorDark, "Dark Door");
-		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuser, "Glowstone Infuser (WIP)");
-		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuserActive, "Glowstone Infuser (WIP)");
+		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuser, "Glowstone Infuser");
+		LanguageRegistry.addName(GTBlocks.blockGlowstoneInfuserActive, "Glowstone Infuser");
 		LanguageRegistry.addName(GTBlocks.oreBlueGlass, "Glassy Blue Ore");
 		
 		
 		//Metadata Blocks
-		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), "Glowing Sandstone");
-		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.cobbleMetaNumber), "Glowing Cobblestone");
-		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.stoneMetaNumber), "Glowing Stone");
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), BlockGlowingRock.BLOCK_NAMES[BlockGlowingRock.sandStoneMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.cobbleMetaNumber), BlockGlowingRock.BLOCK_NAMES[BlockGlowingRock.cobbleMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.stoneMetaNumber), BlockGlowingRock.BLOCK_NAMES[BlockGlowingRock.stoneMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankOakMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.plankOakMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankBirchMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.plankBirchMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankSpruceMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.plankSpruceMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.plankJungleMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.plankJungleMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logOakMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.logOakMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logBirchMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.logBirchMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logSpruceMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.logSpruceMetaNumber]);
+		LanguageRegistry.addName(new ItemStack(GTBlocks.blockGlowingWood, 1, BlockGlowingWood.logJungleMetaNumber), BlockGlowingWood.BLOCK_NAMES[BlockGlowingWood.logJungleMetaNumber]);
 		
 		
 		//Items
 		LanguageRegistry.addName(GTItems.itemPorkApple, "Porkchop with Applesauce");
 		LanguageRegistry.addName(GTItems.itemDarkDoor, "Dark Door");
-		LanguageRegistry.addName(GTItems.itemBlueFertilizer, "Blue Fertilizer");
+		LanguageRegistry.addName(GTItems.itemBlueFertilizer, "Glassy Blue Shard");
 		
 		
 		//Metadata Items

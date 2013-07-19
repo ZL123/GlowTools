@@ -45,17 +45,9 @@ public class GTRecipes {
 		GameRegistry.addRecipe(new ItemStack(GTItems.craftingItems, 4, CraftingItems.redIronMetaNumber), new Object[]{"X", 'X', GTBlocks.blockRedIron});
 		GameRegistry.addShapelessRecipe(new ItemStack(GTItems.craftingItems, 1, CraftingItems.redIronHandleMetaNumber), new Object[]{new ItemStack(GTItems.craftingItems, 1, CraftingItems.blazeMoltMetaNumber), new ItemStack(Item.stick)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.itemPorkApple, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Item.porkCooked), 'Y', new ItemStack(Item.appleRed)});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowSand, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.sand), 'Y', new ItemStack(Block.glowStone)});
 		GameRegistry.addSmelting(GTBlocks.oreCandentinium.blockID, new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber), 0.7F);
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowGlass, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.glass), 'Y', new ItemStack(Block.glowStone)});
-		GameRegistry.addSmelting(GTBlocks.blockGlowSand.blockID, new ItemStack(GTBlocks.blockGlowGlass), 0.4F);
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber), new Object[]{"XX", "XX", 'X', GTBlocks.blockGlowSand});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 8, BlockGlowingRock.sandStoneMetaNumber), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.sandStone), 'Y', new ItemStack(Block.glowStone)});
 		GameRegistry.addRecipe(new ItemStack(Block.sand, 4), new Object[]{"X", 'X', new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.sandStoneMetaNumber)});
 		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockCandentinium), new Object[]{"XXX", "XXX", "XXX", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.candentiniumMetaNumber)});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowDirt, 8), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.dirt), 'Y', new ItemStack(Block.glowStone)});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.cobbleMetaNumber), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.cobblestone), 'Y', new ItemStack(Block.glowStone)});
-		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowingRock, 1, BlockGlowingRock.stoneMetaNumber), new Object[]{"XXX", "XYX", "XXX", 'X', new ItemStack(Block.stone), 'Y', new ItemStack(Block.glowStone)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), new Object[]{"XXX", "XXX", "XXX", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.nuggetGlowIronMetaNumber)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.craftingItems, 1, CraftingItems.redIronMetaNumber), new Object[]{"XXX", "XXX", "XXX", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.nuggetRedIronMetaNumber)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.craftingItems, 9, CraftingItems.nuggetGlowIronMetaNumber), new Object[]{"X", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber)});

@@ -16,11 +16,12 @@ public class Reference {
 	
 	public static final String MODID = "ZL123_GlowTools";
 	public static final String MODNAME = "GlowTools";
-	public static final String VERSION = "0.3a";
+	public static final String VERSION = "0.4";
 	public static final String CHANNELNAME = MODID;
 	public static final String SERVERPROXY = "glowTools.proxy.CommonProxyGT";
 	public static final String CLIENTPROXY = "glowTools.proxy.ClientProxyGT";
 	public static final String GSINFUSERGUI = "/mods/glowTools/textures/gui/gui.gsInfuser.png";
+	public static final String PACKETCHANNEL_GT = "GTPacket";
 	
 	public static final int ENTITYID_SKIDGLOW = 5;
 	public static final int FUELAMOUNT_GLOWMOLT = 8;

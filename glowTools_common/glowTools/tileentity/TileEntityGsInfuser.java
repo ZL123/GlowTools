@@ -39,6 +39,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
     public int currentItemBurnTime = 0;
     public int infuserCookTime = 0;
     public int currentGlowFuelAmount = 0;
+	private BlockGlowstoneInfuser blockinf;
     private String field_94130_e = "Glowstone Infuser";
 
     public int getSizeInventory()
@@ -197,11 +198,12 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         return this.infuserBurnTime * par1 / this.currentItemBurnTime;
     }
     
+    @SideOnly(Side.CLIENT)
     public int getGlowFuelAmountScaled(int par1)
     {
     	return this.currentGlowFuelAmount * par1 / Reference.GSINFUSER_GLOWFUEL_CAPACITY;
     }
-
+    
     public boolean isBurning()
     {
         return this.infuserBurnTime > 0;
@@ -246,12 +248,10 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
             		if (!(getItemGlowFuelAmount(infuserItemStacks[3]) > Reference.GSINFUSER_GLOWFUEL_CAPACITY - currentGlowFuelAmount))
             		{
             			currentGlowFuelAmount += getItemGlowFuelAmount(infuserItemStacks[3]);
-                		if(infuserItemStacks[3].stackSize == 1)
-                		{
+                		if(infuserItemStacks[3].stackSize == 1) {
                 			infuserItemStacks[3] = null;
                 		}
-                		else
-                		{
+                		else {
                     		--this.infuserItemStacks[3].stackSize;
                 		}
             		}
@@ -287,6 +287,7 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
         }
     }
     
+    @SideOnly(Side.CLIENT)
     public int getGlowFuelAmount() {
     	return currentGlowFuelAmount;
     }

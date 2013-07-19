@@ -28,6 +28,7 @@ public class ConfigSettings {
 	public static int oreBlueGlassID;
 	public static int blockGlowFarmID;
 	public static int blockGlowingRockID;
+	public static int blockGlowingWoodID;
 	
 	//Item IDs
 	public static int itemPorkAppleID;

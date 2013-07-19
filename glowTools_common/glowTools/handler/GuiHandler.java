@@ -9,8 +9,8 @@
 
 package glowTools.handler;
 
-import glowTools.gui.GuiInfuser;
-import glowTools.inventory.ContainerInfuser;
+import glowTools.gui.GuiGsInfuser;
+import glowTools.inventory.ContainerGsInfuser;
 import glowTools.tileentity.TileEntityGsInfuser;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -24,7 +24,7 @@ public class GuiHandler implements IGuiHandler
                     int x, int y, int z) {
             TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
             if(tileEntity instanceof TileEntityGsInfuser){
-                    return new ContainerInfuser(player.inventory, (TileEntityGsInfuser) tileEntity);
+                    return new ContainerGsInfuser(player.inventory, (TileEntityGsInfuser) tileEntity);
             }
             return null;
     }
@@ -34,7 +34,7 @@ public class GuiHandler implements IGuiHandler
                     int x, int y, int z) {
             TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
             if(tileEntity instanceof TileEntityGsInfuser){
-                    return new GuiInfuser(player.inventory, (TileEntityGsInfuser) tileEntity);
+                    return new GuiGsInfuser(player.inventory, (TileEntityGsInfuser) tileEntity);
             }
             return null;
     }

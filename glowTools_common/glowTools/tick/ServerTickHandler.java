@@ -11,16 +11,14 @@ package glowTools.tick;
 
 import glowTools.items.GTItems;
 import glowTools.lib.Reference;
+import glowTools.tileentity.TileEntityGsInfuser;
 
 import java.util.EnumSet;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.world.World;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 

@@ -9,7 +9,6 @@
 
 package glowTools.tick;
 
-import glowTools.gui.GuiInfuser;
 import glowTools.lib.Reference;
 import glowTools.tileentity.TileEntityGsInfuser;
 
@@ -21,10 +20,7 @@ import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 
 public class ClientTickHandler implements ITickHandler
-{
-	private GuiInfuser guiGSInfuser;
-	private TileEntityGsInfuser teGSInfuser;
-	
+{	
     @Override
     public void tickStart(EnumSet<TickType> type, Object... tickData) {}
 

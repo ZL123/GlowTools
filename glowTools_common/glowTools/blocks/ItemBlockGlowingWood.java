@@ -12,11 +12,12 @@ package glowTools.blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockGlowingRock extends ItemBlock {
+public class ItemBlockGlowingWood extends ItemBlock {
 	
-	private final static String[] subNames = {"sandstone", "cobblestone", "stone"};
+	private final static String[] subNames = {"plankOak", "logOak", "plankSpruce",
+		"logSpruce", "plankBirch", "logBirch",  "plankJungle", "logJungle"};
 	
-	public ItemBlockGlowingRock(int id) {
+	public ItemBlockGlowingWood(int id) {
 		super(id);
 		setHasSubtypes(true);
 	}

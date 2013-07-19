@@ -16,6 +16,7 @@ import glowTools.config.ConfigSettings;
 import glowTools.entity.EntitySkidglow;
 import glowTools.entity.GTEntities;
 import glowTools.handler.GTCraftingHandler;
+import glowTools.handler.GTPacketHandler;
 import glowTools.handler.GuiHandler;
 import glowTools.handler.IGlowFuelHandler;
 import glowTools.inventory.CreativeTabGlowtools;
@@ -31,8 +32,6 @@ import glowTools.worldgen.GTGen;
 import java.util.List;
 import java.util.logging.Level;
 
-import com.google.common.collect.Lists;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
@@ -42,8 +41,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.AchievementPage;
+
+import com.google.common.collect.Lists;
+
 import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.common.IFuelHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -58,7 +59,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = {Reference.PACKETCHANNEL_GT}, packetHandler = GTPacketHandler.class)
 
 public class GlowTools
 {
@@ -81,11 +82,11 @@ public class GlowTools
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "Omniscepter Hard Mode is set to %b.", ConfigSettings.OmniscepterHardMode);
 		instance = this;
 		
-		//Initialize Blocks' Stuff
-		GTBlocks.init();
-		
 		//Initialize Items' Stuff
 		GTItems.init();
+		
+		//Initialize Blocks' Stuff
+		GTBlocks.init();
 
 		//Achievements
 		GTAchievements chieves = new GTAchievements();

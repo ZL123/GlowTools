@@ -53,6 +53,9 @@ public class WorldGenGlowOres implements IWorldGenerator
 			
 		public void generateOverworld(World world, Random rand, int chunkX, int chunkZ)
 		{
+			Random ChunkGenRand = new Random();
+			int ChunkGenRandNum = ChunkGenRand.nextInt(16)+1;
+			
 			// Up to 2 veins of ore per chunk
 			for (int i = 0; i < 2; i++)
 			{
@@ -65,11 +68,8 @@ public class WorldGenGlowOres implements IWorldGenerator
 						randPosX, randPosY, randPosZ);
 			}
 			
-			Random ChunkGenRand = new Random();
-			int ChunkGenRandNum = ChunkGenRand.nextInt(8)+1;
-			
 			if(ChunkGenRandNum == 1){
-				for (int i = 0; i < 4; i++)
+				for (int i = 0; i < 3; i++)
 				{
 					int randPosX = chunkX + rand.nextInt(16);
 					int randPosY = rand.nextInt(72);
