@@ -1,6 +1,6 @@
 Changelog:
     
-    v0.4 (1.5.2)
+    v0.4.0 (1.5.2)
     + Dungeon/Pyramid/Mineshaft/Smithy/Stronghold loot!
     + More Fancy Tooltip Stuff!
     + Glassy Blue Ore & Glassy Blue Shard!
