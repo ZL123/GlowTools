@@ -11,6 +11,7 @@ package glowTools.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
@@ -24,20 +25,33 @@ import net.minecraft.world.World;
 
 public class EntitySkidglow extends EntityMob
 {
-
+	protected double speed = 1.15D;
+	protected double health = 40.0D;
+	protected double damage = 3.0D;
+	protected double knockresist = 0.1D;
+	
 	public EntitySkidglow(World par1World)
 	{
 		super(par1World);
-		this.texture = "/mods/glowTools/textures/models/Skidglow.png";
-		this.moveSpeed = 0.4F;
-		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
-		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		this.tasks.addTask(3, new EntityAIWander(this, this.moveSpeed));
-		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 22.0F, 0, true));
-        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
+		//this.moveSpeed = 0.4F; --Something's changed here...
+		tasks.addTask(0, new EntityAISwimming(this));
+		tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, speed, false));
+		tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(3, new EntityAIWander(this, speed));
+		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+        targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
+        experienceValue = 12;
 	}
-
+	
+	protected void applyEntityAttributes()
+    {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(health);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(speed);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(damage);
+        this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setAttribute(knockresist);
+    }
+	
 	public int getTotalArmorValue()
 	{
 		return 7;
@@ -46,11 +60,6 @@ public class EntitySkidglow extends EntityMob
 	protected boolean isAIEnabled()
 	{
 		return true;
-	}
-
-	public int getMaxHealth()
-	{
-		return 30;
 	}
 	
 	public int getAttackStrength(Entity par1Entity)
@@ -82,13 +91,13 @@ public class EntitySkidglow extends EntityMob
 	{
 		if(this.rand.nextInt(3) == 1)
 		{
-			this.dropItem(Item.lightStoneDust.itemID, 1);
+			this.dropItem(Item.glowstone.itemID, 1);
 		}
 		else
 		{
 			if(this.rand.nextInt(3) == 2)
 			{
-				this.dropItem(Item.lightStoneDust.itemID, 2);
+				this.dropItem(Item.glowstone.itemID, 2);
 			}
 		}
 	}

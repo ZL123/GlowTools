@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Minecraft</name>
+	<name>GlowTools</name>
 	<comment></comment>
 	<projects>
+		<project>Minecraft</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -16,49 +17,25 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>jars</name>
+			<name>glowTools_common</name>
 			<type>2</type>
-			<location>C:/Users/USER/Desktop/Minecraft Stuffs/Modding/GlowTools-dvlop/forge/mcp/jars</location>
+			<location>C:/Users/USER/Desktop/Minecraft Stuffs/Modding/GlowTools-dvlop/eclipse/GlowTools/glowTools_common</location>
 		</link>
 		<link>
-			<name>minecraft</name>
+			<name>resources</name>
 			<type>2</type>
-			<location>C:/Users/USER/Desktop/Minecraft Stuffs/Modding/GlowTools-dvlop/forge/mcp/src/minecraft</location>
+			<location>C:/Users/USER/Desktop/Minecraft Stuffs/Modding/GlowTools-dvlop/eclipse/GlowTools/resources</location>
 		</link>
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1379553360558</id>
+			<id>1378220747136</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-LICENSE</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1379553360566</id>
-			<name></name>
-			<type>6</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-README.md</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1379553360574</id>
-			<name></name>
-			<type>14</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-eclipse</arguments>
+				<arguments>1.0-name-matches-false-true-COPYING|COPYING.LESSER|README.md</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>
-	<variableList>
-		<variable>
-			<name>MCP_LOC</name>
-			<value>$%7BPARENT-1-WORKSPACE_LOC%7D/forge/mcp</value>
-		</variable>
-	</variableList>
 </projectDescription>

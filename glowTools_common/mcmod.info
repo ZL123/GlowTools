@@ -1,6 +1,6 @@
 [
 {
-	"modid": "ZL123_GlowTools",
+	"modid": "GlowTools by ZL123",
 	"name": "GlowTools",
 	"version": "0.4.0",
 	"mcversion": "1.5.2",
@@ -12,7 +12,7 @@
 	"updateUrl": "",
 	"parent": "",
 	"requiredMods": [
-    "Forge@[7.8.0.685,)",
+    "Forge@[9.10.1.849,)",
     "FML@[5.2.5.686,)"
     ],
 	"screenshots": [],

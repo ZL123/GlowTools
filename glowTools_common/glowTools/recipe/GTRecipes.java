@@ -35,7 +35,7 @@ public class GTRecipes {
 		GameRegistry.addRecipe(new ItemStack(GTBlocks.blockGlowIron, 2), new Object[]{"XXX", "XXX", "XXX", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber)});
 		GameRegistry.addRecipe(new ItemStack(GTItems.craftingItems, 4, CraftingItems.glowingIronMetaNumber), new Object[]{"X", 'X', GTBlocks.blockGlowIron});
 		GameRegistry.addShapelessRecipe(new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowingIronMetaNumber), new Object[]{new ItemStack(Item.ingotIron), new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowMoltMetaNumber)});
-		GameRegistry.addSmelting(Item.lightStoneDust.itemID, new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowMoltMetaNumber), 0.4F);
+		GameRegistry.addSmelting(Item.glowstone.itemID, new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowMoltMetaNumber), 0.4F);
 		GameRegistry.addSmelting(Item.redstone.itemID, new ItemStack(GTItems.craftingItems, 1, CraftingItems.redMoltMetaNumber), 0.4F);
 		GameRegistry.addRecipe(new ItemStack(Item.expBottle, 3), new Object[]{"XZY", "XZY", "XZY", 'X', new ItemStack(GTItems.craftingItems, 1, CraftingItems.glowMoltMetaNumber), 'Y', new ItemStack(GTItems.craftingItems, 1, CraftingItems.redMoltMetaNumber), 'Z', new ItemStack(Item.glassBottle)});
 		GameRegistry.addSmelting(Item.expBottle.itemID, new ItemStack(Item.expBottle, 1), 0.7F);	

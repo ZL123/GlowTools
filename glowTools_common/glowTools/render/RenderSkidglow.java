@@ -10,10 +10,12 @@
 package glowTools.render;
 
 import glowTools.entity.EntitySkidglow;
+import glowTools.lib.Reference;
 import glowTools.model.ModelSkidglow;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.util.ResourceLocation;
 
 public class RenderSkidglow extends RenderLiving
 {
@@ -39,4 +41,9 @@ public class RenderSkidglow extends RenderLiving
     {
         this.renderSkidglow((EntitySkidglow)par1Entity, par2, par4, par6, par8, par9);
     }
+
+	@Override
+	protected ResourceLocation getEntityTexture(Entity entity) {
+		return Reference.SKIDGLOW_SKIN_LOC;
+	}
 }

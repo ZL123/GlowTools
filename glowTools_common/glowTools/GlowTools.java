@@ -46,10 +46,10 @@ import com.google.common.collect.Lists;
 
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -58,7 +58,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
+@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = {Reference.PACKETCHANNEL_GT}, packetHandler = GTPacketHandler.class)
 
 public class GlowTools
@@ -74,7 +74,7 @@ public class GlowTools
     public static GTCraftingHandler craftingHandler = new GTCraftingHandler();
     private static List<IGlowFuelHandler> glowFuelHandlers = Lists.newArrayList();
     
-	@PreInit
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		FMLLog.log(Reference.CHANNELNAME, Level.INFO, "GlowTools v%s is running.", Reference.VERSION);
@@ -94,7 +94,7 @@ public class GlowTools
 		chieves.addAchievementLocalizations();
 	}
 	
-	@Init
+	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderThings();
@@ -129,7 +129,7 @@ public class GlowTools
 		GameRegistry.registerCraftingHandler(craftingHandler);
 	}
 	
-	@PostInit
+	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		GTItems.postInit();

@@ -17,9 +17,9 @@ import glowTools.tileentity.TileEntityGsInfuser;
 
 import java.util.List;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -43,7 +43,7 @@ public class ItemScepterInfuse extends ItemTool {
 	
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer entityPlayer, World world, int x, int y, int z, int side, float hitVecX, float hitVecY, float hitVecZ) {
-		if (this.getItemDamageFromStack(stack) < this.getMaxDamage()) {
+		if (this.getDamage(stack) < this.getMaxDamage()) {
 				int id = world.getBlockId(x, y, z);
 				int meta = world.getBlockMetadata(x, y, z);
 				
@@ -77,7 +77,7 @@ public class ItemScepterInfuse extends ItemTool {
 					ItemStack inSlot = entityPlayer.inventory.getStackInSlot(i);
 					
 					if (TileEntityGsInfuser.isGlowFuel(inSlot)) {
-						this.setItemDamageForStack(stack, getMaxDamage() - TileEntityGsInfuser.getItemGlowFuelAmount(inSlot));
+						this.setDamage(stack, getMaxDamage() - TileEntityGsInfuser.getItemGlowFuelAmount(inSlot));
 						
 						if (inSlot.stackSize > 1) {
 							entityPlayer.inventory.setInventorySlotContents(i, new ItemStack(inSlot.itemID, inSlot.stackSize - 1, inSlot.getItemDamage()));
@@ -97,7 +97,7 @@ public class ItemScepterInfuse extends ItemTool {
     }
 	
 	@Override
-	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving)
+	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, net.minecraft.entity.EntityLivingBase par7EntityLivingBase)
     {
         if ((double)Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
         {

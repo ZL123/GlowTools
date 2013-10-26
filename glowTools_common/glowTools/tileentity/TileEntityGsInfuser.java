@@ -400,11 +400,6 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
     public void openChest() {}
 
     public void closeChest() {}
-
-    public boolean isStackValidForSlot(int par1, ItemStack par2ItemStack)
-    {
-        return par1 == 2 ? false : (par1 == 1 ? isItemFuel(par2ItemStack) : (par1 == 3 ? isGlowFuel(par2ItemStack) : true));
-    }
     
     public int[] getAccessibleSlotsFromSide(int par1)
     {
@@ -413,11 +408,16 @@ public class TileEntityGsInfuser extends TileEntity implements ISidedInventory
 
     public boolean canInsertItem(int slot, ItemStack item, int side)
     {
-        return this.isStackValidForSlot(slot, item);
+        return this.isItemValidForSlot(slot, item);
     }
 
     public boolean canExtractItem(int slot, ItemStack item, int side)
     {
         return side != 0 || slot != 1 || item.itemID == Item.bucketEmpty.itemID;
     }
+
+	@Override
+	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+		return i == 2 ? false : (i == 1 ? isItemFuel(itemstack) : (i == 3 ? isGlowFuel(itemstack) : true));
+	}
 }
