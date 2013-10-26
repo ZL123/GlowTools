@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Minecraft</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>jars</name>
+			<type>2</type>
+			<location>C:/Users/USER/Desktop/Minecraft Stuffs/Modding/GlowTools-dvlop/forge/mcp/jars</location>
+		</link>
+		<link>
+			<name>minecraft</name>
+			<type>2</type>
+			<location>C:/Users/USER/Desktop/Minecraft Stuffs/Modding/GlowTools-dvlop/forge/mcp/src/minecraft</location>
+		</link>
+	</linkedResources>
+	<filteredResources>
+		<filter>
+			<id>1379553360558</id>
+			<name></name>
+			<type>6</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-LICENSE</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1379553360566</id>
+			<name></name>
+			<type>6</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-README.md</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1379553360574</id>
+			<name></name>
+			<type>14</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-eclipse</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
+	<variableList>
+		<variable>
+			<name>MCP_LOC</name>
+			<value>$%7BPARENT-1-WORKSPACE_LOC%7D/forge/mcp</value>
+		</variable>
+	</variableList>
+</projectDescription>
